@@ -4,26 +4,30 @@ import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, MapPin } from "lucide-react"
-import { Carousel } from "./carousel"
-import { EventDetailModal } from "./event-detail-modal"
+import { Carousel } from "../carousels/Carousel"
+import { EventDetailModal } from "./EventDetailModal"
 import { useState } from "react"
-import type { TranslationKey } from "@/lib/translations"
+import type { Translations } from "@/lib/translations"
+import eventsData from "@/data/events.json"
+import { getLocalizedEvent } from "@/lib/translations"
+import type { Event } from "@/lib/types"
 
 interface PreviousEventsModalProps {
   isOpen: boolean
   onClose: () => void
-  t: TranslationKey
+  t: Translations
+  language: 'en' | 'fr'
 }
 
-export function PreviousEventsModal({ isOpen, onClose, t }: PreviousEventsModalProps) {
-  const [selectedEvent, setSelectedEvent] = useState<any>(null)
+export function PreviousEventsModal({ isOpen, onClose, t, language }: PreviousEventsModalProps) {
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false)
 
   if (!isOpen) return null
 
-  const previousEvents = t.events.previousEvents || []
+  const previousEvents = eventsData.previousEvents || []
 
-  const handleEventClick = (event: any) => {
+  const handleEventClick = (event: Event) => {
     setSelectedEvent(event)
     setIsDetailModalOpen(true)
   }
@@ -53,17 +57,19 @@ export function PreviousEventsModal({ isOpen, onClose, t }: PreviousEventsModalP
             {previousEvents && previousEvents.length > 0 ? (
               <Carousel
                 items={previousEvents}
-                itemsPerSlide={2}
-                renderItem={(event) => (
+                itemsPerSlide={3}
+                renderItem={(event) => {
+                  const localizedEvent = getLocalizedEvent(event, language)
+                  return (
                   <Card
                     className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
                     onClick={() => handleEventClick(event)}
                   >
-                    {event.image && (
+                    {localizedEvent.image && (
                       <div className="w-full h-40 overflow-hidden bg-gray-200">
                         <img
-                          src={event.image || "/placeholder.svg"}
-                          alt={event.title}
+                          src={localizedEvent.image || "/placeholder.svg"}
+                          alt={localizedEvent.title}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -71,18 +77,18 @@ export function PreviousEventsModal({ isOpen, onClose, t }: PreviousEventsModalP
                     <CardHeader>
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{event.date}</span>
+                        <span className="text-sm">{localizedEvent.date}</span>
                       </div>
-                      {event.location && (
+                      {localizedEvent.location && (
                         <div className="flex items-center gap-2 text-muted-foreground mb-2">
                           <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{event.location}</span>
+                          <span className="text-sm">{localizedEvent.location}</span>
                         </div>
                       )}
-                      <CardTitle className="text-lg">{event.title}</CardTitle>
+                      <CardTitle className="text-lg">{localizedEvent.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{event.description}</p>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{localizedEvent.description}</p>
                       <Button
                         size="sm"
                         variant="outline"
@@ -92,7 +98,8 @@ export function PreviousEventsModal({ isOpen, onClose, t }: PreviousEventsModalP
                       </Button>
                     </CardContent>
                   </Card>
-                )}
+                  )
+                }}
               />
             ) : (
               <p className="text-center text-muted-foreground py-8">No previous events to display</p>

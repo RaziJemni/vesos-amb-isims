@@ -7,11 +7,12 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type { TranslationKey } from "@/lib/translations"
+import type { Translations } from "@/lib/translations"
+import type { JoinFormData, FormStatus } from "@/lib/types"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface JoinFormProps {
-  t: TranslationKey
+  t: Translations
 }
 
 // UPDATE THIS: Replace with your actual Google Form endpoint URL
@@ -29,7 +30,7 @@ const FORM_FIELD_IDS = {
 }
 
 export function JoinForm({ t }: JoinFormProps) {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<JoinFormData>({
     fullname: "",
     email: "",
     phone: "",
@@ -38,7 +39,7 @@ export function JoinForm({ t }: JoinFormProps) {
     year: "",
     motivation: "",
   })
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [status, setStatus] = useState<FormStatus>("idle")
   const ref = useScrollAnimation()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -89,8 +90,8 @@ export function JoinForm({ t }: JoinFormProps) {
         <p className="text-center text-white/90 mb-12 max-w-2xl mx-auto">{t.join.subtitle}</p>
 
         <div className="mx-auto max-w-2xl">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <form ref={ref} onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up animate-stagger">
+          <div ref={ref} className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 animate-fade-in-up animate-stagger">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="fullname" className="text-white">
@@ -201,12 +202,7 @@ export function JoinForm({ t }: JoinFormProps) {
                 />
               </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold"
-                disabled={status === "loading"}
-              >
+              <Button type="submit" size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold" disabled={status === "loading"}>
                 {status === "loading" ? "Submitting..." : t.join.form.submit}
               </Button>
 

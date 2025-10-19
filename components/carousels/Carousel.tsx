@@ -2,13 +2,14 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import type { CarouselItem } from "@/lib/types"
 
 interface CarouselProps {
-  items: any[]
-  renderItem: (item: any, index: number) => React.ReactNode
+  items: readonly CarouselItem[]
+  renderItem: (item: CarouselItem, index: number) => React.ReactNode
   itemsPerSlide?: number
   showIndicators?: boolean
 }
@@ -17,20 +18,23 @@ export function Carousel({ items, renderItem, itemsPerSlide = 3, showIndicators 
   const [currentSlide, setCurrentSlide] = useState(0)
   const totalSlides = Math.ceil(items.length / itemsPerSlide)
 
+  // Reset to the first slide whenever the items or itemsPerSlide change
+  // This ensures when the parent swaps the item array (e.g. switching years)
+  // the carousel shows the first slide and navigation works predictably.
+  useEffect(() => {
+    setCurrentSlide(0)
+  }, [items, itemsPerSlide])
+
   const goToPrevious = () => {
-    console.log("[v0] Going to previous slide from", currentSlide)
     setCurrentSlide((prev) => {
       const newSlide = prev === 0 ? totalSlides - 1 : prev - 1
-      console.log("[v0] New slide:", newSlide)
       return newSlide
     })
   }
 
   const goToNext = () => {
-    console.log("[v0] Going to next slide from", currentSlide)
     setCurrentSlide((prev) => {
       const newSlide = prev === totalSlides - 1 ? 0 : prev + 1
-      console.log("[v0] New slide:", newSlide)
       return newSlide
     })
   }

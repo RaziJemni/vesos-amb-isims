@@ -1,11 +1,11 @@
 "use client"
 
-import type { TranslationKey } from "@/lib/translations"
+import type { Translations } from "@/lib/translations"
 import { Facebook, Instagram, Linkedin } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface FooterProps {
-  t: TranslationKey
+  t: Translations
 }
 
 export function Footer({ t }: FooterProps) {

@@ -4,10 +4,15 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { LanguageToggle } from "./language-toggle"
-import type { TranslationKey } from "@/lib/translations"
+import type { Translations } from "@/lib/translations"
 
+/**
+ * Navigation component
+ * Fixed header with logo, navigation links, and language toggle
+ * Features responsive mobile menu and scroll-based styling
+ */
 interface NavigationProps {
-  t: TranslationKey
+  t: Translations
   currentLanguage: string
   onLanguageToggle: () => void
 }

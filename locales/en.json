@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "about": "About",
+    "bureau": "Bureau",
+    "goals": "Goals",
+    "events": "Events",
+    "join": "Join"
+  },
+  "hero": {
+    "title": "SOS Children's Village Ambassadors Club of ISIMS",
+    "subtitle": "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+    "cta": "Become a Member"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "The SOS Children's Village Ambassadors Club of ISIMS is a student association committed to charitable actions for disadvantaged children. Our mission is to raise awareness in the university community about the challenges facing children in difficulty and to raise funds to support SOS Village d'Enfants initiatives.\n\nFounded in 2022, our club regularly organizes events, fundraising campaigns and awareness activities to provide concrete support to children in need."
+  },
+  "goals": {
+    "title": "Our Goals",
+    "items": [
+      {
+        "icon": "🎯",
+        "title": "Awareness",
+        "description": "Raise awareness in the university community about children's issues and SOS Village d'Enfants actions."
+      },
+      {
+        "icon": "🤝",
+        "title": "Solidarity",
+        "description": "Promote values of solidarity and mutual aid within the university and beyond."
+      },
+      {
+        "icon": "💰",
+        "title": "Fundraising",
+        "description": "Organize events and activities to raise funds for SOS Village d'Enfants."
+      },
+      {
+        "icon": "🌟",
+        "title": "Student Engagement",
+        "description": "Encourage student engagement in charitable and civic actions."
+      },
+      {
+        "icon": "🌍",
+        "title": "National Network",
+        "description": "Build a strong network between different SOS Village d'Enfants clubs in Tunisian universities."
+      },
+      {
+        "icon": "🎉",
+        "title": "Events",
+        "description": "Organize regular events (conferences, workshops, recreational activities) for children supported by SOS Village."
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Bureau",
+    "viewPreviousBureaus": "View Previous Bureaus",
+    "previousBureausTitle": "Previous Bureaus",
+    "noPreviousBureaus": "No previous bureaus to display",
+    "prevButton": "Previous",
+    "nextButton": "Next"
+  },
+  "events": {
+    "title": "Our Events",
+    "recent": "Recent Events",
+    "upcoming": "Upcoming Events"
+  },
+  "join": {
+    "title": "Join Our Club",
+    "subtitle": "Interested in becoming a member? Fill out the form below and we'll get in touch with you!",
+    "form": {
+      "fullname": "Full Name",
+      "fullnamePlaceholder": "Enter your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "Your phone number",
+      "university": "University/School",
+      "universityPlaceholder": "Your university or school",
+      "studyField": "Field of Study",
+      "studyFieldPlaceholder": "Your field of study",
+      "year": "Year of Study",
+      "yearPlaceholder": "Select your year",
+      "motivation": "Why do you want to join our club?",
+      "motivationPlaceholder": "Tell us about your interests and what you hope to gain...",
+      "submit": "Register",
+      "success": "Thank you for your registration! We will contact you soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "about": "Club Ambassadeurs SOS Village",
+    "location": "ISIMS - Sfax, Tunisia",
+    "email": "club.ambassadeurs.vesostn.isims@gmail.com",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
+  }
+}

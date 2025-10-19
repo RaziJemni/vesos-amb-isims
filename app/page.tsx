@@ -1,15 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { translations, type Language } from "@/lib/translations"
+import { getTranslations, type Language } from "@/lib/translations"
 import { Navigation } from "@/components/navigation"
-import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
-import { Goals } from "@/components/goals"
-import { Team } from "@/components/team"
-import { Events } from "@/components/events"
-import { JoinForm } from "@/components/join-form"
-import { Footer } from "@/components/footer"
+import { Hero } from "@/components/sections/Hero"
+import { About } from "@/components/sections/About"
+import { Goals } from "@/components/sections/Goals"
+import { Team } from "@/components/sections/Team"
+import { Events } from "@/components/sections/Events"
+import { JoinForm } from "@/components/sections/JoinForm"
+import { Footer } from "@/components/sections/Footer"
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en")
@@ -18,7 +18,7 @@ export default function Home() {
     setLanguage((prev) => (prev === "en" ? "fr" : "en"))
   }
 
-  const t = translations[language]
+  const t = getTranslations(language)
 
   return (
     <main className="min-h-screen">
@@ -26,8 +26,8 @@ export default function Home() {
       <Hero t={t} />
       <About t={t} />
       <Goals t={t} />
-      <Team t={t} />
-      <Events t={t} />
+      <Team t={t} language={language} />
+      <Events t={t} language={language} />
       <JoinForm t={t} />
       <Footer t={t} />
     </main>

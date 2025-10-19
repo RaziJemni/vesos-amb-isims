@@ -8,9 +8,30 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "College Club - Join Our Community",
-  description: "Building community, fostering growth, and creating lasting memories together",
-  generator: "v0.app",
+  title: "SOS Children's Village Ambassadors Club - ISIMS",
+  description: "Join our mission to help children in difficult situations through charitable actions and solidarity events. Student organization at ISIMS committed to making a difference.",
+  keywords: ["SOS Village", "children", "charity", "ISIMS", "student club", "volunteer", "Tunisia", "Sfax"],
+  authors: [{ name: "SOS Club ISIMS" }],
+  creator: "SOS Children's Village Ambassadors Club of ISIMS",
+  publisher: "ISIMS",
+  robots: "index, follow",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "SOS Children's Village Ambassadors Club - ISIMS",
+    description: "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+    type: "website",
+    locale: "en_US",
+    siteName: "SOS Club ISIMS",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SOS Children's Village Ambassadors Club - ISIMS",
+    description: "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+  },
 }
 
 export default function RootLayout({
@@ -20,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

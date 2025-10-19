@@ -1,6 +1,7 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "sos-club-website",
+  "version": "1.0.0",
+  "description": "Official website for SOS Children's Village Ambassadors Club of ISIMS",
   "private": true,
   "scripts": {
     "build": "next build",

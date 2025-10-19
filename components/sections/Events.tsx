@@ -6,22 +6,26 @@ import { useState } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, MapPin } from "lucide-react"
-import { EventDetailModal } from "./event-detail-modal"
-import { PreviousEventsModal } from "./previous-events-modal"
-import type { TranslationKey } from "@/lib/translations"
+import { EventDetailModal } from "../modals/EventDetailModal"
+import { PreviousEventsModal } from "../modals/PreviousEventsModal"
+import type { Translations } from "@/lib/translations"
+import type { Event } from "@/lib/types"
+import eventsData from "@/data/events.json"
+import { getLocalizedEvent } from "@/lib/translations"
 
 interface EventsProps {
-  t: TranslationKey
+  t: Translations
+  language: 'en' | 'fr'
 }
 
-export function Events({ t }: EventsProps) {
-  const [selectedEvent, setSelectedEvent] = useState<any>(null)
+export function Events({ t, language }: EventsProps) {
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [showPreviousEvents, setShowPreviousEvents] = useState(false)
   const recentRef = useScrollAnimation()
   const upcomingRef = useScrollAnimation()
 
-  const handleEventClick = (event: any) => {
+  const handleEventClick = (event: Event) => {
     setSelectedEvent(event)
     setIsModalOpen(true)
   }
@@ -41,17 +45,19 @@ export function Events({ t }: EventsProps) {
                 {t.events.recent}
               </h3>
               <div ref={recentRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
-                {t.events.recentEvents.map((event, index) => (
+                {eventsData.recentEvents.map((event, index) => {
+                  const localizedEvent = getLocalizedEvent(event, language)
+                  return (
                   <Card
                     key={index}
                     className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
-                    onClick={() => handleEventClick(event)}
+                    onClick={() => handleEventClick(localizedEvent)}
                   >
-                    {event.image && (
+                    {localizedEvent.image && (
                       <div className="w-full h-48 overflow-hidden bg-gray-200">
                         <img
-                          src={event.image || "/placeholder.svg"}
-                          alt={event.title}
+                          src={localizedEvent.image || "/placeholder.svg"}
+                          alt={localizedEvent.title}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -59,22 +65,23 @@ export function Events({ t }: EventsProps) {
                     <CardHeader>
                       <div className="flex items-center gap-2 text-muted-foreground mb-2">
                         <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{event.date}</span>
+                        <span className="text-sm">{localizedEvent.date}</span>
                       </div>
-                      {event.location && (
+                      {localizedEvent.location && (
                         <div className="flex items-center gap-2 text-muted-foreground mb-2">
                           <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{event.location}</span>
+                          <span className="text-sm">{localizedEvent.location}</span>
                         </div>
                       )}
-                      <CardTitle className="text-xl">{event.title}</CardTitle>
+                      <CardTitle className="text-xl">{localizedEvent.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">{localizedEvent.description}</p>
                       <p className="text-xs text-primary mt-3 font-medium">Click to view details</p>
                     </CardContent>
                   </Card>
-                ))}
+                  )
+                })}
               </div>
             </div>
 
@@ -84,17 +91,19 @@ export function Events({ t }: EventsProps) {
                 {t.events.upcoming}
               </h3>
               <div ref={upcomingRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
-                {t.events.upcomingEvents.map((event, index) => (
+                {eventsData.upcomingEvents.map((event, index) => {
+                  const localizedEvent = getLocalizedEvent(event, language)
+                  return (
                   <Card
                     key={index}
                     className="border-2 border-primary/50 hover:shadow-lg transition-all duration-300 bg-primary/5 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
-                    onClick={() => handleEventClick(event)}
+                    onClick={() => handleEventClick(localizedEvent)}
                   >
-                    {event.image && (
+                    {localizedEvent.image && (
                       <div className="w-full h-48 overflow-hidden bg-gray-200">
                         <img
-                          src={event.image || "/placeholder.svg"}
-                          alt={event.title}
+                          src={localizedEvent.image || "/placeholder.svg"}
+                          alt={localizedEvent.title}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -102,22 +111,23 @@ export function Events({ t }: EventsProps) {
                     <CardHeader>
                       <div className="flex items-center gap-2 text-primary mb-2">
                         <Calendar className="h-4 w-4" />
-                        <span className="text-sm font-medium">{event.date}</span>
+                        <span className="text-sm font-medium">{localizedEvent.date}</span>
                       </div>
-                      {event.location && (
+                      {localizedEvent.location && (
                         <div className="flex items-center gap-2 text-primary mb-2">
                           <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{event.location}</span>
+                          <span className="text-sm">{localizedEvent.location}</span>
                         </div>
                       )}
-                      <CardTitle className="text-xl">{event.title}</CardTitle>
+                      <CardTitle className="text-xl">{localizedEvent.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">{localizedEvent.description}</p>
                       <p className="text-xs text-primary mt-3 font-medium">Click to view details & register</p>
                     </CardContent>
                   </Card>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -139,7 +149,7 @@ export function Events({ t }: EventsProps) {
         <EventDetailModal event={selectedEvent} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} t={t} />
       )}
 
-      <PreviousEventsModal isOpen={showPreviousEvents} onClose={() => setShowPreviousEvents(false)} t={t} />
+      <PreviousEventsModal isOpen={showPreviousEvents} onClose={() => setShowPreviousEvents(false)} t={t} language={language} />
     </>
   )
 }

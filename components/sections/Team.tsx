@@ -5,14 +5,17 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Mail, Instagram, Linkedin, History } from "lucide-react"
-import { PreviousBureauModal } from "./previous-bureau-modal"
-import type { TranslationKey } from "@/lib/translations"
+import { PreviousBureauModal } from "../modals/PreviousBureauModal"
+import type { Translations } from "@/lib/translations"
+import teamData from "@/data/team.json"
+import { getLocalizedRole } from "@/lib/translations"
 
 interface TeamProps {
-  t: TranslationKey
+  t: Translations
+  language: 'en' | 'fr'
 }
 
-export function Team({ t }: TeamProps) {
+export function Team({ t, language }: TeamProps) {
   const ref = useScrollAnimation()
   const [showPreviousBureaus, setShowPreviousBureaus] = useState(false)
 
@@ -23,7 +26,7 @@ export function Team({ t }: TeamProps) {
           {t.team.title}
         </h2>
         <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto animate-stagger">
-          {t.team.members.map((member, index) => (
+          {teamData.currentBureau.members.map((member, index) => (
             <Card
               key={index}
               className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary hover-lift"
@@ -38,7 +41,7 @@ export function Team({ t }: TeamProps) {
               <CardContent className="p-6">
                 <div className="text-center mb-4">
                   <h3 className="text-xl font-semibold mb-1 text-primary">{member.name}</h3>
-                  <p className="text-muted-foreground font-medium">{member.role}</p>
+                  <p className="text-muted-foreground font-medium">{getLocalizedRole(member, language)}</p>
                 </div>
 
                 <div className="space-y-3 border-t pt-4">
@@ -100,7 +103,7 @@ export function Team({ t }: TeamProps) {
         </div>
       </div>
 
-      <PreviousBureauModal isOpen={showPreviousBureaus} onClose={() => setShowPreviousBureaus(false)} t={t} />
+      <PreviousBureauModal isOpen={showPreviousBureaus} onClose={() => setShowPreviousBureaus(false)} t={t} language={language} />
     </section>
   )
 }

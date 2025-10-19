@@ -2,13 +2,14 @@
 
 import { X, MapPin, Calendar, LinkIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import type { TranslationKey } from "@/lib/translations"
+import type { Translations } from "@/lib/translations"
+import type { Event } from "@/lib/types"
 
 interface EventDetailModalProps {
-  event: any
+  event: Event
   isOpen: boolean
   onClose: () => void
-  t: TranslationKey
+  t: Translations
 }
 
 export function EventDetailModal({ event, isOpen, onClose, t }: EventDetailModalProps) {

@@ -1,0 +1,240 @@
+{
+  "recentEvents": [
+    {
+      "id": "awareness-campaign-2024",
+      "date": "2024-10-15",
+      "title": "Awareness Campaign",
+      "titleFr": "Campagne de Sensibilisation",
+      "description": "A successful awareness campaign about children's rights and SOS Village d'Enfants initiatives.",
+      "descriptionFr": "Une campagne de sensibilisation réussie sur les droits des enfants et les initiatives de SOS Village d'Enfants.",
+      "location": "ISIMS Campus",
+      "locationFr": "Campus ISIMS",
+      "image": "/images/events/awareness-campaign.jpg",
+      "details": "We organized a comprehensive awareness campaign highlighting the importance of children's rights and the vital work of SOS Village d'Enfants.",
+      "detailsFr": "Nous avons organisé une campagne de sensibilisation complète mettant en évidence l'importance des droits des enfants et le travail vital de SOS Village d'Enfants.",
+      "gallery": [
+        "/images/events/awareness-1.jpg",
+        "/images/events/awareness-2.jpg",
+        "/images/events/awareness-3.jpg"
+      ],
+      "category": "awareness",
+      "attendees": 150,
+      "fundsRaised": 2500
+    },
+    {
+      "id": "fundraising-gala-2024",
+      "date": "2024-09-28",
+      "title": "Fundraising Gala",
+      "titleFr": "Gala de Collecte de Fonds",
+      "description": "An elegant evening event where we raised funds for children in need through donations and auctions.",
+      "descriptionFr": "Une soirée élégante où nous avons collecté des fonds pour les enfants dans le besoin grâce aux dons et aux enchères.",
+      "location": "Sfax Convention Center",
+      "locationFr": "Centre des Congrès de Sfax",
+      "image": "/images/events/gala.jpg",
+      "details": "Our annual fundraising gala brought together students, faculty, and community members to support SOS Village d'Enfants.",
+      "detailsFr": "Notre gala annuel de collecte de fonds a réuni des étudiants, des professeurs et des membres de la communauté pour soutenir SOS Village d'Enfants.",
+      "gallery": [
+        "/images/events/gala-1.jpg",
+        "/images/events/gala-2.jpg"
+      ],
+      "category": "fundraising",
+      "attendees": 200,
+      "fundsRaised": 5000
+    }
+  ],
+  "upcomingEvents": [
+    {
+      "id": "workshop-making-difference",
+      "date": "2024-11-10",
+      "title": "Workshop: Making a Difference",
+      "titleFr": "Atelier : Faire la Différence",
+      "description": "Join us for an interactive workshop on how students can contribute to charitable causes.",
+      "descriptionFr": "Rejoignez-nous pour un atelier interactif sur la façon dont les étudiants peuvent contribuer à des causes caritatives.",
+      "location": "ISIMS Auditorium",
+      "locationFr": "Auditorium ISIMS",
+      "image": "/images/events/workshop.jpg",
+      "details": "Learn practical ways to make a positive impact in your community. This workshop covers volunteer opportunities, fundraising strategies, and social impact initiatives.",
+      "detailsFr": "Apprenez des moyens pratiques de faire un impact positif dans votre communauté. Cet atelier couvre les opportunités de bénévolat, les stratégies de collecte de fonds et les initiatives d'impact social.",
+      "category": "workshop",
+      "registrationLink": "https://forms.google.com/your-workshop-form",
+      "maxAttendees": 50,
+      "registrationDeadline": "2024-11-08"
+    },
+    {
+      "id": "holiday-charity-drive",
+      "date": "2024-12-05",
+      "title": "Holiday Charity Drive",
+      "titleFr": "Collecte de Cadeaux de Noël",
+      "description": "Help us collect gifts and essentials for children supported by SOS Village d'Enfants.",
+      "descriptionFr": "Aidez-nous à collecter des cadeaux et des essentiels pour les enfants soutenus par SOS Village d'Enfants.",
+      "location": "ISIMS Campus",
+      "locationFr": "Campus ISIMS",
+      "image": "/images/events/charity-drive.jpg",
+      "details": "Join our holiday charity drive to collect gifts, clothing, and essentials for children in need. Every contribution makes a difference!",
+      "detailsFr": "Rejoignez notre collecte de cadeaux de Noël pour collecter des cadeaux, des vêtements et des essentiels pour les enfants dans le besoin. Chaque contribution fait une différence!",
+      "category": "charity",
+      "registrationLink": "https://forms.google.com/your-charity-drive-form",
+      "maxAttendees": 100,
+      "registrationDeadline": "2024-12-03"
+    }
+  ],
+  "previousEvents": [
+    {
+      "id": "summer-charity-picnic",
+      "date": "2024-08-20",
+      "title": "Summer Charity Picnic",
+      "titleFr": "Picnic de Charité d'été",
+      "description": "An outdoor gathering where we raised awareness and collected funds for children in need.",
+      "descriptionFr": "Une réunion en plein air où nous avons sensibilisé et collecté des fonds pour les enfants dans le besoin.",
+      "location": "Sfax Park",
+      "locationFr": "Parc de Sfax",
+      "image": "/images/events/picnic.jpg",
+      "details": "Our summer charity picnic brought together students and community members for a day of fun activities and fundraising.",
+      "detailsFr": "Notre picnic de charité d'été a réuni des étudiants et des membres de la communauté pour une journée d'activités amusantes et de collecte de fonds.",
+      "gallery": [
+        "/images/events/picnic-1.jpg",
+        "/images/events/picnic-2.jpg"
+      ],
+      "category": "outdoor",
+      "attendees": 80,
+      "fundsRaised": 1200
+    },
+    {
+      "id": "educational-workshop",
+      "date": "2024-07-10",
+      "title": "Educational Workshop",
+      "titleFr": "Atelier Éducatif",
+      "description": "A workshop focused on children's rights and social responsibility.",
+      "descriptionFr": "Un atelier axé sur les droits des enfants et la responsabilité sociale.",
+      "location": "ISIMS Campus",
+      "locationFr": "Campus ISIMS",
+      "image": "/images/events/workshop-old.jpg",
+      "details": "We organized an educational workshop to raise awareness about children's rights and the importance of social responsibility.",
+      "detailsFr": "Nous avons organisé un atelier éducatif pour sensibiliser sur les droits des enfants et l'importance de la responsabilité sociale.",
+      "gallery": [
+        "/images/events/workshop-1.jpg"
+      ],
+      "category": "workshop",
+      "attendees": 60,
+      "fundsRaised": 0
+    },
+    {
+      "id": "open-day",
+      "date": "2024-06-15",
+      "title": "Open Day",
+      "titleFr": "Journée Portes Ouvertes",
+      "description": "A day to discover our initiatives and meet the team.",
+      "descriptionFr": "Une journée pour découvrir nos initiatives et rencontrer l'équipe.",
+      "location": "ISIMS Campus",
+      "locationFr": "Campus ISIMS",
+      "image": "/images/events/open-day.jpg",
+      "details": "We welcomed many interested students to discover our projects and charitable activities.",
+      "detailsFr": "Nous avons accueilli de nombreux étudiants intéressés pour découvrir nos projets et nos activités caritatives.",
+      "gallery": [
+        "/images/events/open-day-1.jpg"
+      ],
+      "category": "outreach",
+      "attendees": 120,
+      "fundsRaised": 0
+    },
+    {
+      "id": "book-drive",
+      "date": "2024-05-20",
+      "title": "Book Drive",
+      "titleFr": "Collecte de Livres",
+      "description": "A book collection for children supported by SOS Village.",
+      "descriptionFr": "Une collecte de livres pour les enfants soutenus par SOS Village.",
+      "location": "ISIMS Campus",
+      "locationFr": "Campus ISIMS",
+      "image": "/images/events/book-drive.jpg",
+      "details": "We collected over 500 books to enrich the library of children supported by SOS Village d'Enfants.",
+      "detailsFr": "Nous avons collecté plus de 500 livres pour enrichir la bibliothèque des enfants soutenus par SOS Village d'Enfants.",
+      "gallery": [
+        "/images/events/book-drive-1.jpg"
+      ],
+      "category": "charity",
+      "attendees": 40,
+      "fundsRaised": 0,
+      "itemsCollected": 500
+    },
+    {
+      "id": "social-engagement-conference",
+      "date": "2024-04-10",
+      "title": "Social Engagement Conference",
+      "titleFr": "Conférence sur l'Engagement Social",
+      "description": "An inspiring conference on the importance of social engagement.",
+      "descriptionFr": "Une conférence inspirante sur l'importance de l'engagement social.",
+      "location": "ISIMS Auditorium",
+      "locationFr": "Auditorium ISIMS",
+      "image": "/images/events/conference.jpg",
+      "details": "Experts shared their experiences and advice on how to make a difference in society.",
+      "detailsFr": "Des experts ont partagé leurs expériences et conseils sur comment faire une différence dans la société.",
+      "gallery": [
+        "/images/events/conference-1.jpg"
+      ],
+      "category": "conference",
+      "attendees": 180,
+      "fundsRaised": 0
+    },
+    {
+      "id": "children-art-exhibition",
+      "date": "2024-03-15",
+      "title": "Children's Art Exhibition",
+      "titleFr": "Exposition d'Art des Enfants",
+      "description": "A beautiful exhibition showcasing artwork created by children supported by SOS Village.",
+      "descriptionFr": "Une belle exposition présentant des œuvres d'art créées par les enfants soutenus par SOS Village.",
+      "location": "ISIMS Gallery",
+      "locationFr": "Galerie ISIMS",
+      "image": "/images/events/art-exhibition.jpg",
+      "details": "We organized an art exhibition to showcase the creativity and talent of children in our care. The event featured paintings, drawings, and crafts created during our art therapy sessions.",
+      "detailsFr": "Nous avons organisé une exposition d'art pour mettre en valeur la créativité et le talent des enfants dont nous nous occupons. L'événement a présenté des peintures, des dessins et des bricolages créés lors de nos séances d'art-thérapie.",
+      "gallery": [
+        "/images/events/art-exhibition-1.jpg",
+        "/images/events/art-exhibition-2.jpg",
+        "/images/events/art-exhibition-3.jpg"
+      ],
+      "category": "exhibition",
+      "attendees": 120,
+      "fundsRaised": 800
+    },
+    {
+      "id": "sports-day",
+      "date": "2024-02-20",
+      "title": "Sports Day for Children",
+      "titleFr": "Journée Sportive pour les Enfants",
+      "description": "A fun-filled sports day with various activities and games for children.",
+      "descriptionFr": "Une journée sportive amusante avec diverses activités et jeux pour les enfants.",
+      "location": "ISIMS Sports Complex",
+      "locationFr": "Complexe Sportif ISIMS",
+      "image": "/images/events/sports-day.jpg",
+      "details": "We organized a sports day with various activities including football, basketball, relay races, and fun games. The children had a wonderful time and received medals and certificates.",
+      "detailsFr": "Nous avons organisé une journée sportive avec diverses activités incluant le football, le basketball, les courses de relais et des jeux amusants. Les enfants ont passé un moment merveilleux et ont reçu des médailles et des certificats.",
+      "gallery": [
+        "/images/events/sports-day-1.jpg",
+        "/images/events/sports-day-2.jpg"
+      ],
+      "category": "sports",
+      "attendees": 90,
+      "fundsRaised": 0
+    },
+    {
+      "id": "volunteer-training",
+      "date": "2024-01-25",
+      "title": "Volunteer Training Workshop",
+      "titleFr": "Atelier de Formation des Bénévoles",
+      "description": "Training session for new volunteers on how to work with children and organize events.",
+      "descriptionFr": "Session de formation pour les nouveaux bénévoles sur la façon de travailler avec les enfants et d'organiser des événements.",
+      "location": "ISIMS Conference Room",
+      "locationFr": "Salle de Conférence ISIMS",
+      "image": "/images/events/volunteer-training.jpg",
+      "details": "We conducted a comprehensive training workshop for new volunteers covering child psychology, event organization, fundraising techniques, and safety protocols.",
+      "detailsFr": "Nous avons organisé un atelier de formation complet pour les nouveaux bénévoles couvrant la psychologie de l'enfant, l'organisation d'événements, les techniques de collecte de fonds et les protocoles de sécurité.",
+      "gallery": [
+        "/images/events/volunteer-training-1.jpg"
+      ],
+      "category": "training",
+      "attendees": 45,
+      "fundsRaised": 0
+    }
+  ]
+}
