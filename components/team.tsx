@@ -1,6 +1,11 @@
 "use client"
 
+import { useState } from "react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Mail, Instagram, Linkedin, History } from "lucide-react"
+import { PreviousBureauModal } from "./previous-bureau-modal"
 import type { TranslationKey } from "@/lib/translations"
 
 interface TeamProps {
@@ -8,17 +13,20 @@ interface TeamProps {
 }
 
 export function Team({ t }: TeamProps) {
+  const ref = useScrollAnimation()
+  const [showPreviousBureaus, setShowPreviousBureaus] = useState(false)
+
   return (
     <section id="team" className="py-20 md:py-32 bg-background">
       <div className="container px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary animate-fade-in-up animate-in">
           {t.team.title}
         </h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto animate-stagger">
           {t.team.members.map((member, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary"
+              className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary hover-lift"
             >
               <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
                 <img
@@ -34,10 +42,9 @@ export function Team({ t }: TeamProps) {
                 </div>
 
                 <div className="space-y-3 border-t pt-4">
-                  {/* Email section - only shows if email exists */}
                   {member.email && (
                     <div className="flex items-center justify-center gap-2 text-sm">
-                      <i className="fas fa-envelope text-secondary flex-shrink-0"></i>
+                      <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
                       <a
                         href={`mailto:${member.email}`}
                         className="text-muted-foreground hover:text-primary transition-colors truncate"
@@ -48,19 +55,17 @@ export function Team({ t }: TeamProps) {
                     </div>
                   )}
 
-                  {/* Social links section - only shows if at least one social exists */}
                   {(member.instagram || member.linkedin) && (
                     <div className="flex justify-center gap-3 pt-2">
-                      {/* CUSTOMIZE: Add or remove social links by updating member data in translations.ts */}
                       {member.instagram && (
                         <a
                           href={member.instagram}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+                          className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
                           title="Instagram"
                         >
-                          <i className="fab fa-instagram text-sm"></i>
+                          <Instagram className="h-4 w-4" />
                         </a>
                       )}
                       {member.linkedin && (
@@ -68,22 +73,12 @@ export function Team({ t }: TeamProps) {
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity flex-shrink-0"
+                          className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
                           title="LinkedIn"
                         >
-                          <i className="fab fa-linkedin-in text-sm"></i>
+                          <Linkedin className="h-4 w-4" />
                         </a>
                       )}
-                      {/* CUSTOMIZE: To add more social links (Twitter, GitHub, etc.):
-                          1. Add the property to member object in translations.ts (e.g., twitter: "https://...")
-                          2. Add a new conditional block below following the same pattern
-                          Example:
-                          {member.twitter && (
-                            <a href={member.twitter} ... >
-                              <i className="fab fa-twitter text-sm"></i>
-                            </a>
-                          )}
-                      */}
                     </div>
                   )}
                 </div>
@@ -91,14 +86,21 @@ export function Team({ t }: TeamProps) {
             </Card>
           ))}
         </div>
-        {/* CUSTOMIZE: To add or remove team members:
-            1. Go to lib/translations.ts
-            2. Find the team.members array
-            3. Add new members with: { name: "...", role: "...", email: "...", instagram: "...", linkedin: "..." }
-            4. Remove members by deleting their object from the array
-            The layout will automatically adjust to fit any number of members
-        */}
+
+        <div className="flex justify-center mt-12">
+          <Button
+            onClick={() => setShowPreviousBureaus(true)}
+            variant="outline"
+            size="lg"
+            className="gap-2 border-primary text-primary hover:bg-primary/10"
+          >
+            <History className="h-5 w-5" />
+            {t.team.viewPreviousBureaus}
+          </Button>
+        </div>
       </div>
+
+      <PreviousBureauModal isOpen={showPreviousBureaus} onClose={() => setShowPreviousBureaus(false)} t={t} />
     </section>
   )
 }

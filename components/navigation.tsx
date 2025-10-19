@@ -40,7 +40,7 @@ export function Navigation({ t, currentLanguage, onLanguageToggle }: NavigationP
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in-down ${
           isScrolled ? "bg-background/95 backdrop-blur-sm shadow-md" : "bg-transparent"
         }`}
       >

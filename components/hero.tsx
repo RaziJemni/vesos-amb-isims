@@ -19,7 +19,7 @@ export function Hero({ t }: HeroProps) {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
       <div className="container relative z-10 px-4 py-20 md:py-32">
-        <div className="mx-auto max-w-4xl text-center space-y-8 animate-fade-in-up">
+        <div className="mx-auto max-w-4xl text-center space-y-8 animate-fade-in-up animate-in">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance">{t.hero.title}</h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto text-pretty leading-relaxed">
             {t.hero.subtitle}

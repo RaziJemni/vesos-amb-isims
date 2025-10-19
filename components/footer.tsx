@@ -1,6 +1,8 @@
 "use client"
 
 import type { TranslationKey } from "@/lib/translations"
+import { Facebook, Instagram, Linkedin } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface FooterProps {
   t: TranslationKey
@@ -8,32 +10,33 @@ interface FooterProps {
 
 export function Footer({ t }: FooterProps) {
   const currentYear = new Date().getFullYear()
+  const ref = useScrollAnimation()
 
   // To customize social links, update the URLs below with your actual social media profiles
   const socialLinks = [
     {
       name: "Facebook",
-      icon: "fab fa-facebook-f",
+      icon: Facebook,
       url: "https://www.facebook.com/profile.php?id=100088148657214", // CUSTOMIZE: Replace with your Facebook URL
     },
     {
       name: "Instagram",
-      icon: "fab fa-instagram",
+      icon: Instagram,
       url: "https://www.instagram.com/club_ambassadeurs_sos_isims/", // CUSTOMIZE: Replace with your Instagram URL
     },
     {
       name: "LinkedIn",
-      icon: "fab fa-linkedin-in",
+      icon: Linkedin,
       url: "https://linkedin.com/company/club-ambassadeurs-sos", // CUSTOMIZE: Replace with your LinkedIn URL
     },
     // CUSTOMIZE: Add more social links by adding objects with name, icon, and url properties
-    // Example: { name: "Twitter", icon: "fab fa-twitter", url: "https://twitter.com/yourhandle" }
+    // Example: { name: "Twitter", icon: Twitter, url: "https://twitter.com/yourhandle" }
   ]
 
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="container px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 animate-fade-in-up">
           <div className="space-y-4">
             <h3 className="text-lg font-bold pb-2 border-b-2 border-primary w-fit text-gray-900">{t.footer.about}</h3>
             {/* CUSTOMIZE: Update location below */}
@@ -59,7 +62,7 @@ export function Footer({ t }: FooterProps) {
               </li>
               <li>
                 <a href="#team" className="hover:text-primary transition-colors">
-                  {t.nav.team}
+                  {t.nav.bureau}
                 </a>
               </li>
               <li>
@@ -75,18 +78,21 @@ export function Footer({ t }: FooterProps) {
               {t.footer.followUs}
             </h3>
             <div className="flex gap-4 flex-wrap">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-                  title={social.name}
-                >
-                  <i className={`${social.icon} text-white`}></i>
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300"
+                    title={social.name}
+                  >
+                    <IconComponent className="w-5 h-5 text-white" />
+                  </a>
+                )
+              })}
             </div>
           </div>
         </div>

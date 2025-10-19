@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { TranslationKey } from "@/lib/translations"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface JoinFormProps {
   t: TranslationKey
@@ -38,6 +39,7 @@ export function JoinForm({ t }: JoinFormProps) {
     motivation: "",
   })
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const ref = useScrollAnimation()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -81,14 +83,14 @@ export function JoinForm({ t }: JoinFormProps) {
   return (
     <section id="join" className="py-20 md:py-32 bg-gradient-to-b from-primary to-dark-blue text-white">
       <div className="container px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-4 text-balance text-secondary">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-4 text-balance text-secondary animate-fade-in-up animate-in">
           {t.join.title}
         </h2>
         <p className="text-center text-white/90 mb-12 max-w-2xl mx-auto">{t.join.subtitle}</p>
 
         <div className="mx-auto max-w-2xl">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={ref} onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up animate-stagger">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="fullname" className="text-white">
