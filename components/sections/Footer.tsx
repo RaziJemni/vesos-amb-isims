@@ -34,15 +34,15 @@ export function Footer({ t }: FooterProps) {
   ]
 
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="container px-4 py-16">
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 animate-fade-in-up">
+    <footer className="relative border-t border-secondary/10 bg-white">
+      <div className="container px-4 py-6">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 animate-fade-in-up">
           <div className="space-y-4">
-            <h3 className="text-lg font-bold pb-2 border-b-2 border-primary w-fit text-gray-900">{t.footer.about}</h3>
+            <h3 className="text-base font-bold mb-3 text-secondary">{t.footer.about}</h3>
             {/* CUSTOMIZE: Update location below */}
-            <p className="text-gray-700">{t.footer.location}</p>
+            <p className="text-primary-dark text-sm">{t.footer.location}</p>
             {/* CUSTOMIZE: Update email below */}
-            <p className="text-gray-700">
+            <p className="text-primary-dark text-sm">
               <a href={`mailto:${t.footer.email}`} className="hover:text-primary transition-colors">
                 {t.footer.email}
               </a>
@@ -50,11 +50,11 @@ export function Footer({ t }: FooterProps) {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-bold pb-2 border-b-2 border-primary w-fit text-gray-900">
+            <h3 className="text-base font-bold mb-3 text-secondary">
               {t.footer.quickLinks}
             </h3>
             {/* CUSTOMIZE: Update quick links below */}
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-primary-dark text-sm">
               <li>
                 <a href="#about" className="hover:text-primary transition-colors">
                   {t.nav.about}
@@ -74,10 +74,10 @@ export function Footer({ t }: FooterProps) {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-bold pb-2 border-b-2 border-primary w-fit text-gray-900">
+            <h3 className="text-base font-bold mb-3 text-secondary">
               {t.footer.followUs}
             </h3>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex gap-3 flex-wrap">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon
                 return (
@@ -97,7 +97,7 @@ export function Footer({ t }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 text-center text-gray-600">
+        <div className="border-t border-secondary/10 pt-4 text-center text-sm text-primary-dark/80">
           <p>
             © {currentYear} Club Ambassadeurs SOS Village - ISIMS. {t.footer.rights}
           </p>

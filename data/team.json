@@ -9,7 +9,7 @@
         "email": "farouksnoussi7@gmail.com",
         "instagram": "https://www.instagram.com/farouk_the_creator/",
         "linkedin": "https://www.linkedin.com/in/farouksnoussi",
-        "image": "/images/bureau/farouk-snoussi.jpg"
+        "image": "/assets/images/bureau/farouk-snoussi.png"
       },
       {
         "name": "Mohsin Hamza",
@@ -18,7 +18,7 @@
         "email": "mohsin.hamza@example.com",
         "instagram": "https://www.instagram.com/mohsenhamza777777",
         "linkedin": "https://linkedin.com/in/mohsin-hamza",
-        "image": "/images/bureau/mohsin-hamza.jpg"
+        "image": "/assets/images/bureau/mohsin-hamza.png"
       },
       {
         "name": "Mariem Elloumi",
@@ -27,7 +27,7 @@
         "email": "mariamelloumi17@gmail.com",
         "instagram": "https://www.instagram.com/mariam_elloumi19",
         "linkedin": "https://www.linkedin.com/in/mariam-elloumi-6b478b361",
-        "image": "/images/bureau/mariem-elloumi.jpg"
+        "image": "/assets/images/bureau/mariem-elloumi.png"
       },
       {
         "name": "Azer Chilli",
@@ -36,7 +36,7 @@
         "email": "azer.chilli@example.com",
         "instagram": "https://instagram.com/azer.chilli",
         "linkedin": "https://linkedin.com/in/azer-chilli",
-        "image": "/images/bureau/azer-chilli.jpg"
+        "image": "/assets/images/bureau/azer-chilli.jpg"
       },
       {
         "name": "Molka Besbes",
@@ -45,7 +45,7 @@
         "email": "molka.besbes@example.com",
         "instagram": "https://www.instagram.com/molka_besbes_6/",
         "linkedin": "https://instagram.com/razi.communication",
-        "image": "/images/bureau/molka-besbes.jpg"
+        "image": "/assets/images/bureau/molka-besbes.png"
       },
       {
         "name": "Rim Rekik",
@@ -54,7 +54,7 @@
         "email": "rim@example.com",
         "instagram": "https://instagram.com/rimrekik16",
         "linkedin": "https://linkedin.com/in/rim-official",
-        "image": "/images/bureau/rim-rekik.jpg"
+        "image": "/assets/images/bureau/rim-rekik.png"
       },
       {
         "name": "Mohamed Zrebi",
@@ -63,7 +63,7 @@
         "email": "mohamed.zrebi@example.com",
         "instagram": "https://instagram.com/razi.communication",
         "linkedin": "https://instagram.com/razi.communication",
-        "image": "/images/bureau/mohamed-zrebi.jpg"
+        "image": "/assets/images/bureau/mohamed-zrebi.jpg"
       },
       {
         "name": "Razi Jemni",
@@ -72,7 +72,7 @@
         "email": "razi@example.com",
         "instagram": "https://instagram.com/razi.communication",
         "linkedin": "https://linkedin.com/in/razi-communication",
-        "image": "/images/bureau/razi-jemni.jpg"
+        "image": "/assets/images/bureau/razi-jemni.jpg"
       }
     ]
   },
@@ -85,84 +85,84 @@
           "role": "President",
           "roleFr": "Président",
           "email": "ahmed.benali@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Leila Mansouri",
           "role": "Vice-President",
           "roleFr": "Vice-Président",
           "email": "leila.mansouri@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Karim Souissi",
           "role": "Secretary General",
           "roleFr": "Secrétaire Général",
           "email": "karim.souissi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Sami Trabelsi",
           "role": "Treasurer",
           "roleFr": "Trésorier",
           "email": "sami.trabelsi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Fatma Gharbi",
           "role": "HR Manager",
           "roleFr": "Responsable RH",
           "email": "fatma.gharbi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Yassine Ben Salah",
           "role": "Events Coordinator",
           "roleFr": "Coordinateur Événements",
           "email": "yassine.bensalah@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Hana Chikhaoui",
           "role": "Communications",
           "roleFr": "Communication",
           "email": "hana.chikhaoui@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Omar Kacem",
           "role": "Logistics",
           "roleFr": "Logistique",
           "email": "omar.kacem@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Nour Bouzid",
           "role": "Design Lead",
           "roleFr": "Responsable Design",
           "email": "nour.bouzid@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Rania Messaoudi",
           "role": "Social Media",
           "roleFr": "Réseaux Sociaux",
           "email": "rania.messaoudi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Walid Jaziri",
           "role": "Fundraising",
           "roleFr": "Collecte de Fonds",
           "email": "walid.jaziri@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Imen Khelifi",
           "role": "Volunteer",
           "roleFr": "Bénévole",
           "email": "imen.khelifi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         }
       ]
     },
@@ -174,35 +174,35 @@
           "role": "President",
           "roleFr": "Président",
           "email": "nadia.khouja@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Tarek Mzali",
           "role": "Vice-President",
           "roleFr": "Vice-Président",
           "email": "tarek.mzali@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Salma Ben Ali",
           "role": "Secretary General",
           "roleFr": "Secrétaire Général",
           "email": "salma.benali@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Youssef Trabelsi",
           "role": "Treasurer",
           "roleFr": "Trésorier",
           "email": "youssef.trabelsi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Amina Khelifi",
           "role": "Events Coordinator",
           "roleFr": "Coordinatrice Événements",
           "email": "amina.khelifi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         }
       ]
     },
@@ -214,49 +214,49 @@
           "role": "President",
           "roleFr": "Président",
           "email": "mohamed.amine@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Fatma Jebali",
           "role": "Vice-President",
           "roleFr": "Vice-Président",
           "email": "fatma.jebali@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Khalil Bouazizi",
           "role": "Secretary General",
           "roleFr": "Secrétaire Général",
           "email": "khalil.bouazizi@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Ines Mansouri",
           "role": "Treasurer",
           "roleFr": "Trésorière",
           "email": "ines.mansouri@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Omar Kacem",
           "role": "HR Manager",
           "roleFr": "Responsable RH",
           "email": "omar.kacem@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Rania Ben Salah",
           "role": "Events Manager",
           "roleFr": "Responsable Événements",
           "email": "rania.bensalah@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         },
         {
           "name": "Walid Jaziri",
           "role": "Communications",
           "roleFr": "Communication",
           "email": "walid.jaziri@example.com",
-          "image": "/images/bureau/placeholder-member.jpg"
+          "image": "/assets/images/bureau/placeholder-member.jpg"
         }
       ]
     }

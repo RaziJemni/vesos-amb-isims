@@ -56,7 +56,7 @@ export function Navigation({ t, currentLanguage, onLanguageToggle }: NavigationP
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity"
             >
-              Club Logo
+              <img src="/assets/images/pink-logo.svg" alt="SOS Club Logo" className="h-10 md:h-12" />
             </button>
 
             {/* Desktop Navigation */}

@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react"
+// no useState required here
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Mail, Instagram, Linkedin, History } from "lucide-react"
-import { PreviousBureauModal } from "../modals/PreviousBureauModal"
+import { Mail, Instagram, Linkedin } from "lucide-react"
 import type { Translations } from "@/lib/translations"
 import teamData from "@/data/team.json"
 import { getLocalizedRole } from "@/lib/translations"
@@ -17,12 +15,12 @@ interface TeamProps {
 
 export function Team({ t, language }: TeamProps) {
   const ref = useScrollAnimation()
-  const [showPreviousBureaus, setShowPreviousBureaus] = useState(false)
+  // removed unused previous bureaus state
 
   return (
-    <section id="team" className="py-20 md:py-32 bg-background">
-      <div className="container px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary animate-fade-in-up animate-in">
+    <section id="team" className="py-20 md:py-32 relative bg-white">
+      <div className="container px-4 relative">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary-dark animate-fade-in-up animate-in">
           {t.team.title}
         </h2>
         <div ref={ref} className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto animate-stagger">
@@ -31,9 +29,9 @@ export function Team({ t, language }: TeamProps) {
               key={index}
               className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary hover-lift"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+              <div className="relative w-full h-[350px] bg-gradient-to-br from-primary/10 to-secondary/10">
                 <img
-                  src={`/placeholder.svg?height=400&width=400&query=professional+headshot`}
+                  src={`${member.image}?w=400&h=500&fit=crop&auto=format&dpr=2`}
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
@@ -89,21 +87,7 @@ export function Team({ t, language }: TeamProps) {
             </Card>
           ))}
         </div>
-
-        <div className="flex justify-center mt-12">
-          <Button
-            onClick={() => setShowPreviousBureaus(true)}
-            variant="outline"
-            size="lg"
-            className="gap-2 border-primary text-primary hover:bg-primary/10"
-          >
-            <History className="h-5 w-5" />
-            {t.team.viewPreviousBureaus}
-          </Button>
-        </div>
       </div>
-
-      <PreviousBureauModal isOpen={showPreviousBureaus} onClose={() => setShowPreviousBureaus(false)} t={t} language={language} />
     </section>
   )
 }

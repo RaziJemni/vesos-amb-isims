@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import { useState, FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -15,7 +14,7 @@ interface JoinFormProps {
   t: Translations
 }
 
-// UPDATE THIS: Replace with your actual Google Form endpoint URL
+// UPDATE THIS: Replace with your actual Google Form endpoint URL or set via env var
 const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
 
 // UPDATE THIS: Replace with your actual Google Form field IDs
@@ -25,7 +24,7 @@ const FORM_FIELD_IDS = {
   phone: "entry.456789012",
   university: "entry.345678901",
   studyField: "entry.234567890",
-  year: "entry.123456789",
+  year: "entry.567890123",
   motivation: "entry.012345678",
 }
 
@@ -42,7 +41,7 @@ export function JoinForm({ t }: JoinFormProps) {
   const [status, setStatus] = useState<FormStatus>("idle")
   const ref = useScrollAnimation()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setStatus("loading")
 
@@ -82,19 +81,22 @@ export function JoinForm({ t }: JoinFormProps) {
   }
 
   return (
-    <section id="join" className="py-20 md:py-32 bg-gradient-to-b from-primary to-dark-blue text-white">
-      <div className="container px-4">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-4 text-balance text-secondary animate-fade-in-up animate-in">
+  <section id="join" className="py-20 md:py-32 relative bg-white">
+    <div className="container px-4">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-3 text-balance text-primary-dark animate-fade-in-up animate-in">
           {t.join.title}
         </h2>
-        <p className="text-center text-white/90 mb-12 max-w-2xl mx-auto">{t.join.subtitle}</p>
+        {/* small subtitle under the main title */}
+        <p className="text-center text-primary-dark/90 mb-8 max-w-2xl mx-auto text-base md:text-lg font-medium">
+          {t.join.subtitle}
+        </p>
 
         <div className="mx-auto max-w-2xl">
-          <div ref={ref} className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 animate-fade-in-up animate-stagger">
+          <div ref={ref} className="bg-white shadow rounded-2xl p-8 border border-gray-100 animate-fade-in-up animate-stagger">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="fullname" className="text-white">
+                  <Label htmlFor="fullname" className="text-primary-dark">
                     {t.join.form.fullname}
                   </Label>
                   <Input
@@ -104,12 +106,12 @@ export function JoinForm({ t }: JoinFormProps) {
                     value={formData.fullname}
                     onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
                     required
-                    className="h-11 bg-white/90"
+                    className="h-11 bg-white text-primary-dark"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white">
+                  <Label htmlFor="email" className="text-primary-dark">
                     {t.join.form.email}
                   </Label>
                   <Input
@@ -119,12 +121,12 @@ export function JoinForm({ t }: JoinFormProps) {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="h-11 bg-white/90"
+                    className="h-11 bg-white text-primary-dark"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-white">
+                  <Label htmlFor="phone" className="text-primary-dark">
                     {t.join.form.phone}
                   </Label>
                   <Input
@@ -134,12 +136,12 @@ export function JoinForm({ t }: JoinFormProps) {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                    className="h-11 bg-white/90"
+                    className="h-11 bg-white text-primary-dark"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="university" className="text-white">
+                  <Label htmlFor="university" className="text-primary-dark">
                     {t.join.form.university}
                   </Label>
                   <Input
@@ -149,12 +151,12 @@ export function JoinForm({ t }: JoinFormProps) {
                     value={formData.university}
                     onChange={(e) => setFormData({ ...formData, university: e.target.value })}
                     required
-                    className="h-11 bg-white/90"
+                    className="h-11 bg-white text-primary-dark"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="studyField" className="text-white">
+                  <Label htmlFor="studyField" className="text-primary-dark">
                     {t.join.form.studyField}
                   </Label>
                   <Input
@@ -164,16 +166,16 @@ export function JoinForm({ t }: JoinFormProps) {
                     value={formData.studyField}
                     onChange={(e) => setFormData({ ...formData, studyField: e.target.value })}
                     required
-                    className="h-11 bg-white/90"
+                    className="h-11 bg-white text-primary-dark"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="year" className="text-white">
+                  <Label htmlFor="year" className="text-primary-dark">
                     {t.join.form.year}
                   </Label>
                   <Select value={formData.year} onValueChange={(value) => setFormData({ ...formData, year: value })}>
-                    <SelectTrigger className="h-11 bg-white/90">
+                    <SelectTrigger className="h-11 bg-white text-primary-dark">
                       <SelectValue placeholder={t.join.form.yearPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
@@ -188,7 +190,7 @@ export function JoinForm({ t }: JoinFormProps) {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="motivation" className="text-white">
+                <Label htmlFor="motivation" className="text-primary-dark">
                   {t.join.form.motivation}
                 </Label>
                 <Textarea
@@ -198,7 +200,7 @@ export function JoinForm({ t }: JoinFormProps) {
                   onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
                   required
                   rows={4}
-                  className="resize-none bg-white/90"
+                  className="resize-none bg-white text-primary-dark"
                 />
               </div>
 

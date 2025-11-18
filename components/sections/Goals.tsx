@@ -4,12 +4,6 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Translations } from "@/lib/translations"
 
-interface GoalItem {
-  readonly icon: string
-  readonly title: string
-  readonly description: string
-}
-
 interface GoalsProps {
   t: Translations
 }
@@ -20,7 +14,7 @@ export function Goals({ t }: GoalsProps) {
   // Early return if no goals data
   if (!t.goals?.items?.length) {
     return (
-      <section id="goals" className="relative min-h-screen flex items-center py-20 md:py-32 bg-[#EB5C7F]/10">
+      <section id="goals" className="relative min-h-screen flex items-center py-20 md:py-32 bg-white">
         <div className="container px-4">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance animate-fade-in-up animate-in">
             {t.goals?.title || 'Our Goals'}
@@ -35,8 +29,8 @@ export function Goals({ t }: GoalsProps) {
   const goals = t.goals.items
 
   return (
-    <section id="goals" className="relative min-h-screen flex items-center justify-center py-20 md:py-32 bg-[#EB5C7F]/10">
-      <div className="container px-4">
+    <section id="goals" className="relative min-h-screen flex items-center justify-center py-20 md:py-32 bg-white">
+      <div className="container px-4 relative">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance animate-fade-in-up animate-in">
           {t.goals.title}
         </h2>

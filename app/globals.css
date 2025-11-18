@@ -4,15 +4,23 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme to match HTML: pink (#EB5C7F) and blue (#0066cc) */
-  --club-pink: #eb5c7f;
-  --blue: #0066cc;
-  --dark-blue: #004080;
-  --text-color: #333333;
-  --bg-color: #f5f5f5;
+  /* Updated color scheme with new navy blue (#0e3862) as default text color */
+  /* Brand palette (from provided design) */
+  --brand-blue: #00abec; /* Brand blue */
+  --brand-blue-500: #84ccf1; /* lighter */
+  --brand-blue-200: #cde8f8;
+  --brand-blue-100: #e4f3fb;
 
-  --primary-color: var(--blue);
-  --secondary-color: var(--club-pink);
+  --accent-red: #de5a6c; /* primary accent / red */
+  --accent-red-200: #eba9a9;
+  --accent-red-100: #f9e5e4;
+
+  --dark-blue: #1c325d; /* primary dark for text and overlays */
+  --text-color: var(--dark-blue);
+  --bg-color: #ffffff;
+
+  --primary-color: var(--brand-blue);
+  --secondary-color: var(--accent-red);
   --neutral-light: #ffffff;
   --neutral-dark: var(--text-color);
   --neutral-mid: #999999;
@@ -27,7 +35,7 @@
   --primary-foreground: #ffffff;
   --secondary: var(--secondary-color);
   --secondary-foreground: #ffffff;
-  --muted: #f5f5f5;
+  --muted: var(--brand-blue-100); /* soft light blue background */
   --muted-foreground: var(--neutral-mid);
   --accent: var(--secondary-color);
   --accent-foreground: #ffffff;
@@ -349,7 +357,7 @@
 
 .hover-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(14, 56, 98, 0.2);
 }
 
 .hover-scale {
@@ -358,7 +366,7 @@
 
 .hover-scale:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(14, 56, 98, 0.15);
 }
 
 .hover-glow {

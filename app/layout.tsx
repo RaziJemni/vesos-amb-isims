@@ -1,11 +1,40 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+// Note: Aktiv Grotesk is a local/commercial font. To enable it, place
+// WOFF2 files under `public/fonts/` and uncomment the `localFont` block
+// below. Until the font files are added, fall back to Inter so the dev
+// server and build remain stable.
+import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+// Load Aktiv Grotesk from local files. Place your WOFF2 files under public/fonts/
+// Example filenames expected (you can replace these or drop files there):
+//  - public/fonts/AktivGrotesk-Regular.woff2
+//  - public/fonts/AktivGrotesk-Medium.woff2
+//  - public/fonts/AktivGrotesk-Bold.woff2
+// Prefer local Aktiv Grotesk if font files are present; otherwise fall back to Inter
+
+// Fallback font while Aktiv Grotesk files are not present
+const aktiv = Inter({ subsets: ["latin"] })
+
+/*
+// To enable Aktiv Grotesk when you have the font files, copy them to
+// public/fonts/ and use a const localFont call like this (example):
+
+const aktivLocal = localFont({
+  src: [
+    { path: "/fonts/AktivGrotesk-Regular.woff2", weight: "400", style: "normal" },
+    { path: "/fonts/AktivGrotesk-Medium.woff2", weight: "500", style: "normal" },
+    { path: "/fonts/AktivGrotesk-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-aktiv",
+})
+
+// then use aktivLocal.className on body instead of aktiv.className
+*/
 
 export const metadata: Metadata = {
   title: "SOS Children's Village Ambassadors Club - ISIMS",
@@ -41,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+  <body className={`${aktiv.className} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -1,13 +1,9 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-
-import { useState } from "react"
+// no React hooks required here
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, MapPin } from "lucide-react"
-import { EventDetailModal } from "../modals/EventDetailModal"
-import { PreviousEventsModal } from "../modals/PreviousEventsModal"
 import type { Translations } from "@/lib/translations"
 import type { Event } from "@/lib/types"
 import eventsData from "@/data/events.json"
@@ -19,31 +15,32 @@ interface EventsProps {
 }
 
 export function Events({ t, language }: EventsProps) {
-  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [showPreviousEvents, setShowPreviousEvents] = useState(false)
+  // keep a simple click handler; modal implementation was removed earlier
+  // removed unused previous events state
   const recentRef = useScrollAnimation()
   const upcomingRef = useScrollAnimation()
 
   const handleEventClick = (event: Event) => {
-    setSelectedEvent(event)
-    setIsModalOpen(true)
+    // TODO: wire this to a details view or external link if needed
+    console.log("Event clicked:", event)
   }
 
   return (
     <>
-      <section id="events" className="py-20 md:py-32 bg-muted/30">
-        <div className="container px-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance animate-fade-in-up animate-in">
+      <section id="events" className="py-20 md:py-32 relative bg-white">
+        <div className="container px-4 relative">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary-dark animate-fade-in-up animate-in">
             {t.events.title}
           </h2>
 
-          <div className="max-w-6xl mx-auto space-y-16">
+          <div className="max-w-6xl mx-auto space-y-20">
             {/* Recent Events */}
             <div>
-              <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center animate-fade-in-up">
-                {t.events.recent}
-              </h3>
+              <div className="text-center mb-8">
+                <h3 className="text-xl md:text-2xl font-medium text-primary-dark">
+                  {t.events.recent}
+                </h3>
+              </div>
               <div ref={recentRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
                 {eventsData.recentEvents.map((event, index) => {
                   const localizedEvent = getLocalizedEvent(event, language)
@@ -54,11 +51,11 @@ export function Events({ t, language }: EventsProps) {
                     onClick={() => handleEventClick(localizedEvent)}
                   >
                     {localizedEvent.image && (
-                      <div className="w-full h-48 overflow-hidden bg-gray-200">
+                      <div className="w-full aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
                         <img
                           src={localizedEvent.image || "/placeholder.svg"}
                           alt={localizedEvent.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     )}
@@ -87,24 +84,26 @@ export function Events({ t, language }: EventsProps) {
 
             {/* Upcoming Events */}
             <div>
-              <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center animate-fade-in-up">
-                {t.events.upcoming}
-              </h3>
+              <div className="text-center mb-8">
+                <h3 className="text-xl md:text-2xl font-medium text-primary-dark">
+                  {t.events.upcoming}
+                </h3>
+              </div>
               <div ref={upcomingRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
                 {eventsData.upcomingEvents.map((event, index) => {
                   const localizedEvent = getLocalizedEvent(event, language)
                   return (
                   <Card
                     key={index}
-                    className="border-2 border-primary/50 hover:shadow-lg transition-all duration-300 bg-primary/5 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
+                    className="border-2 border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
                     onClick={() => handleEventClick(localizedEvent)}
                   >
                     {localizedEvent.image && (
-                      <div className="w-full h-48 overflow-hidden bg-gray-200">
+                      <div className="w-full aspect-[16/9] overflow-hidden bg-gray-200">
                         <img
                           src={localizedEvent.image || "/placeholder.svg"}
                           alt={localizedEvent.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                     )}
@@ -132,24 +131,7 @@ export function Events({ t, language }: EventsProps) {
             </div>
           </div>
         </div>
-
-        <div className="flex justify-center mt-12">
-          <Button
-            onClick={() => setShowPreviousEvents(true)}
-            variant="outline"
-            size="lg"
-            className="gap-2 border-primary text-primary hover:bg-primary/10"
-          >
-            See More Previous Events
-          </Button>
-        </div>
       </section>
-
-      {selectedEvent && (
-        <EventDetailModal event={selectedEvent} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} t={t} />
-      )}
-
-      <PreviousEventsModal isOpen={showPreviousEvents} onClose={() => setShowPreviousEvents(false)} t={t} language={language} />
     </>
   )
 }
