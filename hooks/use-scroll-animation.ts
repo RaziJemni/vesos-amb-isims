@@ -1,32 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react";
 
 export function useScrollAnimation() {
-  const ref = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-in")
-        } else {
-          entry.target.classList.remove("animate-in")
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-in");
+                } else {
+                    entry.target.classList.remove("animate-in");
+                }
+            },
+            { threshold: 0.05 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
         }
-      },
-      { threshold: 0.1 },
-    )
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-    }
-  }, [])
-
-  return ref
+    return ref;
 }

@@ -1,0 +1,26 @@
+{
+    "en": {
+        "title": "Our Bureau",
+        "viewPreviousBureaus": "View Previous Bureaus",
+        "previousBureausTitle": "Previous Bureaus",
+        "noPreviousBureaus": "No previous bureaus to display",
+        "prevButton": "Previous",
+        "nextButton": "Next"
+    },
+    "fr": {
+        "title": "Notre Bureau",
+        "viewPreviousBureaus": "Voir les Anciens Bureaux",
+        "previousBureausTitle": "Anciens Bureaux",
+        "noPreviousBureaus": "Aucun ancien bureau à afficher",
+        "prevButton": "Précédent",
+        "nextButton": "Suivant"
+    },
+    "ar": {
+        "title": "مكتبنا",
+        "viewPreviousBureaus": "عرض المكاتب السابقة",
+        "previousBureausTitle": "المكاتب السابقة",
+        "noPreviousBureaus": "لا توجد مكاتب سابقة لعرضها",
+        "prevButton": "السابق",
+        "nextButton": "التالي"
+    }
+}

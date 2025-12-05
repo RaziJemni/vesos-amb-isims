@@ -1,16 +1,22 @@
 /**
  * Translation system for the SOS Club website
- * Supports English and French languages with JSON-based content
+ * Supports English, French, and Arabic languages with per-section JSON files
  */
 
-import enTranslations from "@/locales/en.json";
-import frTranslations from "@/locales/fr.json";
-import teamData from "@/data/team.json";
-import eventsData from "@/data/events.json";
+import navData from "@/locales/nav.json";
+import heroData from "@/locales/hero.json";
+import aboutData from "@/locales/about.json";
+import goalsData from "@/locales/goals.json";
+import teamStringsData from "@/locales/team.json";
+import eventsStringsData from "@/locales/events.json";
+import joinData from "@/locales/join.json";
+import footerData from "@/locales/footer.json";
+import teamContentData from "@/locales/content/team.json";
+import eventsContentData from "@/locales/content/events.json";
 import type { TeamMember, Event } from "./types";
 
 // Supported languages
-export type Language = "en" | "fr";
+export type Language = "en" | "fr" | "ar";
 
 // Translation data structure
 export interface Translations {
@@ -84,17 +90,38 @@ export interface Translations {
     };
 }
 
-// Translation data
-const translations: Record<Language, Translations> = {
-    en: enTranslations as Translations,
-    fr: frTranslations as Translations,
+// Assemble translations from per-section files
+const assembleTranslations = (): Record<Language, Translations> => {
+    const result: Record<Language, Translations> = {} as Record<
+        Language,
+        Translations
+    >;
+    const languages: Language[] = ["en", "fr", "ar"];
+
+    for (const lang of languages) {
+        result[lang] = {
+            nav: navData[lang],
+            hero: heroData[lang],
+            about: aboutData[lang],
+            goals: goalsData[lang],
+            team: teamStringsData[lang],
+            events: eventsStringsData[lang],
+            join: joinData[lang],
+            footer: footerData[lang],
+        };
+    }
+
+    return result;
 };
+
+// Translation data
+const translations: Record<Language, Translations> = assembleTranslations();
 
 // Data that doesn't need translation but is language-aware
 export const getLocalizedData = () => {
     return {
-        team: teamData,
-        events: eventsData,
+        team: teamContentData,
+        events: eventsContentData,
     };
 };
 
@@ -127,25 +154,43 @@ export const getLocalizedRole = (
     member: TeamMember,
     language: Language
 ): string => {
-    return language === "fr" ? member.roleFr || member.role : member.role;
+    if (language === "fr") return member.roleFr || member.role;
+    if (language === "ar")
+        return (member as any).roleAr || member.roleFr || member.role;
+    return member.role;
 };
 
 // Get localized event data
 export const getLocalizedEvent = (event: Event, language: Language): Event => {
     return {
         ...event,
-        title: language === "fr" ? event.titleFr || event.title : event.title,
+        title:
+            language === "fr"
+                ? event.titleFr || event.title
+                : language === "ar"
+                ? (event as any).titleAr || event.titleFr || event.title
+                : event.title,
         description:
             language === "fr"
                 ? event.descriptionFr || event.description
+                : language === "ar"
+                ? (event as any).descriptionAr ||
+                  event.descriptionFr ||
+                  event.description
                 : event.description,
         location:
             language === "fr"
                 ? event.locationFr || event.location
+                : language === "ar"
+                ? (event as any).locationAr ||
+                  event.locationFr ||
+                  event.location
                 : event.location,
         details:
             language === "fr"
                 ? event.detailsFr || event.details
+                : language === "ar"
+                ? (event as any).detailsAr || event.detailsFr || event.details
                 : event.details,
     };
 };

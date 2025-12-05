@@ -1,0 +1,417 @@
+{
+    "currentBureau": {
+        "year": "2025-2026",
+        "members": [
+            {
+                "name": "Farouk Snoussi",
+                "role": "President",
+                "roleFr": "Président",
+                "roleAr": "الرئيس",
+                "email": "farouksnoussi7@gmail.com",
+                "instagram": "https://www.instagram.com/farouk_the_creator/",
+                "linkedin": "https://www.linkedin.com/in/farouksnoussi",
+                "image": "/assets/images/bureau/farouk-snoussi.jpeg"
+            },
+            {
+                "name": "Mohsin Hamza",
+                "role": "Vice-President",
+                "roleFr": "Vice-Président",
+                "roleAr": "نائب الرئيس",
+                "email": "mohsenhamza082@gmail.com",
+                "instagram": "https://www.instagram.com/mohsenhamza777777",
+                "image": "/assets/images/bureau/mohsin-hamza.jpeg"
+            },
+            {
+                "name": "Mariem Elloumi",
+                "role": "Secretary General",
+                "roleFr": "Secrétaire Général",
+                "roleAr": "الأمينة العامة",
+                "email": "mariemelloumi17@gmail.com",
+                "instagram": "https://www.instagram.com/mariam_elloumi19",
+                "linkedin": "https://www.linkedin.com/in/mariam-elloumi-6b478b361",
+                "image": "/assets/images/bureau/mariem-elloumi.jpeg"
+            },
+            {
+                "name": "Yassmin Dlima",
+                "role": "Treasurer",
+                "roleFr": "Trésorier",
+                "roleAr": "أمين الصندوق",
+                "email": "dlimayassmin16@gmail.com",
+                "instagram": "https://www.instagram.com/dlima_yassmin",
+                "image": "/assets/images/bureau/yassmin-dlima.jpeg"
+            },
+            {
+                "name": "Azer Chilli",
+                "role": "HR Manager",
+                "roleFr": "Responsable RH",
+                "roleAr": "مدير الموارد البشرية",
+                "email": "azerchelly59@gmail.com",
+                "instagram": "https://www.instagram.com/chelly_azer",
+                "image": "/assets/images/bureau/azer-chilli.jpeg"
+            },
+            {
+                "name": "Molka Besbes",
+                "role": "HR Assistant",
+                "roleFr": "Assistante RH",
+                "roleAr": "مساعدة الموارد البشرية",
+                "email": "besbesmolka8@gmail.com",
+                "instagram": "https://www.instagram.com/molka_besbes_6",
+                "image": "/assets/images/bureau/molka-besbes.jpeg"
+            },
+            {
+                "name": "Firas Hmidi",
+                "role": "Events Manager",
+                "roleFr": "Responsable Événements",
+                "roleAr": "مدير الفعاليات",
+                "email": "firaas.hmidi@gmail.com",
+                "instagram": "https://www.instagram.com/firashmidi_",
+                "linkedin": "https://www.linkedin.com/in/firashmidi",
+                "image": "/assets/images/bureau/firas-hmidi.jpeg"
+            },
+            {
+                "name": "Mohamed Zribi",
+                "role": "Events Assistant",
+                "roleFr": "Assistant event",
+                "roleAr": "مساعد الفعاليات",
+                "email": "medbusiness000@gmail.com",
+                "instagram": "https://www.instagram.com/zribi98",
+                "image": "/assets/images/bureau/mohamed-zribi.jpeg"
+            },
+            {
+                "name": "Sarrah Yousfi",
+                "role": "Events Assistant",
+                "roleFr": "Assistante event",
+                "roleAr": "مساعدة الفعاليات",
+                "email": "sarrahyousfi18@gmail.com",
+                "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
+                "image": "/assets/images/bureau/sarrah-yousfi.jpeg"
+            },
+            {
+                "name": "Razi Jemni",
+                "role": "Digital Communication Manager",
+                "roleFr": "Responsable Communication",
+                "roleAr": "مدير التواصل الرقمي",
+                "email": "razijemni264@gmail.com",
+                "instagram": "https://www.instagram.com/razi.jemni",
+                "linkedin": "https://www.linkedin.com/in/razi-jemni",
+                "image": "/assets/images/bureau/razi-jemni.jpeg"
+            },
+            {
+                "name": "Yassine Abbes",
+                "role": "Digital Communication Assistant",
+                "roleFr": "Assistant Communication Digitale",
+                "roleAr": "مساعد التواصل الرقمي",
+                "email": "abbesyassine154@gmail.com",
+                "instagram": "https://www.instagram.com/yasssineabbes",
+                "image": "/assets/images/bureau/yassine-abbes.jpeg"
+            },
+            {
+                "name": "Ghada Ben Hassine",
+                "role": "Digital Communication Assistant",
+                "roleFr": "Assistante Communication Digitale",
+                "roleAr": "مساعدة التواصل الرقمي",
+                "email": "benhassineghada53@gmail.com",
+                "instagram": "https://www.instagram.com/ghada_ben_hassine15",
+                "linkedin": "https://www.linkedin.com/in/ghadabenhassine",
+                "image": "/assets/images/bureau/ghada-ben-hassine.jpeg"
+            }
+        ]
+    },
+    "previousBureaus": [
+        {
+            "year": "2024-2025",
+            "members": [
+                {
+                    "name": "Farouk Snoussi",
+                    "role": "President",
+                    "roleFr": "Président",
+                    "roleAr": "الرئيس",
+                    "email": "farouksnoussi7@gmail.com",
+                    "image": "/assets/images/bureau/farouk-snoussi.jpeg"
+                },
+                {
+                    "name": "Wissal Missaoui",
+                    "role": "Vice President",
+                    "roleFr": "Vice-Président",
+                    "roleAr": "نائب الرئيس",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mohsin Hamza",
+                    "role": "Treasurer",
+                    "roleFr": "Trésorier",
+                    "roleAr": "أمين الصندوق",
+                    "email": "mohsenhamza082@gmail.com",
+                    "image": "/assets/images/bureau/mohsin-hamza.jpeg"
+                },
+                {
+                    "name": "Mariem Elloumi",
+                    "role": "Partnership Manager",
+                    "roleFr": "Gestionnaire de Partenariat",
+                    "roleAr": "مدير الشراكات",
+                    "email": "mariemelloumi17@gmail.com",
+                    "image": "/assets/images/bureau/mariem-elloumi.jpeg"
+                },
+                {
+                    "name": "Med Aziz Tourki",
+                    "role": "HR Manager",
+                    "roleFr": "Responsable RH",
+                    "roleAr": "مدير الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Soulene Ktata",
+                    "role": "HR Assistant",
+                    "roleFr": "Assistante RH",
+                    "roleAr": "مساعدة الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mazen Bahri",
+                    "role": "Events Manager",
+                    "roleFr": "Responsable Événements",
+                    "roleAr": "مدير الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mariam Louati",
+                    "role": "Events Assistant",
+                    "roleFr": "Assistante Événements",
+                    "roleAr": "مساعدة الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mahdi Msalmi",
+                    "role": "Events Assistant",
+                    "roleFr": "Assistant Événements",
+                    "roleAr": "مساعد الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Chaima Ajmi",
+                    "role": "Digital Communication Manager",
+                    "roleFr": "Responsable Communication Digitale",
+                    "roleAr": "مدير التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Oumaima Ben Salah",
+                    "role": "Digital Communication Assistant",
+                    "roleFr": "Assistante Communication Digitale",
+                    "roleAr": "مساعدة التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                }
+            ]
+        },
+        {
+            "year": "2023-2024",
+            "members": [
+                {
+                    "name": "Nour Menii",
+                    "role": "President",
+                    "roleFr": "Président",
+                    "roleAr": "الرئيس",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Abdessalem Chaouch",
+                    "role": "Vice-President",
+                    "roleFr": "Vice-Président",
+                    "roleAr": "نائب الرئيس",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Adem Makni",
+                    "role": "Treasurer",
+                    "roleFr": "Trésorier",
+                    "roleAr": "أمين الصندوق",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Achref Gallaoui",
+                    "role": "Partnership Manager",
+                    "roleFr": "Gestionnaire de Partenariat",
+                    "roleAr": "مدير الشراكات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Bacem Hlabba",
+                    "role": "Partnership Assistant",
+                    "roleFr": "Assistant Partenariat",
+                    "roleAr": "مساعد الشراكات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mohamed Amine Ben Hmad",
+                    "role": "HR Manager",
+                    "roleFr": "Responsable RH",
+                    "roleAr": "مدير الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Ahmed Makni",
+                    "role": "HR Assistant",
+                    "roleFr": "Assistant RH",
+                    "roleAr": "مساعد الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Samar Elghoul",
+                    "role": "Events Manager",
+                    "roleFr": "Responsable Événementiel",
+                    "roleAr": "مدير الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mahdi Chtara",
+                    "role": "Events Assistant",
+                    "roleFr": "Assistant Événementiel",
+                    "roleAr": "مساعد الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Yosr Mrad",
+                    "role": "Digital Communication Manager",
+                    "roleFr": "Responsable Communication",
+                    "roleAr": "مدير التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Sami Zidi",
+                    "role": "Digital Communication Assistant",
+                    "roleFr": "Assistant Communication",
+                    "roleAr": "مساعد التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Acil Mabrouki",
+                    "role": "Secretary General",
+                    "roleFr": "Secrétaire Générale",
+                    "roleAr": "الأمينة العامة",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                }
+            ]
+        },
+        {
+            "year": "2022-2023",
+            "members": [
+                {
+                    "name": "Nour Menii",
+                    "role": "President",
+                    "roleFr": "Président",
+                    "roleAr": "الرئيس",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Abdessalem Chaouch",
+                    "role": "Vice-President",
+                    "roleFr": "Vice-Président",
+                    "roleAr": "نائب الرئيس",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Adem Makni",
+                    "role": "Treasurer",
+                    "roleFr": "Trésorier",
+                    "roleAr": "أمين الصندوق",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Achref Gallaoui",
+                    "role": "Partnership Manager",
+                    "roleFr": "Gestionnaire de Partenariat",
+                    "roleAr": "مدير الشراكات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Bacem Hlabba",
+                    "role": "Partnership Assistant",
+                    "roleFr": "Assistant Partenariat",
+                    "roleAr": "مساعد الشراكات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mohamed Amine Ben Hmad",
+                    "role": "HR Manager",
+                    "roleFr": "Responsable RH",
+                    "roleAr": "مدير الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Ahmed Makni",
+                    "role": "HR Assistant",
+                    "roleFr": "Assistant RH",
+                    "roleAr": "مساعد الموارد البشرية",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Samar Elghoul",
+                    "role": "Events Manager",
+                    "roleFr": "Responsable Événementiel",
+                    "roleAr": "مدير الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Mahdi Chtara",
+                    "role": "Events Assistant",
+                    "roleFr": "Assistant Événementiel",
+                    "roleAr": "مساعد الفعاليات",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Yosr Mrad",
+                    "role": "Digital Communication Manager",
+                    "roleFr": "Responsable Communication",
+                    "roleAr": "مدير التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Sami Zidi",
+                    "role": "Digital Communication Assistant",
+                    "roleFr": "Assistant Communication",
+                    "roleAr": "مساعد التواصل الرقمي",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                },
+                {
+                    "name": "Acil Mabrouki",
+                    "role": "Secretary General",
+                    "roleFr": "Secrétaire Générale",
+                    "roleAr": "الأمينة العامة",
+                    "email": "",
+                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                }
+            ]
+        }
+    ]
+}

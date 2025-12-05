@@ -1,0 +1,23 @@
+{
+    "en": {
+        "about": "About",
+        "bureau": "Bureau",
+        "goals": "Goals",
+        "events": "Events",
+        "join": "Join"
+    },
+    "fr": {
+        "about": "À Propos",
+        "bureau": "Bureau",
+        "goals": "Objectifs",
+        "events": "Nos Événements",
+        "join": "Rejoindre"
+    },
+    "ar": {
+        "about": "عنّا",
+        "bureau": "المجلس",
+        "goals": "أهدافنا",
+        "events": "فعالياتنا",
+        "join": "انضم"
+    }
+}

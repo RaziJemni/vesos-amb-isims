@@ -1,0 +1,155 @@
+{
+    "recentEvents": [],
+    "upcomingEvents": [
+        {
+            "id": "placeholder-upcoming",
+            "date": "2025-12-15",
+            "title": "Upcoming Event (placeholder)",
+            "titleFr": "Événement à venir (placeholder)",
+            "titleAr": "حدث قادم (نموذج)",
+            "description": "This is a placeholder upcoming event. Replace with real event data when ready.",
+            "descriptionFr": "Ceci est un événement à venir fictif. Remplacez par de vraies données lorsque vous êtes prêt.",
+            "descriptionAr": "هذا حدث قادم نموذجي. استبدله ببيانات فعلية عندما تكون جاهزًا.",
+            "location": "TBD",
+            "locationFr": "À déterminer",
+            "locationAr": "سيُحدد لاحقًا",
+            "image": "/assets/images/events/placeholder.jpg",
+            "details": "Placeholder details."
+        }
+    ],
+    "previousEvents": [
+        {
+            "year": "2024-2025",
+            "events": [
+                {
+                    "id": "fundraising-gala-2024",
+                    "date": "2024-09-28",
+                    "title": "Fundraising Gala (placeholder)",
+                    "titleFr": "Gala de collecte de fonds (placeholder)",
+                    "titleAr": "حفل جمع التبرعات (نموذج)",
+                    "description": "Placeholder previous event for 2024-2025 season.",
+                    "descriptionFr": "Événement précédent fictif pour la saison 2024-2025.",
+                    "descriptionAr": "حدث سابق افتراضي لموسم 2024-2025.",
+                    "location": "TBD",
+                    "locationFr": "À déterminer",
+                    "locationAr": "سيُحدد لاحقًا",
+                    "image": "/assets/images/events/placeholder-2024.jpg",
+                    "details": "Placeholder details for 2024-2025."
+                }
+            ]
+        },
+        {
+            "year": "2023-2024",
+            "events": [
+                {
+                    "id": "charity-gala-2023",
+                    "date": "2023-12-15",
+                    "title": "Charity Gala (placeholder)",
+                    "titleFr": "Gala de charité (placeholder)",
+                    "titleAr": "حفل خيري (نموذج)",
+                    "description": "Placeholder previous event for 2023-2024 season.",
+                    "descriptionFr": "Événement précédent fictif pour la saison 2023-2024.",
+                    "descriptionAr": "حدث سابق افتراضي لموسم 2023-2024.",
+                    "location": "TBD",
+                    "locationFr": "À déterminer",
+                    "locationAr": "سيُحدد لاحقًا",
+                    "image": "/assets/images/events/placeholder-2023.jpg",
+                    "details": "Placeholder details for 2023-2024."
+                }
+            ]
+        },
+        {
+            "year": "2022-2023",
+            "events": [
+                {
+                    "id": "vesos-ambassadors-launch",
+                    "date": "2022-12-07",
+                    "title": "Launch of the Vesos Ambassadors Club",
+                    "titleFr": "Lancement du Club des Ambassadeurs Vesos",
+                    "titleAr": "إطلاق نادي سفراء فيسوس",
+                    "description": "Official launch of the Vesos Ambassadors Club with public stand and member recruitment.",
+                    "descriptionFr": "Lancement officiel du Club des Ambassadeurs Vesos avec un stand public et le recrutement de membres.",
+                    "descriptionAr": "الإطلاق الرسمي لنادي سفراء فيسوس مع كشك عام وتجنيد الأعضاء.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS، صفاقس",
+                    "image": "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/2.webp",
+                        "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/3.webp",
+                        "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/4.webp",
+                        "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/5.webp",
+                        "/assets/images/events/previous/2022-2023/vesos-ambassadors-launch/6.webp"
+                    ],
+                    "details": "The Vesos Ambassadors Club officially launched at ISIMS, marking the beginning of a new student initiative on campus. A stand was set up to introduce the club, share its vision, and welcome students interested in joining.\n\nDuring this first public appearance, the team presented the club's objectives, activities, and future plans. The stand attracted many students who engaged with the team, learned about the club's mission, and signed up as new members. This milestone event laid the foundation for the club's community and the activities that followed throughout the year."
+                },
+                {
+                    "id": "integration-day-2022",
+                    "date": "2022-12-11",
+                    "title": "Integration Day",
+                    "titleFr": "Journée d'Intégration",
+                    "titleAr": "يوم التكامل",
+                    "description": "Welcoming new members with friendly meet-up and team interaction.",
+                    "descriptionFr": "Accueil des nouveaux membres avec une rencontre conviviale et une interaction d'équipe.",
+                    "descriptionAr": "الترحيب بالأعضاء الجدد مع اجتماع ودود والتفاعل بين الفريق.",
+                    "location": "Diamond Bowling, Avenue de Carthage, Sfax",
+                    "locationFr": "Diamond Bowling, Avenue de Carthage, Sfax",
+                    "locationAr": "Diamond Bowling، شارع قرطاج، صفاقس",
+                    "image": "/assets/images/events/previous/2022-2023/integration-day-2022/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2022-2023/integration-day-2022/2.webp",
+                        "/assets/images/events/previous/2022-2023/integration-day-2022/3.webp",
+                        "/assets/images/events/previous/2022-2023/integration-day-2022/4.webp",
+                        "/assets/images/events/previous/2022-2023/integration-day-2022/5.webp",
+                        "/assets/images/events/previous/2022-2023/integration-day-2022/6.webp"
+                    ],
+                    "details": "An integration day was organized to welcome the newly recruited members and help them get familiar with the club's environment and leadership team.\n\nThe session brought together new members for a friendly and engaging meet-up. Participants had the chance to introduce themselves, interact with the bureau, and learn more about the club's values and workflow. The atmosphere was relaxed and enjoyable, encouraging early connections and a sense of belonging within the team."
+                },
+                {
+                    "id": "team-building-day-2023",
+                    "date": "2023-01-29",
+                    "title": "Team Building Day",
+                    "titleFr": "Journée de Renforcement d'Équipe",
+                    "titleAr": "يوم بناء الفريق",
+                    "description": "Team-building activities focused on strengthening cooperation and group dynamics.",
+                    "descriptionFr": "Activités de renforcement d'équipe axées sur le renforcement de la coopération et la dynamique de groupe.",
+                    "descriptionAr": "أنشطة بناء الفريق تركز على تعزيز التعاون وديناميكية المجموعة.",
+                    "location": "Club Miami Center, Sfax",
+                    "locationFr": "Club Miami Center, Sfax",
+                    "locationAr": "Club Miami Center، صفاقس",
+                    "image": "/assets/images/events/previous/2022-2023/team-building-day-2023/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2022-2023/team-building-day-2023/2.webp",
+                        "/assets/images/events/previous/2022-2023/team-building-day-2023/3.webp",
+                        "/assets/images/events/previous/2022-2023/team-building-day-2023/4.webp",
+                        "/assets/images/events/previous/2022-2023/team-building-day-2023/5.webp",
+                        "/assets/images/events/previous/2022-2023/team-building-day-2023/6.webp"
+                    ],
+                    "details": "The club held a team-building event designed to strengthen cooperation, improve group dynamics, and help members connect beyond formal meetings.\n\nThe day included light activities and interactive moments aimed at developing communication, trust, and teamwork. Members spent time getting to know each other in a more relaxed setting, which helped reinforce group cohesion and motivation for the upcoming projects of the club. While similar in spirit to the integration day, this event focused more on teamwork and bonding within the existing group."
+                },
+                {
+                    "id": "public-speaking-training-2023",
+                    "date": "2023-02-05",
+                    "title": "Public Speaking & Communication Training",
+                    "titleFr": "Formation en Prise de Parole Publique et Communication",
+                    "titleAr": "تدريب الخطابة والاتصالات العامة",
+                    "description": "Training session on public speaking and communication skills development.",
+                    "descriptionFr": "Séance de formation sur la prise de parole en public et le développement des compétences en communication.",
+                    "descriptionAr": "جلسة تدريبية حول الخطابة العامة وتطوير مهارات الاتصال.",
+                    "location": "Centre des Arts Dramatiques et Scéniques de Sfax",
+                    "locationFr": "Centre des Arts Dramatiques et Scéniques de Sfax",
+                    "locationAr": "مركز الفنون الدرامية والمسرحية بصفاقس",
+                    "image": "/assets/images/events/previous/2022-2023/public-speaking-training-2023/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/2.webp",
+                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/3.webp",
+                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/4.webp",
+                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/5.webp",
+                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/6.webp"
+                    ],
+                    "details": "A training session was held to help members improve their public speaking abilities and strengthen their communication skills.\n\nThe formation introduced essential techniques for speaking confidently in front of an audience, structuring messages clearly, and maintaining effective communication. Participants learned practical tips and practiced scenarios that helped them become more comfortable expressing themselves in both formal and informal settings. The event aimed to support the personal and professional growth of the club's members."
+                }
+            ]
+        }
+    ]
+}

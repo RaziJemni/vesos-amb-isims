@@ -1,0 +1,26 @@
+{
+    "en": {
+        "about": "Club Ambassadeurs SOS Village",
+        "location": "ISIMS - Sfax, Tunisia",
+        "email": "club.ambassadeurs.vesostn.isims@gmail.com",
+        "quickLinks": "Quick Links",
+        "followUs": "Follow Us",
+        "rights": "All rights reserved."
+    },
+    "fr": {
+        "about": "Club Ambassadeurs SOS Village",
+        "location": "ISIMS - Sfax, Tunisie",
+        "email": "club.ambassadeurs.vesostn.isims@gmail.com",
+        "quickLinks": "Liens Rapides",
+        "followUs": "Suivez-nous",
+        "rights": "Tous droits réservés."
+    },
+    "ar": {
+        "about": "نادي سفراء SOS Village",
+        "location": "ISIMS - صفاقس، تونس",
+        "email": "club.ambassadeurs.vesostn.isims@gmail.com",
+        "quickLinks": "روابط سريعة",
+        "followUs": "تابعنا",
+        "rights": "جميع الحقوق محفوظة."
+    }
+}

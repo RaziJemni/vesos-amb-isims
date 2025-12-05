@@ -81,7 +81,7 @@ export function JoinForm({ t }: JoinFormProps) {
   }
 
   return (
-  <section id="join" className="py-20 md:py-32 relative bg-white">
+  <section id="join" className="relative min-h-screen flex items-center justify-center py-20 md:py-32 bg-white">
     <div className="container px-4">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-3 text-balance text-primary-dark animate-fade-in-up animate-in">
           {t.join.title}
@@ -92,7 +92,7 @@ export function JoinForm({ t }: JoinFormProps) {
         </p>
 
         <div className="mx-auto max-w-2xl">
-          <div ref={ref} className="bg-white shadow rounded-2xl p-8 border border-gray-100 animate-fade-in-up animate-stagger">
+          <div ref={ref} className="bg-primary/5 shadow rounded-2xl p-8 border border-gray-100 animate-fade-in-up animate-stagger">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">

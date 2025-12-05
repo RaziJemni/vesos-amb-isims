@@ -1,13 +1,13 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type React from "react";
+import type { Metadata } from "next";
 // Note: Aktiv Grotesk is a local/commercial font. To enable it, place
 // WOFF2 files under `public/fonts/` and uncomment the `localFont` block
 // below. Until the font files are added, fall back to Inter so the dev
 // server and build remain stable.
-import localFont from "next/font/local"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 // Load Aktiv Grotesk from local files. Place your WOFF2 files under public/fonts/
 // Example filenames expected (you can replace these or drop files there):
@@ -17,7 +17,7 @@ import "./globals.css"
 // Prefer local Aktiv Grotesk if font files are present; otherwise fall back to Inter
 
 // Fallback font while Aktiv Grotesk files are not present
-const aktiv = Inter({ subsets: ["latin"] })
+const aktiv = Inter({ subsets: ["latin"] });
 
 /*
 // To enable Aktiv Grotesk when you have the font files, copy them to
@@ -37,43 +37,55 @@ const aktivLocal = localFont({
 */
 
 export const metadata: Metadata = {
-  title: "SOS Children's Village Ambassadors Club - ISIMS",
-  description: "Join our mission to help children in difficult situations through charitable actions and solidarity events. Student organization at ISIMS committed to making a difference.",
-  keywords: ["SOS Village", "children", "charity", "ISIMS", "student club", "volunteer", "Tunisia", "Sfax"],
-  authors: [{ name: "SOS Club ISIMS" }],
-  creator: "SOS Children's Village Ambassadors Club of ISIMS",
-  publisher: "ISIMS",
-  robots: "index, follow",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
-  openGraph: {
     title: "SOS Children's Village Ambassadors Club - ISIMS",
-    description: "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
-    type: "website",
-    locale: "en_US",
-    siteName: "SOS Club ISIMS",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SOS Children's Village Ambassadors Club - ISIMS",
-    description: "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
-  },
-}
+    description:
+        "Join our mission to help children in difficult situations through charitable actions and solidarity events. Student organization at ISIMS committed to making a difference.",
+    keywords: [
+        "SOS Village",
+        "children",
+        "charity",
+        "ISIMS",
+        "student club",
+        "volunteer",
+        "Tunisia",
+        "Sfax",
+    ],
+    authors: [{ name: "SOS Club ISIMS" }],
+    creator: "SOS Children's Village Ambassadors Club of ISIMS",
+    publisher: "ISIMS",
+    robots: "index, follow",
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon-16x16.png",
+        apple: "/apple-touch-icon.png",
+    },
+    openGraph: {
+        title: "SOS Children's Village Ambassadors Club - ISIMS",
+        description:
+            "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+        type: "website",
+        locale: "en_US",
+        siteName: "SOS Club ISIMS",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "SOS Children's Village Ambassadors Club - ISIMS",
+        description:
+            "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+    },
+};
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-  <body className={`${aktiv.className} font-sans antialiased`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body className={`${aktiv.className} font-sans antialiased`}>
+                {children}
+                <Analytics />
+            </body>
+        </html>
+    );
 }

@@ -1,137 +1,309 @@
-"use client"
+"use client";
 
-// no React hooks required here
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, MapPin } from "lucide-react"
-import type { Translations } from "@/lib/translations"
-import type { Event } from "@/lib/types"
-import eventsData from "@/data/events.json"
-import { getLocalizedEvent } from "@/lib/translations"
+import { useState, useEffect } from "react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar, MapPin } from "lucide-react";
+import EventDetailModal from "@/components/modals/EventDetailModal";
+import { PreviousEventsModal } from "@/components/modals/PreviousEventsModal";
+import type { Translations } from "@/lib/translations";
+import type { Event } from "@/lib/types";
+import { getLocalizedEvent, getLocalizedData } from "@/lib/translations";
+
+const { events: eventsData } = getLocalizedData();
 
 interface EventsProps {
-  t: Translations
-  language: 'en' | 'fr'
+    t: Translations;
+    language: "en" | "fr";
 }
 
 export function Events({ t, language }: EventsProps) {
-  // keep a simple click handler; modal implementation was removed earlier
-  // removed unused previous events state
-  const recentRef = useScrollAnimation()
-  const upcomingRef = useScrollAnimation()
+    const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+    const [showPreviousModal, setShowPreviousModal] = useState(false);
 
-  const handleEventClick = (event: Event) => {
-    // TODO: wire this to a details view or external link if needed
-    console.log("Event clicked:", event)
-  }
+    const recentRef = useScrollAnimation();
+    const upcomingRef = useScrollAnimation();
+    const previousButtonRef = useScrollAnimation();
 
-  return (
-    <>
-      <section id="events" className="py-20 md:py-32 relative bg-white">
-        <div className="container px-4 relative">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16 text-balance text-primary-dark animate-fade-in-up animate-in">
-            {t.events.title}
-          </h2>
+    const handleEventClick = (event: Event) => {
+        setSelectedEvent(event);
+        // keep previous modal open so the detail modal can stack on top
+    };
 
-          <div className="max-w-6xl mx-auto space-y-20">
-            {/* Recent Events */}
-            <div>
-              <div className="text-center mb-8">
-                <h3 className="text-xl md:text-2xl font-medium text-primary-dark">
-                  {t.events.recent}
-                </h3>
-              </div>
-              <div ref={recentRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
-                {eventsData.recentEvents.map((event, index) => {
-                  const localizedEvent = getLocalizedEvent(event, language)
-                  return (
-                  <Card
-                    key={index}
-                    className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
-                    onClick={() => handleEventClick(localizedEvent)}
-                  >
-                    {localizedEvent.image && (
-                      <div className="w-full aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
-                        <img
-                          src={localizedEvent.image || "/placeholder.svg"}
-                          alt={localizedEvent.title}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <CardHeader>
-                      <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{localizedEvent.date}</span>
-                      </div>
-                      {localizedEvent.location && (
-                        <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                          <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{localizedEvent.location}</span>
+    const closeModal = () => setSelectedEvent(null);
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") closeModal();
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, []);
+
+    // `eventsData.previousEvents` is an array of groups: { year: "2023-2024", events: [...] }
+    const previousGroups = (eventsData.previousEvents || [])
+        .slice()
+        .sort((a, b) => {
+            const aStart = parseInt(String(a.year).split("-")[0], 10) || 0;
+            const bStart = parseInt(String(b.year).split("-")[0], 10) || 0;
+            return bStart - aStart;
+        });
+
+    const previousEventsByYear = previousGroups.reduce<Record<string, Event[]>>(
+        (acc, g) => {
+            acc[g.year] = g.events || [];
+            return acc;
+        },
+        {}
+    );
+
+    const previousYears = previousGroups.map((g) => g.year);
+    const hasPreviousEvents = previousYears.length > 0;
+
+    // Recent should always show the latest two events regardless of their season
+    const allPreviousEvents: Event[] = previousGroups.flatMap(
+        (g) => g.events || []
+    );
+    const recentEvents = allPreviousEvents
+        .slice()
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 2);
+
+    return (
+        <>
+            <section
+                id="events"
+                className="relative min-h-screen flex items-center py-20 md:py-32 bg-primary/30 text-primary-dark"
+            >
+                <div className="absolute left-0 right-0 top-0 h-[8vh] pointer-events-none bg-gradient-to-b from-white to-transparent" />
+                <div className="container px-4 relative flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-4 mb-12 animate-fade-in-up animate-in max-w-4xl text-center">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-balance">
+                            {t.events.title}
+                        </h2>
+                    </div>
+
+                    <div className="w-full max-w-6xl space-y-20">
+                        {/* Recent Events */}
+                        <div>
+                            <div className="text-center mb-8">
+                                <h3 className="text-xl md:text-2xl font-medium text-primary-dark">
+                                    {t.events.recent}
+                                </h3>
+                            </div>
+                            <div
+                                ref={recentRef}
+                                className="grid gap-6 md:grid-cols-2 animate-stagger"
+                            >
+                                {recentEvents.map((event, index) => {
+                                    const localizedEvent = getLocalizedEvent(
+                                        event,
+                                        language
+                                    );
+                                    return (
+                                        <Card
+                                            key={index}
+                                            className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
+                                            onClick={() =>
+                                                handleEventClick(localizedEvent)
+                                            }
+                                        >
+                                            {localizedEvent.image && (
+                                                <div className="w-full aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
+                                                    <img
+                                                        src={
+                                                            localizedEvent.image ||
+                                                            "/placeholder.svg"
+                                                        }
+                                                        alt={
+                                                            localizedEvent.title
+                                                        }
+                                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                    />
+                                                </div>
+                                            )}
+                                            <CardHeader>
+                                                <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                                                    <Calendar className="h-4 w-4" />
+                                                    <span className="text-sm">
+                                                        {localizedEvent.date}
+                                                    </span>
+                                                </div>
+                                                {localizedEvent.location && (
+                                                    <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                                                        <MapPin className="h-4 w-4" />
+                                                        <span className="text-sm">
+                                                            {
+                                                                localizedEvent.location
+                                                            }
+                                                        </span>
+                                                    </div>
+                                                )}
+                                                <CardTitle className="text-xl">
+                                                    {localizedEvent.title}
+                                                </CardTitle>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <p className="text-muted-foreground leading-relaxed">
+                                                    {localizedEvent.description}
+                                                </p>
+                                                <p className="text-xs text-primary mt-3 font-medium">
+                                                    Click to view details
+                                                </p>
+                                            </CardContent>
+                                        </Card>
+                                    );
+                                })}
+                            </div>
                         </div>
-                      )}
-                      <CardTitle className="text-xl">{localizedEvent.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground leading-relaxed">{localizedEvent.description}</p>
-                      <p className="text-xs text-primary mt-3 font-medium">Click to view details</p>
-                    </CardContent>
-                  </Card>
-                  )
-                })}
-              </div>
-            </div>
 
-            {/* Upcoming Events */}
-            <div>
-              <div className="text-center mb-8">
-                <h3 className="text-xl md:text-2xl font-medium text-primary-dark">
-                  {t.events.upcoming}
-                </h3>
-              </div>
-              <div ref={upcomingRef} className="grid gap-6 md:grid-cols-2 animate-stagger">
-                {eventsData.upcomingEvents.map((event, index) => {
-                  const localizedEvent = getLocalizedEvent(event, language)
-                  return (
-                  <Card
-                    key={index}
-                    className="border-2 border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
-                    onClick={() => handleEventClick(localizedEvent)}
-                  >
-                    {localizedEvent.image && (
-                      <div className="w-full aspect-[16/9] overflow-hidden bg-gray-200">
-                        <img
-                          src={localizedEvent.image || "/placeholder.svg"}
-                          alt={localizedEvent.title}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                    )}
-                    <CardHeader>
-                      <div className="flex items-center gap-2 text-primary mb-2">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm font-medium">{localizedEvent.date}</span>
-                      </div>
-                      {localizedEvent.location && (
-                        <div className="flex items-center gap-2 text-primary mb-2">
-                          <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{localizedEvent.location}</span>
+                        {/* Previous Button */}
+                        <div
+                            ref={previousButtonRef}
+                            className="w-full max-w-6xl flex justify-center mt-16 px-4 animate-fade-in-up animate-in"
+                        >
+                            <Button
+                                variant="secondary"
+                                onClick={() =>
+                                    hasPreviousEvents &&
+                                    setShowPreviousModal(true)
+                                }
+                                className="w-full sm:w-auto px-8 py-6 text-base shadow-md hover:shadow-lg"
+                                disabled={!hasPreviousEvents}
+                            >
+                                {language === "fr"
+                                    ? "Voir les evenements precedents"
+                                    : "Previous events"}
+                            </Button>
                         </div>
-                      )}
-                      <CardTitle className="text-xl">{localizedEvent.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground leading-relaxed">{localizedEvent.description}</p>
-                      <p className="text-xs text-primary mt-3 font-medium">Click to view details & register</p>
-                    </CardContent>
-                  </Card>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+
+                        {/* Upcoming Events */}
+                        <div>
+                            <div className="text-center mb-8">
+                                <h3 className="text-xl md:text-2xl font-medium">
+                                    {t.events.upcoming}
+                                </h3>
+                            </div>
+                            {eventsData.upcomingEvents.length === 0 ? (
+                                <div className="text-center py-12">
+                                    <p className="text-lg text-muted-foreground">
+                                        {language === "fr"
+                                            ? "Pas d'événements à venir bientôt"
+                                            : "No upcoming events soon"}
+                                    </p>
+                                </div>
+                            ) : (
+                                <div
+                                    ref={upcomingRef}
+                                    className={`grid gap-6 animate-stagger ${
+                                        eventsData.upcomingEvents.length === 1
+                                            ? "md:flex md:justify-center md:w-full"
+                                            : "md:grid-cols-2"
+                                    }`}
+                                >
+                                    {eventsData.upcomingEvents.map(
+                                        (event, index) => {
+                                            const localizedEvent =
+                                                getLocalizedEvent(
+                                                    event,
+                                                    language
+                                                );
+                                            return (
+                                                <Card
+                                                    key={index}
+                                                    className={`border-2 border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift ${
+                                                        eventsData
+                                                            .upcomingEvents
+                                                            .length === 1
+                                                            ? "w-full md:max-w-md"
+                                                            : ""
+                                                    }`}
+                                                    onClick={() =>
+                                                        handleEventClick(
+                                                            localizedEvent
+                                                        )
+                                                    }
+                                                >
+                                                    {localizedEvent.image && (
+                                                        <div className="w-full aspect-[16/9] overflow-hidden bg-gray-200">
+                                                            <img
+                                                                src={
+                                                                    localizedEvent.image ||
+                                                                    "/placeholder.svg"
+                                                                }
+                                                                alt={
+                                                                    localizedEvent.title
+                                                                }
+                                                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                                            />
+                                                        </div>
+                                                    )}
+                                                    <CardHeader>
+                                                        <div className="flex items-center gap-2 text-primary mb-2">
+                                                            <Calendar className="h-4 w-4" />
+                                                            <span className="text-sm font-medium">
+                                                                {
+                                                                    localizedEvent.date
+                                                                }
+                                                            </span>
+                                                        </div>
+                                                        {localizedEvent.location && (
+                                                            <div className="flex items-center gap-2 text-primary mb-2">
+                                                                <MapPin className="h-4 w-4" />
+                                                                <span className="text-sm">
+                                                                    {
+                                                                        localizedEvent.location
+                                                                    }
+                                                                </span>
+                                                            </div>
+                                                        )}
+                                                        <CardTitle className="text-xl">
+                                                            {
+                                                                localizedEvent.title
+                                                            }
+                                                        </CardTitle>
+                                                    </CardHeader>
+                                                    <CardContent>
+                                                        <p className="text-muted-foreground leading-relaxed">
+                                                            {
+                                                                localizedEvent.description
+                                                            }
+                                                        </p>
+                                                        <p className="text-xs text-primary mt-3 font-medium">
+                                                            Click to view
+                                                            details & register
+                                                        </p>
+                                                    </CardContent>
+                                                </Card>
+                                            );
+                                        }
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                <div className="absolute left-0 right-0 bottom-0 h-[8vh] pointer-events-none bg-gradient-to-b from-transparent to-white" />
+            </section>
+
+            {showPreviousModal && hasPreviousEvents && (
+                <PreviousEventsModal
+                    open={showPreviousModal}
+                    previousGroups={previousGroups}
+                    language={language}
+                    onClose={() => setShowPreviousModal(false)}
+                    onSelectEvent={(event) => handleEventClick(event)}
+                />
+            )}
+
+            {selectedEvent && (
+                <EventDetailModal
+                    event={selectedEvent}
+                    language={language}
+                    onClose={closeModal}
+                />
+            )}
+        </>
+    );
 }

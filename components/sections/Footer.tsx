@@ -34,11 +34,11 @@ export function Footer({ t }: FooterProps) {
   ]
 
   return (
-    <footer className="relative border-t border-secondary/10 bg-white">
+    <footer className="relative border-t border-secondary/10 bg-accent/20 text-primary-dark">
       <div className="container px-4 py-6">
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 animate-fade-in-up">
           <div className="space-y-4">
-            <h3 className="text-base font-bold mb-3 text-secondary">{t.footer.about}</h3>
+            <h3 className="text-base font-bold mb-3 text-primary-dark">{t.footer.about}</h3>
             {/* CUSTOMIZE: Update location below */}
             <p className="text-primary-dark text-sm">{t.footer.location}</p>
             {/* CUSTOMIZE: Update email below */}
@@ -50,7 +50,7 @@ export function Footer({ t }: FooterProps) {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-base font-bold mb-3 text-secondary">
+            <h3 className="text-base font-bold mb-3 text-primary-dark">
               {t.footer.quickLinks}
             </h3>
             {/* CUSTOMIZE: Update quick links below */}
@@ -74,7 +74,7 @@ export function Footer({ t }: FooterProps) {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-base font-bold mb-3 text-secondary">
+            <h3 className="text-base font-bold mb-3 text-primary-dark">
               {t.footer.followUs}
             </h3>
             <div className="flex gap-3 flex-wrap">

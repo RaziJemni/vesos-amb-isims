@@ -1,0 +1,17 @@
+{
+    "en": {
+        "title": "Our Events",
+        "recent": "Recent Events",
+        "upcoming": "Upcoming Events"
+    },
+    "fr": {
+        "title": "Nos Événements",
+        "recent": "Événements récents",
+        "upcoming": "Événements à venir"
+    },
+    "ar": {
+        "title": "فعالياتنا",
+        "recent": "أحدث الفعاليات",
+        "upcoming": "الفعاليات القادمة"
+    }
+}
