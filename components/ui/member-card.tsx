@@ -2,6 +2,7 @@
 
 import { Mail, Instagram, Linkedin } from "lucide-react"
 import type { ReactNode } from "react"
+import type { Language } from "@/lib/translations"
 
 interface Member {
   name: string
@@ -15,7 +16,7 @@ interface Member {
 
 interface MemberCardProps {
   member: Member
-  language?: "en" | "fr"
+  language?: Language
   className?: string
   children?: ReactNode
 }

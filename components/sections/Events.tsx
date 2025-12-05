@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, MapPin } from "lucide-react";
 import EventDetailModal from "@/components/modals/EventDetailModal";
 import { PreviousEventsModal } from "@/components/modals/PreviousEventsModal";
-import type { Translations } from "@/lib/translations";
+import type { Language, Translations } from "@/lib/translations";
 import type { Event } from "@/lib/types";
 import { getLocalizedEvent, getLocalizedData } from "@/lib/translations";
 
@@ -15,7 +15,7 @@ const { events: eventsData } = getLocalizedData();
 
 interface EventsProps {
     t: Translations;
-    language: "en" | "fr";
+    language: Language;
 }
 
 export function Events({ t, language }: EventsProps) {
@@ -60,6 +60,24 @@ export function Events({ t, language }: EventsProps) {
 
     const previousYears = previousGroups.map((g) => g.year);
     const hasPreviousEvents = previousYears.length > 0;
+    const previousButtonLabel =
+        language === "fr"
+            ? "Évènements précédents"
+            : language === "ar"
+            ? "الفعاليات السابقة"
+            : "Previous events";
+    const viewDetailsLabel =
+        language === "fr"
+            ? "Cliquez pour voir les détails"
+            : language === "ar"
+            ? "اضغط لعرض التفاصيل"
+            : "Click to view details";
+    const noUpcomingLabel =
+        language === "fr"
+            ? "Pas d'évènements à venir bientôt"
+            : language === "ar"
+            ? "لا توجد فعاليات قادمة قريباً"
+            : "No upcoming events soon";
 
     // Recent should always show the latest two events regardless of their season
     const allPreviousEvents: Event[] = previousGroups.flatMap(
@@ -149,7 +167,7 @@ export function Events({ t, language }: EventsProps) {
                                                     {localizedEvent.description}
                                                 </p>
                                                 <p className="text-xs text-primary mt-3 font-medium">
-                                                    Click to view details
+                                                    {viewDetailsLabel}
                                                 </p>
                                             </CardContent>
                                         </Card>
@@ -172,9 +190,7 @@ export function Events({ t, language }: EventsProps) {
                                 className="w-full sm:w-auto px-8 py-6 text-base shadow-md hover:shadow-lg"
                                 disabled={!hasPreviousEvents}
                             >
-                                {language === "fr"
-                                    ? "Voir les evenements precedents"
-                                    : "Previous events"}
+                                {previousButtonLabel}
                             </Button>
                         </div>
 
@@ -188,9 +204,7 @@ export function Events({ t, language }: EventsProps) {
                             {eventsData.upcomingEvents.length === 0 ? (
                                 <div className="text-center py-12">
                                     <p className="text-lg text-muted-foreground">
-                                        {language === "fr"
-                                            ? "Pas d'événements à venir bientôt"
-                                            : "No upcoming events soon"}
+                                        {noUpcomingLabel}
                                     </p>
                                 </div>
                             ) : (

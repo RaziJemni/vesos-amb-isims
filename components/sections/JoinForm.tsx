@@ -6,29 +6,30 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type { Translations } from "@/lib/translations"
+import type { Language, Translations } from "@/lib/translations"
 import type { JoinFormData, FormStatus } from "@/lib/types"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 interface JoinFormProps {
   t: Translations
+  language: Language
 }
 
-// UPDATE THIS: Replace with your actual Google Form endpoint URL or set via env var
-const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+// Replace with your actual Google Form endpoint URL or set via env var
+const GOOGLE_FORM_ACTION_URL = process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL || "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
 
-// UPDATE THIS: Replace with your actual Google Form field IDs
+// Replace with your actual Google Form field IDs
 const FORM_FIELD_IDS = {
-  fullname: "entry.123456789",
-  email: "entry.987654321",
-  phone: "entry.456789012",
-  university: "entry.345678901",
-  studyField: "entry.234567890",
-  year: "entry.567890123",
-  motivation: "entry.012345678",
+  fullname: process.env.NEXT_PUBLIC_GOOGLE_FORM_FULLNAME_FIELD || "entry.123456789",
+  email: process.env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL_FIELD || "entry.987654321",
+  phone: process.env.NEXT_PUBLIC_GOOGLE_FORM_PHONE_FIELD || "entry.456789012",
+  university: process.env.NEXT_PUBLIC_GOOGLE_FORM_UNIVERSITY_FIELD || "entry.345678901",
+  studyField: process.env.NEXT_PUBLIC_GOOGLE_FORM_STUDY_FIELD || "entry.234567890",
+  year: process.env.NEXT_PUBLIC_GOOGLE_FORM_YEAR_FIELD || "entry.567890123",
+  motivation: process.env.NEXT_PUBLIC_GOOGLE_FORM_MOTIVATION_FIELD || "entry.012345678",
 }
 
-export function JoinForm({ t }: JoinFormProps) {
+export function JoinForm({ t, language }: JoinFormProps) {
   const [formData, setFormData] = useState<JoinFormData>({
     fullname: "",
     email: "",
@@ -40,9 +41,37 @@ export function JoinForm({ t }: JoinFormProps) {
   })
   const [status, setStatus] = useState<FormStatus>("idle")
   const ref = useScrollAnimation()
+  const formConfigured = !GOOGLE_FORM_ACTION_URL.includes("YOUR_FORM_ID")
+  const yearOptions: Record<Language, Array<{ value: string; label: string }>> = {
+    en: [
+      { value: "1st-year", label: "1st year" },
+      { value: "2nd-year", label: "2nd year" },
+      { value: "3rd-year", label: "3rd year" },
+      { value: "4th-year", label: "4th year" },
+      { value: "5th-year", label: "5th year" },
+    ],
+    fr: [
+      { value: "1st-year", label: "1ère année" },
+      { value: "2nd-year", label: "2ème année" },
+      { value: "3rd-year", label: "3ème année" },
+      { value: "4th-year", label: "4ème année" },
+      { value: "5th-year", label: "5ème année" },
+    ],
+    ar: [
+      { value: "1st-year", label: "السنة الأولى" },
+      { value: "2nd-year", label: "السنة الثانية" },
+      { value: "3rd-year", label: "السنة الثالثة" },
+      { value: "4th-year", label: "السنة الرابعة" },
+      { value: "5th-year", label: "السنة الخامسة" },
+    ],
+  }
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    if (!formConfigured) {
+      setStatus("error")
+      return
+    }
     setStatus("loading")
 
     try {
@@ -90,6 +119,11 @@ export function JoinForm({ t }: JoinFormProps) {
         <p className="text-center text-primary-dark/90 mb-8 max-w-2xl mx-auto text-base md:text-lg font-medium">
           {t.join.subtitle}
         </p>
+        {!formConfigured && (
+          <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
+            The join form is curreently unavailable. Please contact us wait until its back online.
+          </div>
+        )}
 
         <div className="mx-auto max-w-2xl">
           <div ref={ref} className="bg-primary/5 shadow rounded-2xl p-8 border border-gray-100 animate-fade-in-up animate-stagger">
@@ -179,11 +213,11 @@ export function JoinForm({ t }: JoinFormProps) {
                       <SelectValue placeholder={t.join.form.yearPlaceholder} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1st-year">1ère année</SelectItem>
-                      <SelectItem value="2nd-year">2ème année</SelectItem>
-                      <SelectItem value="3rd-year">3ème année</SelectItem>
-                      <SelectItem value="4th-year">4ème année</SelectItem>
-                      <SelectItem value="5th-year">5ème année</SelectItem>
+                      {(yearOptions[language] || yearOptions.en).map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -204,7 +238,7 @@ export function JoinForm({ t }: JoinFormProps) {
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold" disabled={status === "loading"}>
+              <Button type="submit" size="lg" className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold" disabled={status === "loading" || !formConfigured}>
                 {status === "loading" ? "Submitting..." : t.join.form.submit}
               </Button>
 

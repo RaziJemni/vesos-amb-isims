@@ -1,8 +1,0 @@
-<!-- Generated placeholder image -->
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#1e40af"/>
-  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="white" text-anchor="middle">
-    Science Workshop
-  </text>
-  <rect x="320" y="120" width="160" height="160" fill="none" stroke="white" stroke-width="2"/>
-</svg>

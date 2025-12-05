@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryModalProps {
@@ -15,21 +15,45 @@ export default function GalleryModal({
     onClose,
 }: GalleryModalProps) {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
+    const modalRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         // Lock scroll when modal opens
+        const previousOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
 
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "ArrowLeft") goToPrevious();
             if (e.key === "ArrowRight") goToNext();
             if (e.key === "Escape") onClose();
+            if (e.key === "Tab" && modalRef.current) {
+                const focusables = Array.from(
+                    modalRef.current.querySelectorAll<HTMLElement>(
+                        'button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                    )
+                );
+                if (!focusables.length) return;
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                const active = document.activeElement as HTMLElement | null;
+                if (e.shiftKey) {
+                    if (active === first || !modalRef.current.contains(active)) {
+                        e.preventDefault();
+                        last.focus();
+                    }
+                } else if (active === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         };
 
         window.addEventListener("keydown", handleKeyDown);
+        closeButtonRef.current?.focus();
 
         return () => {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = previousOverflow;
             window.removeEventListener("keydown", handleKeyDown);
         };
     }, [currentIndex, onClose]);
@@ -46,6 +70,10 @@ export default function GalleryModal({
         <div
             className="fixed inset-0 bg-black/90 z-[70] flex items-center justify-center p-4"
             onClick={onClose}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gallery images"
+            ref={modalRef}
         >
             <div
                 className="relative w-full h-full flex items-center justify-center"
@@ -56,6 +84,7 @@ export default function GalleryModal({
                     onClick={onClose}
                     className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors z-10"
                     aria-label="Close"
+                    ref={closeButtonRef}
                 >
                     <X className="h-8 w-8 text-white" />
                 </button>

@@ -2,39 +2,237 @@
     "recentEvents": [],
     "upcomingEvents": [
         {
-            "id": "placeholder-upcoming",
-            "date": "2025-12-15",
-            "title": "Upcoming Event (placeholder)",
-            "titleFr": "Événement à venir (placeholder)",
-            "titleAr": "حدث قادم (نموذج)",
-            "description": "This is a placeholder upcoming event. Replace with real event data when ready.",
-            "descriptionFr": "Ceci est un événement à venir fictif. Remplacez par de vraies données lorsque vous êtes prêt.",
-            "descriptionAr": "هذا حدث قادم نموذجي. استبدله ببيانات فعلية عندما تكون جاهزًا.",
-            "location": "TBD",
-            "locationFr": "À déterminer",
-            "locationAr": "سيُحدد لاحقًا",
-            "image": "/assets/images/events/placeholder.jpg",
-            "details": "Placeholder details."
+            "id": "third-anniversary-celebration-2025",
+            "date": "2025-12-07",
+            "title": "3rd Anniversary Celebration",
+            "titleFr": "Célébration du 3ème Anniversaire",
+            "titleAr": "احتفالية الذكرى السنوية الثالثة",
+            "description": "The Vesos Ambassadors Club is preparing to celebrate its third anniversary, marking three years of dedication, growth, and student engagement.",
+            "descriptionFr": "Le Club des Ambassadeurs Vesos se prépare à célébrer son troisième anniversaire, marquant trois ans de dévouement, de croissance et d'engagement étudiant.",
+            "descriptionAr": "يستعد نادي سفراء فيسوس للاحتفال بذكرى سنته الثالثة، مما يشير إلى ثلاث سنوات من التفاني والنمو والمشاركة الطلابية.",
+            "location": "ISIMS, Sfax",
+            "locationFr": "ISIMS, Sfax",
+            "locationAr": "ISIMS، صفاقس",
+            "image": "/assets/images/events/upcoming/third-anniversary-celebration-2025/1.webp",
+            "gallery": [],
+            "details": "The event promises a warm celebration that highlights the club's journey and achievements so far. Surprises and special moments are planned to make this anniversary memorable for members, guests, and partners. More details will be revealed as the date approaches."
         }
-    ],
+    ],    
     "previousEvents": [
+        {
+            "year": "2025-2026",
+            "events": [
+                {
+                    "id": "pinky-night-october-awareness-2025",
+                    "date": "2025-10-30",
+                    "title": "Pinky Night – October Awareness Event",
+                    "titleFr": "Soirée Rose – Événement de Sensibilisation d'Octobre",
+                    "titleAr": "ليلة وردية – حدث التوعية بأكتوبر",
+                    "description": "A collaborative Pink October event was held with Club Ambassadeurs Vesos ESSTSS and LPSES, combining awareness, fun, and community engagement.",
+                    "descriptionFr": "Un événement Pink October collaboratif a été organisé avec Club Ambassadeurs Vesos ESSTSS et LPSES, combinant sensibilisation, amusement et engagement communautaire.",
+                    "descriptionAr": "تم عقد حدث أكتوبر الوردي تعاوني مع نادي سفراء فيسوس ESSTSS و LPSES، يجمع بين التوعية والمرح والمشاركة المجتمعية.",
+                    "location": "Foyer El Bassatin, Sfax",
+                    "locationFr": "Foyer El Bassatin, Sfax",
+                    "locationAr": "Foyer El Bassatin، صفاقس",
+                    "image": "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/1.webp",
+            "gallery": [
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/2.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/3.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/4.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/5.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/6.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/7.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/8.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/9.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/10.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/11.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/12.webp",
+                "/assets/images/events/previous/2025-2026/pinky-night-october-awareness-2025/13.webp"
+            ],
+                    "details": "The evening featured a variety of activities designed to promote October's awareness message in a warm and engaging way. Participants enjoyed bracelet-making workshops, playful activities, and a supportive \"dépistage\" moment dedicated to girls' health awareness within a safe environment. The night ended with a cozy screening of Paddington 2, creating a memorable and meaningful experience for all attendees. The event blended education, creativity, and entertainment while strengthening bonds between the collaborating clubs."
+                },
+                {
+                    "id": "join-connect-season-opener-2025",
+                    "date": "2025-10-22",
+                    "title": "Join & Connect – Season Opener",
+                    "titleFr": "Rejoins & Connecte – Ouverture de Saison",
+                    "titleAr": "انضم وتواصل – بداية الموسم",
+                    "description": "\"Join & Connect\" marked the opening of the 2025–2026 season, inviting students to discover the club, participate in activities, and get a feel for its atmosphere.",
+                    "descriptionFr": "\"Rejoins & Connecte\" a marqué l'ouverture de la saison 2025–2026, invitant les étudiants à découvrir le club, participer aux activités et sentir son atmosphère.",
+                    "descriptionAr": "\"انضم وتواصل\" أشارت إلى بداية موسم 2025–2026، دعوة الطلاب لاكتشاف النادي والمشاركة في الأنشطة والشعور بأجوائه.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS، صفاقس",
+                    "image": "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/1.webp",
+            "gallery": [
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/2.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/3.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/4.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/5.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/6.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/7.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/8.webp",
+                "/assets/images/events/previous/2025-2026/join-connect-season-opener-2025/9.webp"
+            ],
+                    "details": "Similar in spirit to previous integration and team-building events, this stand aimed to create a friendly and welcoming first contact with new students. The team organized small games, interactive activities, and open conversations to help visitors feel comfortable and learn about the club's mission and plans for the new year. The event helped set a positive tone for the upcoming season and encouraged new members to join the Vesos Ambassadors community."
+                }
+            ]
+        },
         {
             "year": "2024-2025",
             "events": [
                 {
-                    "id": "fundraising-gala-2024",
-                    "date": "2024-09-28",
-                    "title": "Fundraising Gala (placeholder)",
-                    "titleFr": "Gala de collecte de fonds (placeholder)",
-                    "titleAr": "حفل جمع التبرعات (نموذج)",
-                    "description": "Placeholder previous event for 2024-2025 season.",
-                    "descriptionFr": "Événement précédent fictif pour la saison 2024-2025.",
-                    "descriptionAr": "حدث سابق افتراضي لموسم 2024-2025.",
-                    "location": "TBD",
-                    "locationFr": "À déterminer",
-                    "locationAr": "سيُحدد لاحقًا",
-                    "image": "/assets/images/events/placeholder-2024.jpg",
-                    "details": "Placeholder details for 2024-2025."
+                    "id": "season-launch-integration-day-2024",
+                    "date": "2024-10-02",
+                    "title": "Season Launch & Integration Day",
+                    "titleFr": "Season Launch & Integration Day",
+                    "titleAr": "Season Launch & Integration Day",
+                    "description": "The new academic season kicked off with the club's stand and integration day, welcoming new students and presenting the Vesos Ambassadors Club.",
+                    "descriptionFr": "La nouvelle saison acad‚mique a d‚marr‚ avec le stand et la journ‚e d'int‚gration du club, accueillant les nouveaux ‚tudiants et pr‚sentant le Vesos Ambassadors Club.",
+                    "descriptionAr": "????? ?????? ?????? ??????? ?????? ?????? ??????? ?????? ???? ??????? ????? ?????? ??????? ????? Vesos ???????.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS? ?????",
+                    "image": "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/2.webp",
+                        "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/3.webp",
+                        "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/4.webp",
+                        "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/5.webp",
+                        "/assets/images/events/previous/2024-2025/season-launch-integration-day-2024/6.webp"
+                    ],
+                    "details": "The team set up a booth to present the club's vision, answer questions, and invite students to join for the 2024-2025 season. The day focused on creating first connections, sharing plans for the year, and welcoming newcomers into the community."
+                },
+                {
+                    "id": "team-building-day-2024",
+                    "date": "2024-11-30",
+                    "title": "Team Building Day",
+                    "titleFr": "Team Building Day",
+                    "titleAr": "Team Building Day",
+                    "description": "A team-building gathering brought new members together to meet the bureau, strengthen communication, and start collaborating smoothly.",
+                    "descriptionFr": "Une journ‚e de team building a rassembl‚ les nouveaux membres pour rencontrer le bureau, renforcer la communication et d‚marrer une bonne collaboration.",
+                    "descriptionAr": "???? ??? ?????? ????? ???????? ???????? ??? ??????? ????????? ????? ????? ?????? ?????????.",
+                    "location": "Iyed Colab, Sfax",
+                    "locationFr": "Iyed Colab, Sfax",
+                    "locationAr": "Iyed Colab? ?????",
+                    "image": "/assets/images/events/previous/2024-2025/team-building-day-2024/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/2.webp",
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/3.webp",
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/4.webp",
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/5.webp",
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/6.webp",
+                        "/assets/images/events/previous/2024-2025/team-building-day-2024/7.webp"
+                    ],
+                    "details": "Members met in a relaxed setting to connect, share experiences, and build trust for the projects ahead. Activities focused on teamwork, communication, and creating a friendly space for collaboration through the rest of the season."
+                },
+                {
+                    "id": "second-anniversary-celebration-2024",
+                    "date": "2024-12-07",
+                    "title": "2nd Anniversary Celebration",
+                    "titleFr": "Célébration du 2ème Anniversaire",
+                    "titleAr": "احتفالية الذكرى السنوية الثانية",
+                    "description": "The Vesos Ambassadors Club celebrated its second anniversary, marking two years of growth, activity, and community engagement.",
+                    "descriptionFr": "Le Club des Ambassadeurs Vesos a célébré son deuxième anniversaire, marquant deux ans de croissance, d'activité et d'engagement communautaire.",
+                    "descriptionAr": "احتفل نادي سفراء فيسوس بذكرى سنته الثانية، مما يشير إلى سنتين من النمو والنشاط والمشاركة المجتمعية.",
+                    "location": "Ribat El Madina, Sfax",
+                    "locationFr": "Ribat El Madina, Sfax",
+                    "locationAr": "Ribat El Madina، صفاقس",
+                    "image": "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/2.webp",
+                        "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/3.webp",
+                        "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/4.webp",
+                        "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/5.webp",
+                        "/assets/images/events/previous/2024-2025/second-anniversary-celebration-2024/6.webp"
+                    ],
+                    "details": "Members, partners, and supporters gathered to celebrate the club's milestones and reflect on the achievements of the past year. The event brought together familiar faces from the SOS community and created a warm atmosphere filled with appreciation and motivation for future progress."
+                },
+                {
+                    "id": "web-development-training-2024",
+                    "date": "2024-12-11",
+                    "title": "Web Development Training",
+                    "titleFr": "Formation en Développement Web",
+                    "titleAr": "تدريب تطوير الويب",
+                    "description": "A practical training session was organized for students interested in web development, offering an introduction to essential front-end concepts.",
+                    "descriptionFr": "Une séance de formation pratique a été organisée pour les étudiants intéressés par le développement web, offrant une introduction aux concepts essentiels du front-end.",
+                    "descriptionAr": "تم تنظيم جلسة تدريبية عملية للطلاب المهتمين بتطوير الويب، وتقديم مقدمة للمفاهيم الأساسية للواجهة الأمامية.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS، صفاقس",
+                    "image": "/assets/images/events/previous/2024-2025/web-development-training-2024/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2024-2025/web-development-training-2024/2.webp",
+                        "/assets/images/events/previous/2024-2025/web-development-training-2024/3.webp",
+                        "/assets/images/events/previous/2024-2025/web-development-training-2024/4.webp",
+                        "/assets/images/events/previous/2024-2025/web-development-training-2024/5.webp",
+                        "/assets/images/events/previous/2024-2025/web-development-training-2024/6.webp"
+                    ],
+                    "details": "Led by the talented formatrice Rahma Hamza, the training introduced participants to the fundamentals of HTML, CSS, and JavaScript. Students learned the basics of structuring web pages, styling interfaces, and interacting with page elements through code. The session combined explanations with hands-on practice, allowing attendees to experiment and build simple web components."
+                },
+                {
+                    "id": "play-for-change-competition-2024",
+                    "date": "2024-12-14",
+                    "title": "Play for Change – Game Learning Pitch Competition",
+                    "titleFr": "Play for Change – Compétition de Pitch d'Apprentissage par le Jeu",
+                    "titleAr": "Play for Change – مسابقة عرض أفكار التعلم من خلال اللعب",
+                    "description": "\"Play for Change\" was an educational and creative competition inviting young participants to pitch game-based learning ideas that inspire positive development.",
+                    "descriptionFr": "\"Play for Change\" était une compétition éducative et créative invitant les jeunes participants à présenter des idées d'apprentissage basées sur les jeux qui inspirent le développement positif.",
+                    "descriptionAr": "كانت \"Play for Change\" منافسة تعليمية وإبداعية تدعو المشاركين الشباب لتقديم أفكار تعلم قائمة على اللعب تلهم التطور الإيجابي.",
+                    "location": "ISIMS, Sfax / Maison des Jeunes Sakiet Ezzit",
+                    "locationFr": "ISIMS, Sfax / Maison des Jeunes Sakiet Ezzit",
+                    "locationAr": "ISIMS، صفاقس / مركز الشباب ساقية الزيت",
+                    "image": "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/1.webp",
+            "gallery": [
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/2.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/3.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/4.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/5.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/6.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/7.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/8.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/9.webp",
+                "/assets/images/events/previous/2024-2025/play-for-change-competition-2024/10.webp"
+            ],
+                    "details": "Organized in collaboration with Game Zone Club (ISIMS), the event encouraged children and youth to explore the intersection of gaming and learning. Participants presented innovative concepts that used interactive gameplay as a tool for skill-building, education, and personal growth. Across the two days, the event included pitching sessions, playful activities, and guidance from mentors, creating a motivating environment for creativity and learning."
+                },
+                {
+                    "id": "movie-making-boot-camp-2025",
+                    "date": "2025-02-23",
+                    "title": "Movie-Making Boot Camp",
+                    "titleFr": "Boot Camp de Réalisation de Films",
+                    "titleAr": "معسكر صناعة الأفلام",
+                    "description": "A filmmaking boot camp was held to introduce participants to the fundamentals of movie creation, from ideas to final cuts.",
+                    "descriptionFr": "Un boot camp de réalisation de films a été organisé pour introduire les participants aux principes fondamentaux de la création de films, des idées aux montages finaux.",
+                    "descriptionAr": "تم عقد معسكر صناعة الأفلام لتقديم المشاركين إلى أساسيات صناعة الأفلام، من الأفكار إلى التقطيعات النهائية.",
+                    "location": "Ribat El Madina, Sfax",
+                    "locationFr": "Ribat El Madina, Sfax",
+                    "locationAr": "Ribat El Madina، صفاقس",
+                    "image": "/assets/images/events/previous/2024-2025/movie-making-boot-camp-2025/1.webp",
+                    "gallery": [],
+                    "details": "Inspired by the official announcement theme, the boot camp guided students through the entire filmmaking process: scripting, storyboarding, directing, filming, and editing. With practical tasks and supportive guidance, attendees experimented with storytelling and visual expression. The event aimed to help aspiring filmmakers discover new skills, unleash creativity, and produce their first short film in a collaborative environment."
+                },
+                {
+                    "id": "mental-health-awareness-day-2025",
+                    "date": "2025-04-25",
+                    "title": "Mental Health Awareness Day",
+                    "titleFr": "Journée de Sensibilisation à la Santé Mentale",
+                    "titleAr": "يوم التوعية بالصحة العقلية",
+                    "description": "A mental-health-focused awareness day was organized in collaboration with Club Ambassadeurs SOS ISIMS and Club Ambassadeurs SOS LPSES, bringing students together for an open and supportive discussion.",
+                    "descriptionFr": "Une journée de sensibilisation axée sur la santé mentale a été organisée en collaboration avec Club Ambassadeurs SOS ISIMS et Club Ambassadeurs SOS LPSES, réunissant les étudiants pour une discussion ouverte et bienveillante.",
+                    "descriptionAr": "تم تنظيم يوم توعية يركز على الصحة العقلية بالتعاون مع نادي السفراء SOS ISIMS ونادي السفراء SOS LPSES، مما جمع الطلاب لنقاش مفتوح وداعم.",
+                    "location": "Pioneer High School, Sakiet Ezzit",
+                    "locationFr": "Pioneer High School, Sakiet Ezzit",
+                    "locationAr": "مدرسة Pioneer الثانوية، ساقية الزيت",
+                    "image": "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/2.webp",
+                        "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/3.webp",
+                        "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/4.webp",
+                        "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/5.webp",
+                        "/assets/images/events/previous/2024-2025/mental-health-awareness-day-2025/6.webp"
+                    ],
+                    "details": "The event featured real psychologists, personal testimonies, and accessible guidance to help participants better understand mental health challenges. Attendees engaged in meaningful conversations about well-being, emotional resilience, and seeking support when needed. After the discussion panel, a relaxed \"post-café\" gathering offered space for reflection, connection, and informal conversation, helping create a warm community atmosphere around an important topic."
                 }
             ]
         },
@@ -42,19 +240,93 @@
             "year": "2023-2024",
             "events": [
                 {
-                    "id": "charity-gala-2023",
-                    "date": "2023-12-15",
-                    "title": "Charity Gala (placeholder)",
-                    "titleFr": "Gala de charité (placeholder)",
-                    "titleAr": "حفل خيري (نموذج)",
-                    "description": "Placeholder previous event for 2023-2024 season.",
-                    "descriptionFr": "Événement précédent fictif pour la saison 2023-2024.",
-                    "descriptionAr": "حدث سابق افتراضي لموسم 2023-2024.",
-                    "location": "TBD",
-                    "locationFr": "À déterminer",
-                    "locationAr": "سيُحدد لاحقًا",
-                    "image": "/assets/images/events/placeholder-2023.jpg",
-                    "details": "Placeholder details for 2023-2024."
+                    "id": "season-launch-integration-day-2023",
+                    "date": "2023-10-09",
+                    "title": "Season Launch & Integration Day",
+                    "titleFr": "Lancement de la Saison et Journée d'Intégration",
+                    "titleAr": "إطلاق الموسم ويوم التكامل",
+                    "description": "The club kicked off the new academic season with its first stand at ISIMS, welcoming students and introducing them to the Vesos Ambassadors Club.",
+                    "descriptionFr": "Le club a lancé la nouvelle année académique avec son premier stand à ISIMS, accueillant les étudiants et les présentant au Club des Ambassadeurs Vesos.",
+                    "descriptionAr": "بدأ النادي الموسم الأكاديمي الجديد مع أول كشك له في ISIMS، ورحب بالطلاب وقدمهم إلى نادي سفراء فيسوس.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS، صفاقس",
+                    "image": "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/2.webp",
+                        "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/3.webp",
+                        "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/4.webp",
+                        "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/5.webp",
+                        "/assets/images/events/previous/2023-2024/season-launch-integration-day-2023/6.webp"
+                    ],
+                    "details": "As the new semester began, the team prepared a booth to present the club's mission, values, and yearly plan. Many students stopped by to learn more and register for membership. The event served as both a recruitment day and an informal integration moment for the new generation of members joining the club for the 2023–2024 season."
+                },
+                {
+                    "id": "team-building-day-oct-2023",
+                    "date": "2023-10-23",
+                    "title": "Team Building Day",
+                    "titleFr": "Journée de Renforcement d'Équipe",
+                    "titleAr": "يوم بناء الفريق",
+                    "description": "A team-building event was held to bring together the newly recruited members and help them connect with one another and with the club's bureau.",
+                    "descriptionFr": "Un événement de renforcement d'équipe a été organisé pour réunir les nouveaux membres recrutés et les aider à se connecter les uns avec les autres et avec le bureau du club.",
+                    "descriptionAr": "تم عقد حدث بناء الفريق لجمع الأعضاء المجندين حديثًا ومساعدتهم على الاتصال ببعضهم البعض وبمكتب النادي.",
+                    "location": "Resto Sonnara, Sfax",
+                    "locationFr": "Resto Sonnara, Sfax",
+                    "locationAr": "Resto Sonnara، صفاقس",
+                    "image": "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/1.webp",
+            "gallery": [
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/2.webp",
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/3.webp",
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/4.webp",
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/5.webp",
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/6.webp",
+                "/assets/images/events/previous/2023-2024/team-building-day-oct-2023/7.webp"
+            ],
+                    "details": "The session allowed both new and returning members to interact, share experiences, and build early connections within the club. Through a relaxed and friendly atmosphere, members got the chance to meet the bureau, understand its role, and feel more integrated into the group. This gathering set the tone for cooperation and collaboration throughout the season."
+                },
+                {
+                    "id": "first-anniversary-celebration-2023",
+                    "date": "2023-12-07",
+                    "title": "1st Anniversary Celebration",
+                    "titleFr": "Célébration du 1er Anniversaire",
+                    "titleAr": "احتفالية الذكرى السنوية الأولى",
+                    "description": "The Vesos Ambassadors Club celebrated its first anniversary, bringing together members, guests, and supporters from different SOS clubs and associations.",
+                    "descriptionFr": "Le Club des Ambassadeurs Vesos a célébré son premier anniversaire, réunissant les membres, les invités et les partisans de différents clubs et associations SOS.",
+                    "descriptionAr": "احتفل نادي سفراء فيسوس بذكرى سنته الأولى، حيث جمع الأعضاء والضيوف والداعمين من نوادٍ وجمعيات SOS مختلفة.",
+                    "location": "El Collab, Sfax",
+                    "locationFr": "El Collab, Sfax",
+                    "locationAr": "El Collab، صفاقس",
+                    "image": "/assets/images/events/previous/2023-2024/first-anniversary-celebration-2023/1.webp",
+                    "gallery": [
+                        "/assets/images/events/previous/2023-2024/first-anniversary-celebration-2023/2.webp"
+                    ],
+                    "details": "This milestone event highlighted the club's achievements during its first year and created a space for members and visitors to celebrate the club's progress. Attendees enjoyed a warm and friendly gathering that strengthened partnerships within the SOS community. The anniversary served as a moment of appreciation, connection, and motivation for the year ahead."
+                },
+                {
+                    "id": "vesos-talk-show-2024",
+                    "date": "2024-03-03",
+                    "title": "VESOS Talk Show 2024",
+                    "titleFr": "VESOS Talk Show 2024",
+                    "titleAr": "حدث VESOS Talk Show 2024",
+                    "description": "The club organized its first major public event: a talk show featuring actors, media figures, and influencers discussing the Vesos Association and its mission.",
+                    "descriptionFr": "Le club a organisé son premier grand événement public : un talk show réunissant des acteurs, des personnalités médiatiques et des influenceurs discutant de l'Association Vesos et sa mission.",
+                    "descriptionAr": "نظم النادي أول حدث عام كبير له: حدث حوار يضم ممثلين وشخصيات إعلامية ومؤثرين يناقشون جمعية فيسوس ورسالتها.",
+                    "location": "Palais des Congrès et Centre d'Expositions, Lac 1 — Tunis",
+                    "locationFr": "Palais des Congrès et Centre d'Expositions, Lac 1 — Tunis",
+                    "locationAr": "قصر المؤتمرات ومركز المعارض، بحيرة 1 — تونس",
+                    "image": "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/1.webp",
+            "gallery": [
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/2.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/3.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/4.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/5.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/6.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/7.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/8.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/9.webp",
+                "/assets/images/events/previous/2023-2024/vesos-talk-show-2024/10.webp"
+            ],
+                    "details": "This large-scale event brought together well-known personalities from different fields to highlight the objectives and social impact of the Vesos Association. Guests such as Naoufel Ouertani, Jihene Miled, Amal Knani, Mourad Ben Nefla, Fathi Mouldi, and others contributed to the conversation, helping amplify the visibility of the association. The talk show marked a significant achievement for the Vesos Ambassadors Club and expanded its reach to a wider audience."
                 }
             ]
         },
@@ -118,13 +390,12 @@
                     "locationFr": "Club Miami Center, Sfax",
                     "locationAr": "Club Miami Center، صفاقس",
                     "image": "/assets/images/events/previous/2022-2023/team-building-day-2023/1.webp",
-                    "gallery": [
-                        "/assets/images/events/previous/2022-2023/team-building-day-2023/2.webp",
-                        "/assets/images/events/previous/2022-2023/team-building-day-2023/3.webp",
-                        "/assets/images/events/previous/2022-2023/team-building-day-2023/4.webp",
-                        "/assets/images/events/previous/2022-2023/team-building-day-2023/5.webp",
-                        "/assets/images/events/previous/2022-2023/team-building-day-2023/6.webp"
-                    ],
+            "gallery": [
+                "/assets/images/events/previous/2022-2023/team-building-day-2023/2.webp",
+                "/assets/images/events/previous/2022-2023/team-building-day-2023/3.webp",
+                "/assets/images/events/previous/2022-2023/team-building-day-2023/4.webp",
+                "/assets/images/events/previous/2022-2023/team-building-day-2023/5.webp"
+            ],
                     "details": "The club held a team-building event designed to strengthen cooperation, improve group dynamics, and help members connect beyond formal meetings.\n\nThe day included light activities and interactive moments aimed at developing communication, trust, and teamwork. Members spent time getting to know each other in a more relaxed setting, which helped reinforce group cohesion and motivation for the upcoming projects of the club. While similar in spirit to the integration day, this event focused more on teamwork and bonding within the existing group."
                 },
                 {
@@ -140,13 +411,14 @@
                     "locationFr": "Centre des Arts Dramatiques et Scéniques de Sfax",
                     "locationAr": "مركز الفنون الدرامية والمسرحية بصفاقس",
                     "image": "/assets/images/events/previous/2022-2023/public-speaking-training-2023/1.webp",
-                    "gallery": [
-                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/2.webp",
-                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/3.webp",
-                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/4.webp",
-                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/5.webp",
-                        "/assets/images/events/previous/2022-2023/public-speaking-training-2023/6.webp"
-                    ],
+            "gallery": [
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/2.webp",
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/3.webp",
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/4.webp",
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/5.webp",
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/6.webp",
+                "/assets/images/events/previous/2022-2023/public-speaking-training-2023/7.webp"
+            ],
                     "details": "A training session was held to help members improve their public speaking abilities and strengthen their communication skills.\n\nThe formation introduced essential techniques for speaking confidently in front of an audience, structuring messages clearly, and maintaining effective communication. Participants learned practical tips and practiced scenarios that helped them become more comfortable expressing themselves in both formal and informal settings. The event aimed to support the personal and professional growth of the club's members."
                 }
             ]

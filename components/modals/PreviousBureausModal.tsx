@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import type { Bureau } from "@/lib/types";
-import { getLocalizedRole } from "@/lib/translations";
+import { getLocalizedRole, type Language } from "@/lib/translations";
 
 interface PreviousBureausModalProps {
     open: boolean;
     bureaus: Bureau[];
-    language: "en" | "fr";
+    language: Language;
     onClose: () => void;
 }
 
@@ -24,12 +24,51 @@ export function PreviousBureausModal({
     const [activeYear, setActiveYear] = useState<string | null>(
         years[0] ?? null
     );
+    const modalRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         if (years.length) {
             setActiveYear(years[0]);
         }
     }, [years.join("")]);
+
+    useEffect(() => {
+        if (!open) return;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+            if (e.key !== "Tab" || !modalRef.current) return;
+            const focusables = Array.from(
+                modalRef.current.querySelectorAll<HTMLElement>(
+                    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+                )
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement as HTMLElement | null;
+            if (e.shiftKey) {
+                if (active === first || !modalRef.current.contains(active)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else if (active === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        closeButtonRef.current?.focus();
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [open, onClose]);
 
     if (!open) return null;
 
@@ -43,17 +82,27 @@ export function PreviousBureausModal({
             <div
                 className="bg-white rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="previous-bureaus-title"
+                ref={modalRef}
             >
                 <div className="flex items-center justify-between gap-4 p-4 border-b sticky top-0 bg-white z-10">
-                    <h3 className="text-2xl font-semibold text-primary-dark">
+                    <h3
+                        id="previous-bureaus-title"
+                        className="text-2xl font-semibold text-primary-dark"
+                    >
                         {language === "fr"
                             ? "Bureaux précédents"
+                            : language === "ar"
+                            ? "المكاتب السابقة"
                             : "Previous bureaus"}
                     </h3>
                     <button
                         onClick={onClose}
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                         aria-label="Close previous bureaus"
+                        ref={closeButtonRef}
                     >
                         <X className="h-5 w-5" />
                     </button>
@@ -127,7 +176,11 @@ export function PreviousBureausModal({
                         onClick={onClose}
                         className="min-w-[120px]"
                     >
-                        {language === "fr" ? "Fermer" : "Close"}
+                        {language === "fr"
+                            ? "Fermer"
+                            : language === "ar"
+                            ? "إغلاق"
+                            : "Close"}
                     </Button>
                 </div>
             </div>

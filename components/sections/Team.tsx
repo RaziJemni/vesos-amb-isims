@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Instagram, Linkedin } from "lucide-react";
-import type { Translations } from "@/lib/translations";
+import type { Language, Translations } from "@/lib/translations";
 import { getLocalizedRole, getLocalizedData } from "@/lib/translations";
 
 const { team: teamData } = getLocalizedData();
@@ -13,7 +13,7 @@ import { PreviousBureausModal } from "@/components/modals/PreviousBureausModal";
 
 interface TeamProps {
     t: Translations;
-    language: "en" | "fr";
+    language: Language;
 }
 
 export function Team({ t, language }: TeamProps) {
@@ -117,6 +117,8 @@ export function Team({ t, language }: TeamProps) {
                         >
                             {language === "fr"
                                 ? "Bureaux precedents"
+                                : language === "ar"
+                                ? "المكاتب السابقة"
                                 : "Previous bureaus"}
                         </Button>
                     </div>

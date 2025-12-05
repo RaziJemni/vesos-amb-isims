@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getTranslations, type Language } from "@/lib/translations";
 import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/sections/Hero";
@@ -20,6 +20,13 @@ export default function Home() {
         );
     };
 
+    useEffect(() => {
+        if (typeof document !== "undefined") {
+            document.documentElement.lang = language;
+            document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+        }
+    }, [language]);
+
     const t = getTranslations(language);
 
     return (
@@ -34,7 +41,7 @@ export default function Home() {
             <Goals t={t} />
             <Team t={t} language={language} />
             <Events t={t} language={language} />
-            <JoinForm t={t} />
+            <JoinForm t={t} language={language} />
             <Footer t={t} />
         </main>
     );

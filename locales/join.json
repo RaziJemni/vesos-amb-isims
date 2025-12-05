@@ -24,7 +24,7 @@
     },
     "fr": {
         "title": "Rejoignez Notre Club",
-        "subtitle": "Intéressé à devenir membre ? Remplissez le formulaire ci-dessous et nous vous contacterons !",
+        "subtitle": "Intéressé(e) à devenir membre ? Remplissez le formulaire ci-dessous et nous vous contacterons !",
         "form": {
             "fullname": "Nom Complet",
             "fullnamePlaceholder": "Entrez votre nom complet",
@@ -34,9 +34,9 @@
             "phonePlaceholder": "Votre numéro de téléphone",
             "university": "Université/École",
             "universityPlaceholder": "Votre université ou école",
-            "studyField": "Filière d'Études",
+            "studyField": "Filière d'études",
             "studyFieldPlaceholder": "Votre filière d'études",
-            "year": "Année d'Études",
+            "year": "Année d'études",
             "yearPlaceholder": "Sélectionnez votre année",
             "motivation": "Pourquoi souhaitez-vous rejoindre notre club?",
             "motivationPlaceholder": "Parlez-nous de vos intérêts et de ce que vous espérez gagner...",

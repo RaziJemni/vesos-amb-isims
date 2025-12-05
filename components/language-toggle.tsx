@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
+import type { Language } from "@/lib/translations";
 
 interface LanguageToggleProps {
-    currentLanguage: string;
+    currentLanguage: Language;
     onToggle: () => void;
 }
 

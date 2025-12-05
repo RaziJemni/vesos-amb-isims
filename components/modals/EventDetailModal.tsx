@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X, MapPin, Calendar, Link as LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryModal from "@/components/modals/GalleryModal";
+import type { Language } from "@/lib/translations";
 import type { Event } from "@/lib/types";
 
 interface EventDetailModalProps {
     event: Event;
-    language: "en" | "fr";
+    language: Language;
     onClose: () => void;
 }
 
@@ -19,29 +20,76 @@ export default function EventDetailModal({
 }: EventDetailModalProps) {
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [galleryIndex, setGalleryIndex] = useState(0);
+    const modalRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        // Lock scroll when modal opens
+        if (!event) return;
+        const previousOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
 
-        return () => {
-            // Unlock scroll when modal closes
-            document.body.style.overflow = "unset";
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+            if (e.key !== "Tab" || !modalRef.current) return;
+            const focusables = Array.from(
+                modalRef.current.querySelectorAll<HTMLElement>(
+                    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+                )
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement as HTMLElement | null;
+            if (e.shiftKey) {
+                if (active === first || !modalRef.current.contains(active)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (active === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         };
-    }, []);
+
+        document.addEventListener("keydown", handleKeyDown);
+        closeButtonRef.current?.focus();
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [event, onClose]);
 
     if (!event) return null;
 
     const title =
-        language === "fr" ? event.titleFr || event.title : event.title;
+        language === "fr"
+            ? event.titleFr || event.title
+            : language === "ar"
+            ? (event as any).titleAr || event.titleFr || event.title
+            : event.title;
     const description =
         language === "fr"
             ? event.descriptionFr || event.description
+            : language === "ar"
+            ? (event as any).descriptionAr ||
+              event.descriptionFr ||
+              event.description
             : event.description;
     const location =
-        language === "fr" ? event.locationFr || event.location : event.location;
+        language === "fr"
+            ? event.locationFr || event.location
+            : language === "ar"
+            ? (event as any).locationAr || event.locationFr || event.location
+            : event.location;
     const details =
-        language === "fr" ? event.detailsFr || event.details : event.details;
+        language === "fr"
+            ? event.detailsFr || event.details
+            : language === "ar"
+            ? (event as any).detailsAr || event.detailsFr || event.details
+            : event.details;
 
     // Build full gallery including main image at the beginning
     const fullGallery = event.image
@@ -62,6 +110,10 @@ export default function EventDetailModal({
                 <div
                     className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                     onClick={(e) => e.stopPropagation()}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="event-detail-title"
+                    ref={modalRef}
                 >
                     {/* Close button */}
                     <div className="sticky top-0 flex justify-end p-4 bg-white border-b">
@@ -69,6 +121,7 @@ export default function EventDetailModal({
                             onClick={onClose}
                             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                             aria-label="Close"
+                            ref={closeButtonRef}
                         >
                             <X className="h-6 w-6" />
                         </button>
@@ -91,7 +144,10 @@ export default function EventDetailModal({
                     {/* Event details */}
                     <div className="p-6 md:p-8 space-y-6">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+                            <h2
+                                id="event-detail-title"
+                                className="text-3xl md:text-4xl font-bold mb-4 text-primary"
+                            >
                                 {title}
                             </h2>
 
@@ -115,6 +171,8 @@ export default function EventDetailModal({
                             <h3 className="text-lg font-semibold mb-2 text-gray-900">
                                 {language === "fr"
                                     ? "Description"
+                                    : language === "ar"
+                                    ? "الوصف"
                                     : "Description"}
                             </h3>
                             <p className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -126,7 +184,11 @@ export default function EventDetailModal({
                         {details && (
                             <div>
                                 <h3 className="text-lg font-semibold mb-2 text-gray-900">
-                                    {language === "fr" ? "Détails" : "Details"}
+                                    {language === "fr"
+                                        ? "Détails"
+                                        : language === "ar"
+                                        ? "التفاصيل"
+                                        : "Details"}
                                 </h3>
                                 <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                                     {details}
@@ -138,7 +200,11 @@ export default function EventDetailModal({
                         {event.gallery && event.gallery.length > 0 && (
                             <div>
                                 <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                                    {language === "fr" ? "Galerie" : "Gallery"}
+                                    {language === "fr"
+                                        ? "Galerie"
+                                        : language === "ar"
+                                        ? "المعرض"
+                                        : "Gallery"}
                                 </h3>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     {event.gallery.map((image, i) => (
@@ -174,6 +240,8 @@ export default function EventDetailModal({
                                         <LinkIcon className="h-4 w-4" />
                                         {language === "fr"
                                             ? "S'inscrire"
+                                            : language === "ar"
+                                            ? "التسجيل في هذا الحدث"
                                             : "Register for this event"}
                                     </Button>
                                 </a>

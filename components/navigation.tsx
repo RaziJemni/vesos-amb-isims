@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "./language-toggle";
-import type { Translations } from "@/lib/translations";
+import type { Language, Translations } from "@/lib/translations";
 
 /**
  * Navigation component
@@ -13,7 +13,7 @@ import type { Translations } from "@/lib/translations";
  */
 interface NavigationProps {
     t: Translations;
-    currentLanguage: string;
+    currentLanguage: Language;
     onLanguageToggle: () => void;
 }
 

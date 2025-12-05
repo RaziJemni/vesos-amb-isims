@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, X } from "lucide-react";
 import type { Event } from "@/lib/types";
-import { getLocalizedEvent } from "@/lib/translations";
+import { getLocalizedEvent, type Language } from "@/lib/translations";
 
 interface PreviousEventsModalProps {
     open: boolean;
     previousGroups: { year: string; events: Event[] }[];
-    language: "en" | "fr";
+    language: Language;
     onClose: () => void;
     onSelectEvent: (event: Event) => void;
 }
@@ -35,16 +35,46 @@ export function PreviousEventsModal({
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     const scrollRef = useRef<HTMLDivElement>(null);
+    const modalRef = useRef<HTMLDivElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-    // Lock background scroll so we only ever see ONE scrollbar (inside modal)
+    // Lock background scroll so we only ever see ONE scrollbar (inside modal) and trap focus
     useEffect(() => {
         if (!open) return;
         const previousOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+            if (e.key !== "Tab" || !modalRef.current) return;
+            const focusables = Array.from(
+                modalRef.current.querySelectorAll<HTMLElement>(
+                    'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+                )
+            );
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement as HTMLElement | null;
+            if (e.shiftKey) {
+                if (active === first || !modalRef.current.contains(active)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else if (active === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        closeButtonRef.current?.focus();
+
         return () => {
             document.body.style.overflow = previousOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
         };
-    }, [open]);
+    }, [open, onClose]);
 
     useEffect(() => {
         // Only reset the active tab when the modal is opened or when the years list changes
@@ -81,18 +111,28 @@ export function PreviousEventsModal({
             <div
                 className="bg-white rounded-2xl w-full max-w-6xl max-h-[90vh] flex flex-col shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="previous-events-title"
+                ref={modalRef}
             >
                 {/* HEADER */}
                 <div className="flex items-center justify-between gap-4 p-4 border-b bg-white">
-                    <h3 className="text-2xl font-semibold text-primary-dark">
+                    <h3
+                        id="previous-events-title"
+                        className="text-2xl font-semibold text-primary-dark"
+                    >
                         {language === "fr"
                             ? "Événements précédents"
+                            : language === "ar"
+                            ? "الفعاليات السابقة"
                             : "Previous events"}
                     </h3>
                     <button
                         onClick={onClose}
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                         aria-label="Close previous events"
+                        ref={closeButtonRef}
                     >
                         <X className="h-5 w-5" />
                     </button>
@@ -175,6 +215,8 @@ export function PreviousEventsModal({
                                             <p className="text-xs text-primary mt-3 font-medium">
                                                 {language === "fr"
                                                     ? "Cliquer pour les détails"
+                                                    : language === "ar"
+                                                    ? "اضغط لرؤية التفاصيل"
                                                     : "Click for details"}
                                             </p>
                                         </CardContent>
@@ -192,7 +234,11 @@ export function PreviousEventsModal({
                         onClick={onClose}
                         className="min-w-[120px]"
                     >
-                        {language === "fr" ? "Fermer" : "Close"}
+                        {language === "fr"
+                            ? "Fermer"
+                            : language === "ar"
+                            ? "إغلاق"
+                            : "Close"}
                     </Button>
                 </div>
             </div>
