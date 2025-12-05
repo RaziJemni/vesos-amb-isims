@@ -122,7 +122,7 @@ export function Events({ t, language }: EventsProps) {
                                     return (
                                         <Card
                                             key={index}
-                                            className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden hover-lift"
+                                            className="hover:shadow-lg transition-all duration-300 cursor-pointer hover:-translate-y-1 overflow-hidden"
                                             onClick={() =>
                                                 handleEventClick(localizedEvent)
                                             }
