@@ -121,7 +121,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
         </p>
         {!formConfigured && (
           <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
-            The join form is curreently unavailable. Please contact us wait until its back online.
+            The join form is curreently unavailable. Please wait until its back online.
           </div>
         )}
 
