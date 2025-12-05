@@ -128,7 +128,7 @@ export function PreviousBureausModal({
 
                 <div className="flex-1 overflow-hidden">
                     <div className="p-4 h-full">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[70vh] overflow-y-auto pr-1 pb-24">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[70vh] overflow-y-auto pr-1 pb-24">
                             {(activeBureau?.members || []).map(
                                 (member, index) => (
                                     <Card
