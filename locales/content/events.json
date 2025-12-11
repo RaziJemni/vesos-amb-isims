@@ -1,28 +1,37 @@
 {
     "recentEvents": [],
-    "upcomingEvents": [
-        {
-            "id": "third-anniversary-celebration-2025",
-            "date": "2025-12-07",
-            "title": "3rd Anniversary Celebration",
-            "titleFr": "Célébration du 3e Anniversaire",
-            "titleAr": "الاحتفال بالذكرى الثالثة لتأسيس النادي",
-            "description": "The Vesos Ambassadors Club is preparing to celebrate its third anniversary, marking three years of dedication, growth, and student engagement.",
-            "descriptionFr": "Le Club des Ambassadeurs Vesos se prépare à célébrer son troisième anniversaire, marquant trois années de dévouement, de croissance et d'engagement étudiant.",
-            "descriptionAr": "يستعد نادي سفراء فيزوس للاحتفال بذكرى تأسيسه الثالثة، احتفاءً بثلاث سنوات من الالتزام والنمو ومشاركة الطلبة.",
-            "location": "ISIMS, Sfax",
-            "locationFr": "ISIMS, Sfax",
-            "locationAr": "ISIMS، صفاقس",
-            "image": "/assets/images/events/upcoming/third-anniversary-celebration-2025/1.webp",
-            "gallery": [],
-            "details": "The event promises a warm celebration that highlights the club's journey and achievements so far. Surprises and special moments are planned to make this anniversary memorable for members, guests, and partners. More details will be revealed as the date approaches.",
-            "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeMv4Tw9BpgeI8P5lepvBQNYHjHPbamGr63jwC8RIP6CGjLfA/viewform"
-        }
-    ],
+    "upcomingEvents": [],
     "previousEvents": [
         {
             "year": "2025-2026",
             "events": [
+                {
+                    "id": "third-anniversary-celebration-2025",
+                    "date": "2025-12-07",
+                    "title": "3rd Anniversary Celebration",
+                    "titleFr": "Célébration du 3e Anniversaire",
+                    "titleAr": "الاحتفال بالذكرى الثالثة لتأسيس النادي",
+                    "description": "The Vesos Ambassadors Club is preparing to celebrate its third anniversary, marking three years of dedication, growth, and student engagement.",
+                    "descriptionFr": "Le Club des Ambassadeurs Vesos se prépare à célébrer son troisième anniversaire, marquant trois années de dévouement, de croissance et d'engagement étudiant.",
+                    "descriptionAr": "يستعد نادي سفراء فيزوس للاحتفال بذكرى تأسيسه الثالثة، احتفاءً بثلاث سنوات من الالتزام والنمو ومشاركة الطلبة.",
+                    "location": "ISIMS, Sfax",
+                    "locationFr": "ISIMS, Sfax",
+                    "locationAr": "ISIMS، صفاقس",
+                    "image": "/assets/images/events/previous/2025-2026/3rd anniversary/1.png",
+                    "gallery": [
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/2.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/3.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/4.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/5.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/6.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/7.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/8.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/9.png",
+                        "/assets/images/events/previous/2025-2026/3rd anniversary/10.png"
+                    ],
+                    "details": "The event promises a warm celebration that highlights the club's journey and achievements so far. Surprises and special moments are planned to make this anniversary memorable for members, guests, and partners. More details will be revealed as the date approaches.",
+                    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSeMv4Tw9BpgeI8P5lepvBQNYHjHPbamGr63jwC8RIP6CGjLfA/viewform"
+                },
                 {
                     "id": "pinky-night-october-awareness-2025",
                     "date": "2025-10-30",

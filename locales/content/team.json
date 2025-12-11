@@ -41,6 +41,15 @@
                 "image": "/assets/images/bureau/yassmin-dlima.jpeg"
             },
             {
+                "name":"Asma Lahmar",
+                "role": "Partnership Manager",
+                "roleFr": "Responsable Partenariats",
+                "roleAr": "مديرة الشراكات",
+                "email": "lahmarasma222@gmail.com",
+                "instagram": "https://www.instagram.com/asmaalahmar_",
+                "image": "/assets/images/bureau/asma-lahmar.jpeg"
+            },
+            {
                 "name": "Azer Chelly",
                 "role": "HR Manager",
                 "roleFr": "Responsable RH",
@@ -59,10 +68,19 @@
                 "image": "/assets/images/bureau/molka-besbes.jpeg"
             },
             {
-                "name": "Firas Hmidi",
+                "name": "Sarrah Yousfi",
                 "role": "Events Manager",
-                "roleFr": "Responsable Événements",
-                "roleAr": "مدير الفعاليات",
+                "roleFr": "Responsable Evénements",
+                "roleAr": "مديرة الفعاليات",
+                "email": "sarrahyousfi18@gmail.com",
+                "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
+                "image": "/assets/images/bureau/sarrah-yousfi.jpeg"
+            },
+            {
+                "name": "Firas Hmidi",
+                "role": "Events Assistant",
+                "roleFr": "Assistant événements",
+                "roleAr": "مساعد الفعاليات",
                 "email": "firaas.hmidi@gmail.com",
                 "instagram": "https://www.instagram.com/firashmidi_",
                 "linkedin": "https://www.linkedin.com/in/firashmidi",
@@ -77,15 +95,7 @@
                 "instagram": "https://www.instagram.com/zribi98",
                 "image": "/assets/images/bureau/mohamed-zribi.jpeg"
             },
-            {
-                "name": "Sarrah Yousfi",
-                "role": "Events Assistant",
-                "roleFr": "Assistante événements",
-                "roleAr": "مساعدة الفعاليات",
-                "email": "sarrahyousfi18@gmail.com",
-                "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
-                "image": "/assets/images/bureau/sarrah-yousfi.jpeg"
-            },
+        
             {
                 "name": "Razi Jemni",
                 "role": "Digital Communication Manager",

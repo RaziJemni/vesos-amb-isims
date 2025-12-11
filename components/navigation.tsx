@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "./language-toggle";
 import type { Language, Translations } from "@/lib/translations";
+import { cn } from "@/lib/utils";
 
 /**
  * Navigation component
@@ -45,6 +46,13 @@ export function Navigation({
         const element = document.querySelector(href);
         element?.scrollIntoView({ behavior: "smooth" });
     };
+
+    const joinButtonClasses = cn(
+        "transition-colors",
+        isScrolled
+            ? "bg-primary hover:bg-primary/90 text-white"
+            : "bg-white hover:bg-white/90 text-primary",
+    );
 
     return (
         <>
@@ -90,13 +98,14 @@ export function Navigation({
                             <div className="w-px h-6 bg-gray-300"></div>
                             <Button
                                 onClick={() => handleNavClick("#join")}
-                                className="bg-primary hover:bg-primary/90 text-white"
+                                className={joinButtonClasses}
                             >
                                 {t.nav.join}
                             </Button>
                             <LanguageToggle
                                 currentLanguage={currentLanguage}
                                 onChange={onLanguageChange}
+                                isScrolled={isScrolled}
                             />
                         </div>
 
@@ -105,6 +114,7 @@ export function Navigation({
                             <LanguageToggle
                                 currentLanguage={currentLanguage}
                                 onChange={onLanguageChange}
+                                isScrolled={isScrolled}
                             />
                             <Button
                                 variant="ghost"
@@ -140,7 +150,7 @@ export function Navigation({
                             ))}
                             <Button
                                 onClick={() => handleNavClick("#join")}
-                                className="bg-primary hover:bg-primary/90 text-white w-full mt-4"
+                                className={cn(joinButtonClasses, "w-full mt-4")}
                             >
                                 {t.nav.join}
                             </Button>

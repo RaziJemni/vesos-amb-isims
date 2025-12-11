@@ -24,11 +24,6 @@ export function Footer({ t }: FooterProps) {
       icon: Instagram,
       url: "https://www.instagram.com/club_ambassadeurs_sos_isims/", // CUSTOMIZE: Replace with your Instagram URL
     },
-    {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: "https://linkedin.com/company/club-ambassadeurs-sos", // CUSTOMIZE: Replace with your LinkedIn URL
-    },
     // CUSTOMIZE: Add more social links by adding objects with name, icon, and url properties
     // Example: { name: "Twitter", icon: Twitter, url: "https://twitter.com/yourhandle" }
   ]

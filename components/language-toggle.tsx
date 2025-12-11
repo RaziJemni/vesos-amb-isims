@@ -37,26 +37,22 @@ export function LanguageToggle({
         >
             <SelectTrigger
                 size="sm"
-                className="bg-transparent min-w-[130px] gap-2"
+                className="gap-2 bg-primary-dark text-primary-100 min-w-[80px] [&_svg]:text-primary-100 [&_.lucide-chevron-down]:opacity-100"
                 aria-label="Select language"
             >
-                <Globe className="h-4 w-4 text-muted-foreground" />
-                <div className="flex items-center gap-2">
-                    <span className="font-semibold">
-                        {selected?.short ?? currentLanguage.toUpperCase()}
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                        {selected?.label ?? "Language"}
-                    </span>
-                </div>
+                <Globe className="w-4 h-4 text-primary-dark" />
+                <span className="font-semibold">
+                    {selected?.short ?? currentLanguage.toUpperCase()}
+                </span>
             </SelectTrigger>
             <SelectContent align="end">
                 {languages.map((lang) => (
-                    <SelectItem key={lang.value} value={lang.value}>
-                        <span className="font-medium">{lang.short}</span>
-                        <span className="text-xs text-muted-foreground">
-                            {lang.label}
-                        </span>
+                    <SelectItem
+                        key={lang.value}
+                        value={lang.value}
+                        className="justify-center [&_svg]:text-primary-dark"
+                    >
+                        <span className="font-medium">{lang.label}</span>
                     </SelectItem>
                 ))}
             </SelectContent>
