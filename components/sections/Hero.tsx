@@ -37,7 +37,7 @@ export function Hero({ t }: HeroProps) {
                         Students Organization for Success
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-b from-primary-foreground to-primary-foreground/80">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance text-primary-foreground drop-shadow-sm">
                         {t.hero.title}
                     </h1>
 
