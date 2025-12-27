@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import type { Translations } from "@/lib/translations";
@@ -14,19 +12,24 @@ interface HeroProps {
 }
 
 export function Hero({ t }: HeroProps) {
-    const scrollToJoin = () => {
-        document.getElementById("join")?.scrollIntoView({ behavior: "smooth" });
-    };
-
     return (
         <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-primary text-primary-foreground">
             {/* Background pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+            <div
+                aria-hidden
+                className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+            />
 
             <div className="container relative z-10 px-4 py-20 md:py-32">
                 {/* Decorative circles */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-primary-foreground/10 animate-[spin_60s_linear_infinite]" />
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-primary-foreground/10 animate-[spin_45s_linear_infinite_reverse]" />
+                <div
+                    aria-hidden
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-primary-foreground/10 animate-[spin_60s_linear_infinite]"
+                />
+                <div
+                    aria-hidden
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-primary-foreground/10 animate-[spin_45s_linear_infinite_reverse]"
+                />
 
                 <div className="mx-auto max-w-4xl text-center space-y-12 animate-fade-in-up animate-in">
                     {/* Subtle label above title */}
@@ -44,13 +47,18 @@ export function Hero({ t }: HeroProps) {
 
                     <div className="flex flex-col items-center gap-6 pt-4">
                         <Button
+                            asChild
                             size="lg"
                             variant="secondary"
-                            onClick={scrollToJoin}
                             className="gap-2 text-lg px-8 py-6 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
                         >
-                            {t.hero.cta}
-                            <ArrowRight className="h-5 w-5" />
+                            <a
+                                href="#join"
+                                className="inline-flex items-center gap-2"
+                            >
+                                {t.hero.cta}
+                                <ArrowRight className="h-5 w-5" />
+                            </a>
                         </Button>
 
                         {/* Scroll indicator */}

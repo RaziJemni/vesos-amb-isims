@@ -1,8 +1,6 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { cookies } from "next/headers";
 import { getTranslations, type Language } from "@/lib/translations";
-import { Navigation } from "@/components/navigation";
+import HomeClient from "@/app/HomeClient";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Goals } from "@/components/sections/Goals";
@@ -11,29 +9,15 @@ import { Events } from "@/components/sections/Events";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { Footer } from "@/components/sections/Footer";
 
-export default function Home() {
-    const [language, setLanguage] = useState<Language>("en");
-
-    const handleLanguageChange = (lang: Language) => {
-        setLanguage(lang);
-    };
-
-    useEffect(() => {
-        if (typeof document !== "undefined") {
-            document.documentElement.lang = language;
-            document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-        }
-    }, [language]);
-
+export default async function Home() {
+    const cookieStore = await cookies();
+    const language =
+        (cookieStore.get("language")?.value as Language | undefined) || "en";
     const t = getTranslations(language);
 
     return (
         <main className="min-h-screen">
-            <Navigation
-                t={t}
-                currentLanguage={language}
-                onLanguageChange={handleLanguageChange}
-            />
+            <HomeClient initialLanguage={language} />
             <Hero t={t} />
             <About t={t} />
             <Goals t={t} />

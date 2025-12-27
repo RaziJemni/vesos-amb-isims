@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
@@ -136,9 +137,13 @@ export function PreviousBureausModal({
                                         className="h-full border border-gray-200 hover:shadow-md transition-shadow"
                                     >
                                         <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
-                                            <img
-                                                src={`${member.image}?w=320&h=320&fit=crop&auto=format&dpr=2`}
+                                            <Image
+                                                src={member.image}
                                                 alt={member.name}
+                                                width={320}
+                                                height={320}
+                                                loading="lazy"
+                                                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryModalProps {
@@ -38,7 +39,10 @@ export default function GalleryModal({
                 const last = focusables[focusables.length - 1];
                 const active = document.activeElement as HTMLElement | null;
                 if (e.shiftKey) {
-                    if (active === first || !modalRef.current.contains(active)) {
+                    if (
+                        active === first ||
+                        !modalRef.current.contains(active)
+                    ) {
                         e.preventDefault();
                         last.focus();
                     }
@@ -90,9 +94,13 @@ export default function GalleryModal({
                 </button>
 
                 {/* Main image */}
-                <img
+                <Image
                     src={images[currentIndex]}
                     alt={`Gallery image ${currentIndex + 1}`}
+                    width={1600}
+                    height={900}
+                    loading="lazy"
+                    sizes="100vw"
                     className="max-w-full max-h-full object-contain"
                 />
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -129,7 +130,7 @@ export function Events({ t, language }: EventsProps) {
                                         >
                                             {localizedEvent.image && (
                                                 <div className="w-full aspect-[16/9] overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5">
-                                                    <img
+                                                    <Image
                                                         src={
                                                             localizedEvent.image ||
                                                             "/placeholder.svg"
@@ -137,6 +138,10 @@ export function Events({ t, language }: EventsProps) {
                                                         alt={
                                                             localizedEvent.title
                                                         }
+                                                        width={1280}
+                                                        height={720}
+                                                        loading="lazy"
+                                                        sizes="(min-width: 1024px) 50vw, 100vw"
                                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                                     />
                                                 </div>
@@ -241,7 +246,7 @@ export function Events({ t, language }: EventsProps) {
                                                 >
                                                     {localizedEvent.image && (
                                                         <div className="w-full aspect-[16/9] overflow-hidden bg-gray-200">
-                                                            <img
+                                                            <Image
                                                                 src={
                                                                     localizedEvent.image ||
                                                                     "/placeholder.svg"
@@ -249,6 +254,10 @@ export function Events({ t, language }: EventsProps) {
                                                                 alt={
                                                                     localizedEvent.title
                                                                 }
+                                                                width={1280}
+                                                                height={720}
+                                                                loading="lazy"
+                                                                sizes="(min-width: 1024px) 50vw, 100vw"
                                                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                                             />
                                                         </div>

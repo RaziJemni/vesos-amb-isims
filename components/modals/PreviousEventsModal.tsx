@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, X } from "lucide-react";
@@ -178,9 +179,13 @@ export function PreviousEventsModal({
                                     >
                                         {localized.image && (
                                             <div className="w-full aspect-[16/9] overflow-hidden bg-gray-100">
-                                                <img
+                                                <Image
                                                     src={localized.image}
                                                     alt={localized.title}
+                                                    width={960}
+                                                    height={540}
+                                                    loading="lazy"
+                                                    sizes="(min-width: 1024px) 50vw, 100vw"
                                                     className="w-full h-full object-cover"
                                                 />
                                             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { X, MapPin, Calendar, Link as LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryModal from "@/components/modals/GalleryModal";
@@ -133,9 +134,13 @@ export default function EventDetailModal({
                             className="w-full h-64 md:h-80 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
                             onClick={() => handleImageClick(0)}
                         >
-                            <img
+                            <Image
                                 src={event.image || "/placeholder.svg"}
                                 alt={title}
+                                width={1280}
+                                height={720}
+                                loading="lazy"
+                                sizes="100vw"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -215,11 +220,15 @@ export default function EventDetailModal({
                                                 handleImageClick(i + 1)
                                             }
                                         >
-                                            <img
+                                            <Image
                                                 src={
                                                     image || "/placeholder.svg"
                                                 }
                                                 alt={`${title} ${i + 1}`}
+                                                width={600}
+                                                height={400}
+                                                loading="lazy"
+                                                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                                                 className="w-full h-40 object-cover"
                                             />
                                         </div>

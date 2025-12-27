@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -43,9 +44,13 @@ export function Team({ t, language }: TeamProps) {
                                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary "
                             >
                                 <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] bg-gradient-to-br from-primary/10 to-secondary/10">
-                                    <img
-                                        src={`${member.image}?w=400&h=500&fit=crop&auto=format&dpr=2`}
+                                    <Image
+                                        src={member.image}
                                         alt={member.name}
+                                        width={400}
+                                        height={500}
+                                        loading="lazy"
+                                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
