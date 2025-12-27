@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 // server and build remain stable.
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import AnalyticsClient from "./AnalyticsClient";
 import "./globals.css";
 
 // Load Aktiv Grotesk from local files. Place your WOFF2 files under public/fonts/
@@ -84,7 +84,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${aktiv.className} font-sans antialiased`}>
                 {children}
-                <Analytics />
+                <AnalyticsClient />
             </body>
         </html>
     );
