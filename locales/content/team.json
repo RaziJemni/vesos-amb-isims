@@ -10,7 +10,7 @@
                 "email": "farouksnoussi7@gmail.com",
                 "instagram": "https://www.instagram.com/farouk_the_creator/",
                 "linkedin": "https://www.linkedin.com/in/farouksnoussi",
-                "image": "/assets/images/bureau/farouk-snoussi.jpeg"
+                "image": "/assets/images/bureau/farouk-snoussi.avif"
             },
             {
                 "name": "Mohsen Hamza",
@@ -19,7 +19,7 @@
                 "roleAr": "نائب الرئيس",
                 "email": "mohsenhamza082@gmail.com",
                 "instagram": "https://www.instagram.com/mohsenhamza777777",
-                "image": "/assets/images/bureau/mohsin-hamza.jpeg"
+                "image": "/assets/images/bureau/mohsin-hamza.avif"
             },
             {
                 "name": "Mariam Elloumi",
@@ -29,7 +29,7 @@
                 "email": "mariemelloumi17@gmail.com",
                 "instagram": "https://www.instagram.com/mariam_elloumi19",
                 "linkedin": "https://www.linkedin.com/in/mariam-elloumi-6b478b361",
-                "image": "/assets/images/bureau/mariem-elloumi.jpeg"
+                "image": "/assets/images/bureau/mariem-elloumi.avif"
             },
             {
                 "name": "Yassmin Dlima",
@@ -38,7 +38,7 @@
                 "roleAr": "أمينة الصندوق",
                 "email": "dlimayassmin16@gmail.com",
                 "instagram": "https://www.instagram.com/dlima_yassmin",
-                "image": "/assets/images/bureau/yassmin-dlima.jpeg"
+                "image": "/assets/images/bureau/yassmin-dlima.avif"
             },
             {
                 "name":"Asma Lahmar",
@@ -47,7 +47,7 @@
                 "roleAr": "مديرة الشراكات",
                 "email": "lahmarasma222@gmail.com",
                 "instagram": "https://www.instagram.com/asmaalahmar_",
-                "image": "/assets/images/bureau/asma-lahmar.jpeg"
+                "image": "/assets/images/bureau/asma-lahmar.avif"
             },
             {
                 "name": "Azer Chelly",
@@ -56,7 +56,7 @@
                 "roleAr": "مدير الموارد البشرية",
                 "email": "azerchelly59@gmail.com",
                 "instagram": "https://www.instagram.com/chelly_azer",
-                "image": "/assets/images/bureau/azer-chilli.jpeg"
+                "image": "/assets/images/bureau/azer-chilli.avif"
             },
             {
                 "name": "Molka Besbes",
@@ -65,7 +65,7 @@
                 "roleAr": "مساعدة الموارد البشرية",
                 "email": "besbesmolka8@gmail.com",
                 "instagram": "https://www.instagram.com/molka_besbes_6",
-                "image": "/assets/images/bureau/molka-besbes.jpeg"
+                "image": "/assets/images/bureau/molka-besbes.avif"
             },
             {
                 "name": "Sarrah Yousfi",
@@ -74,7 +74,7 @@
                 "roleAr": "مديرة الفعاليات",
                 "email": "sarrahyousfi18@gmail.com",
                 "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
-                "image": "/assets/images/bureau/sarrah-yousfi.jpeg"
+                "image": "/assets/images/bureau/sarrah-yousfi.avif"
             },
             {
                 "name": "Firas Hmidi",
@@ -84,7 +84,7 @@
                 "email": "firaas.hmidi@gmail.com",
                 "instagram": "https://www.instagram.com/firashmidi_",
                 "linkedin": "https://www.linkedin.com/in/firashmidi",
-                "image": "/assets/images/bureau/firas-hmidi.jpeg"
+                "image": "/assets/images/bureau/firas-hmidi.avif"
             },
             {
                 "name": "Mohamed Zribi",
@@ -93,7 +93,7 @@
                 "roleAr": "مساعد الفعاليات",
                 "email": "medbusiness000@gmail.com",
                 "instagram": "https://www.instagram.com/zribi98",
-                "image": "/assets/images/bureau/mohamed-zribi.jpeg"
+                "image": "/assets/images/bureau/mohamed-zribi.avif"
             },
         
             {
@@ -104,7 +104,7 @@
                 "email": "razijemni264@gmail.com",
                 "instagram": "https://www.instagram.com/razi.jemni",
                 "linkedin": "https://www.linkedin.com/in/razi-jemni",
-                "image": "/assets/images/bureau/razi-jemni.jpeg"
+                "image": "/assets/images/bureau/razi-jemni.avif"
             },
             {
                 "name": "Yassine Abbes",
@@ -113,7 +113,7 @@
                 "roleAr": "مساعد التواصل الرقمي",
                 "email": "abbesyassine154@gmail.com",
                 "instagram": "https://www.instagram.com/yasssineabbes",
-                "image": "/assets/images/bureau/yassine-abbes.jpeg"
+                "image": "/assets/images/bureau/yassine-abbes.avif"
             }
         ]
     },
@@ -127,7 +127,7 @@
                     "roleFr": "Président",
                     "roleAr": "الرئيس",
                     "email": "farouksnoussi7@gmail.com",
-                    "image": "/assets/images/bureau/farouk-snoussi.jpeg"
+                    "image": "/assets/images/bureau/farouk-snoussi.avif"
                 },
                 {
                     "name": "Wissal Missaoui",
@@ -135,7 +135,7 @@
                     "roleFr": "Vice-présidente",
                     "roleAr": "نائبة الرئيس",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mohsin Hamza",
@@ -143,7 +143,7 @@
                     "roleFr": "Trésorier",
                     "roleAr": "أمين الصندوق",
                     "email": "mohsenhamza082@gmail.com",
-                    "image": "/assets/images/bureau/mohsin-hamza.jpeg"
+                    "image": "/assets/images/bureau/mohsin-hamza.avif"
                 },
                 {
                     "name": "Mariam Elloumi",
@@ -151,7 +151,7 @@
                     "roleFr": "Responsable Partenariats",
                     "roleAr": "مديرة الشراكات",
                     "email": "mariemelloumi17@gmail.com",
-                    "image": "/assets/images/bureau/mariem-elloumi.jpeg"
+                    "image": "/assets/images/bureau/mariem-elloumi.avif"
                 },
                 {
                     "name": "Med Aziz Tourki",
@@ -159,7 +159,7 @@
                     "roleFr": "Responsable RH",
                     "roleAr": "مدير الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Soulene Ktata",
@@ -167,7 +167,7 @@
                     "roleFr": "Assistante RH",
                     "roleAr": "مساعدة الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mazen Bahri",
@@ -175,7 +175,7 @@
                     "roleFr": "Responsable Événements",
                     "roleAr": "مدير الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mariam Louati",
@@ -183,7 +183,7 @@
                     "roleFr": "Assistante Événements",
                     "roleAr": "مساعدة الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mahdi Msalmi",
@@ -191,7 +191,7 @@
                     "roleFr": "Assistant Événements",
                     "roleAr": "مساعد الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Chaima Ajmi",
@@ -199,7 +199,7 @@
                     "roleFr": "Responsable Communication Digitale",
                     "roleAr": "مديرة التواصل الرقمي",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Oumaima Ben Salah",
@@ -207,7 +207,7 @@
                     "roleFr": "Assistante Communication Digitale",
                     "roleAr": "مساعدة التواصل الرقمي",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 }
             ]
         },
@@ -220,7 +220,7 @@
                     "roleFr": "Présidente",
                     "roleAr": "الرئيسة",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mohamed Amine Ben Hmad",
@@ -228,7 +228,7 @@
                     "roleFr": "Vice-président",
                     "roleAr": "نائب الرئيس",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Acil Mabrouki",
@@ -236,7 +236,7 @@
                     "roleFr": "Secrétaire générale",
                     "roleAr": "الأمينة العامة",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Adem Makni",
@@ -244,7 +244,7 @@
                     "roleFr": "Trésorier",
                     "roleAr": "أمين الصندوق",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Ahmed Makni",
@@ -252,7 +252,7 @@
                     "roleFr": "Responsable RH",
                     "roleAr": "مدير الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mahdi Chtara",
@@ -260,7 +260,7 @@
                     "roleFr": "Responsable Événements",
                     "roleAr": "مدير الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Yosr Mrad",
@@ -268,7 +268,7 @@
                     "roleFr": "Responsable Communication",
                     "roleAr": "مسؤولة التواصل",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Ahmed Walha",
@@ -276,7 +276,7 @@
                     "roleFr": "Responsable Partenariats",
                     "roleAr": "مسؤول الشراكات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Arwa Miledi",
@@ -284,7 +284,7 @@
                     "roleFr": "Assistante Communication",
                     "roleAr": "مساعدة التواصل",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Amina Bouaasida",
@@ -292,7 +292,7 @@
                     "roleFr": "Assistante Communication",
                     "roleAr": "مساعدة التواصل",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Moataz Triki",
@@ -300,7 +300,7 @@
                     "roleFr": "Assistant RH",
                     "roleAr": "مساعد الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Ayoub Barkia",
@@ -308,7 +308,7 @@
                     "roleFr": "Assistant Événements",
                     "roleAr": "مساعد الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Jihen Kachouri",
@@ -316,7 +316,7 @@
                     "roleFr": "Assistante Partenariats",
                     "roleAr": "مساعدة الشراكات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 }
             ]
         },
@@ -329,7 +329,7 @@
                     "roleFr": "Présidente",
                     "roleAr": "الرئيسة",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Abdessalem Chaouch",
@@ -337,7 +337,7 @@
                     "roleFr": "Vice-président",
                     "roleAr": "نائب الرئيس",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Adem Makni",
@@ -345,7 +345,7 @@
                     "roleFr": "Trésorier",
                     "roleAr": "أمين الصندوق",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Achref Gallaoui",
@@ -353,7 +353,7 @@
                     "roleFr": "Responsable Partenariats",
                     "roleAr": "مسؤول الشراكات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Bacem Hlabba",
@@ -361,7 +361,7 @@
                     "roleFr": "Assistant Partenariats",
                     "roleAr": "مساعد الشراكات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mohamed Amine Ben Hmad",
@@ -369,7 +369,7 @@
                     "roleFr": "Responsable RH",
                     "roleAr": "مدير الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Ahmed Makni",
@@ -377,7 +377,7 @@
                     "roleFr": "Assistant RH",
                     "roleAr": "مساعد الموارد البشرية",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Samar Elghoul",
@@ -385,7 +385,7 @@
                     "roleFr": "Responsable Événementiel",
                     "roleAr": "مديرة الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Mahdi Chtara",
@@ -393,7 +393,7 @@
                     "roleFr": "Assistant Événementiel",
                     "roleAr": "مساعد الفعاليات",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Yosr Mrad",
@@ -401,7 +401,7 @@
                     "roleFr": "Responsable Communication",
                     "roleAr": "مسؤولة التواصل",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Sami Zidi",
@@ -409,7 +409,7 @@
                     "roleFr": "Assistant Communication",
                     "roleAr": "مساعد التواصل",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 },
                 {
                     "name": "Acil Mabrouki",
@@ -417,7 +417,7 @@
                     "roleFr": "Secrétaire générale",
                     "roleAr": "الأمينة العامة",
                     "email": "",
-                    "image": "/assets/images/bureau/placeholder-member.jpg"
+                    "image": "/assets/images/bureau/placeholder-member.avif"
                 }
             ]
         }
