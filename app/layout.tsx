@@ -17,7 +17,7 @@ import "./globals.css";
 // Prefer local Aktiv Grotesk if font files are present; otherwise fall back to Inter
 
 // Fallback font while Aktiv Grotesk files are not present
-const aktiv = Inter({ subsets: ["latin"] });
+const aktiv = Inter({ subsets: ["latin"], display: "swap" });
 
 /*
 // To enable Aktiv Grotesk when you have the font files, copy them to
