@@ -26,11 +26,13 @@ export interface Translations {
         goals: string;
         events: string;
         join: string;
+        learnMore: string;
     };
     hero: {
         title: string;
         subtitle: string;
         cta: string;
+        donate: string;
     };
     about: {
         title: string;
@@ -134,7 +136,7 @@ export const getTranslations = (language: Language): Translations => {
 export const t = (
     language: Language,
     key: string,
-    fallback?: string
+    fallback?: string,
 ): string => {
     const keys = key.split(".");
     let value: any = translations[language] || translations.en;
@@ -152,7 +154,7 @@ export const t = (
 // Get localized team member role
 export const getLocalizedRole = (
     member: TeamMember,
-    language: Language
+    language: Language,
 ): string => {
     if (language === "fr") return member.roleFr || member.role;
     if (language === "ar")
@@ -168,30 +170,30 @@ export const getLocalizedEvent = (event: Event, language: Language): Event => {
             language === "fr"
                 ? event.titleFr || event.title
                 : language === "ar"
-                ? (event as any).titleAr || event.titleFr || event.title
-                : event.title,
+                  ? (event as any).titleAr || event.titleFr || event.title
+                  : event.title,
         description:
             language === "fr"
                 ? event.descriptionFr || event.description
                 : language === "ar"
-                ? (event as any).descriptionAr ||
-                  event.descriptionFr ||
-                  event.description
-                : event.description,
+                  ? (event as any).descriptionAr ||
+                    event.descriptionFr ||
+                    event.description
+                  : event.description,
         location:
             language === "fr"
                 ? event.locationFr || event.location
                 : language === "ar"
-                ? (event as any).locationAr ||
-                  event.locationFr ||
-                  event.location
-                : event.location,
+                  ? (event as any).locationAr ||
+                    event.locationFr ||
+                    event.location
+                  : event.location,
         details:
             language === "fr"
                 ? event.detailsFr || event.details
                 : language === "ar"
-                ? (event as any).detailsAr || event.detailsFr || event.details
-                : event.details,
+                  ? (event as any).detailsAr || event.detailsFr || event.details
+                  : event.details,
     };
 };
 

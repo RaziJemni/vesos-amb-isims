@@ -2,16 +2,19 @@
     "en": {
         "title": "SOS Children's Village Ambassadors Club of ISIMS",
         "subtitle": "Join our mission to support children in vulnerable situations through charitable actions and solidarity events.",
-        "cta": "Become a Member"
+        "cta": "Become a Member",
+        "donate": "Donate Here"
     },
     "fr": {
         "title": "Club Ambassadeurs SOS Village d'Enfants de l'ISIMS",
         "subtitle": "Rejoignez notre mission d'aider les enfants en situation fragile grâce à des actions caritatives et des événements solidaires.",
-        "cta": "Devenir membre"
+        "cta": "Devenir membre",
+        "donate": "Donner Ici"
     },
     "ar": {
         "title": "نادي سفراء قرية الأطفال SOS في ISIMS",
         "subtitle": "انضم إلى مهمتنا لدعم الأطفال في أوضاع هشّة عبر أعمال خيرية وفعاليات تضامنية.",
-        "cta": "انضم كعضو"
+        "cta": "انضم كعضو",
+        "donate": "تبرع هنا"
     }
 }

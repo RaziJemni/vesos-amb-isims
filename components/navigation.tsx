@@ -65,24 +65,46 @@ export function Navigation({
             >
                 <div className="container px-4">
                     <div className="flex items-center justify-between h-16 md:h-20">
-                        {/* Logo */}
-                        <button
-                            onClick={() =>
-                                window.scrollTo({ top: 0, behavior: "smooth" })
-                            }
-                            className="text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity"
-                        >
-                            {/* Show white logo when nav is over the hero (transparent), otherwise show blue logo */}
-                            <img
-                                src={
-                                    isScrolled
-                                        ? "/assets/icons/logo-blue.svg"
-                                        : "/assets/icons/logo-white.svg"
+                        {/* Logo Section */}
+                        <div className="flex items-center gap-2 md:gap-3">
+                            {/* ISIMS Logo */}
+                            <button
+                                onClick={() =>
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    })
                                 }
-                                alt="SOS Club Logo"
-                                className="h-26 md:h-34"
-                            />
-                        </button>
+                                className="hover:opacity-80 transition-opacity"
+                            >
+                                <img
+                                    src="/assets/icons/logo-isims.svg"
+                                    alt="ISIMS Logo"
+                                    className="h-10 md:h-12"
+                                />
+                            </button>
+                            {/* Main Logo */}
+                            <button
+                                onClick={() =>
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    })
+                                }
+                                className="text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity"
+                            >
+                                {/* Show white logo when nav is over the hero (transparent), otherwise show blue logo */}
+                                <img
+                                    src={
+                                        isScrolled
+                                            ? "/assets/icons/logo-blue.svg"
+                                            : "/assets/icons/logo-white.svg"
+                                    }
+                                    alt="SOS Club Logo"
+                                    className="h-26 md:h-34"
+                                />
+                            </button>
+                        </div>
 
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center gap-8">
@@ -101,6 +123,20 @@ export function Navigation({
                                 className={joinButtonClasses}
                             >
                                 {t.nav.join}
+                            </Button>
+                            <Button
+                                onClick={() =>
+                                    window.open("https://sosve.tn", "_blank")
+                                }
+                                variant="outline"
+                                className={cn(
+                                    "transition-colors",
+                                    isScrolled
+                                        ? "border-primary text-primary hover:bg-primary/10"
+                                        : "border-white text-primary hover:bg-white/10",
+                                )}
+                            >
+                                {t.nav.learnMore}
                             </Button>
                             <LanguageToggle
                                 currentLanguage={currentLanguage}

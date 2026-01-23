@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import type { Translations } from "@/lib/translations";
@@ -46,20 +48,33 @@ export function Hero({ t }: HeroProps) {
                     </p>
 
                     <div className="flex flex-col items-center gap-6 pt-4">
-                        <Button
-                            asChild
-                            size="lg"
-                            variant="secondary"
-                            className="gap-2 text-lg px-8 py-6 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
-                        >
-                            <a
-                                href="#join"
-                                className="inline-flex items-center gap-2"
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Button
+                                asChild
+                                size="lg"
+                                variant="secondary"
+                                className="gap-2 text-lg px-8 py-6 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
                             >
-                                {t.hero.cta}
+                                <a
+                                    href="#join"
+                                    className="inline-flex items-center gap-2"
+                                >
+                                    {t.hero.cta}
+                                    <ArrowRight className="h-5 w-5" />
+                                </a>
+                            </Button>
+                            <Button
+                                size="lg"
+                                variant="outline"
+                                className="gap-2 text-lg font-bold px-8 py-6 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl text-primary border-primary-foreground hover:bg-primary-foreground/10"
+                                onClick={() =>
+                                    window.open("https://sosve.tn", "_blank")
+                                }
+                            >
+                                {t.hero.donate}
                                 <ArrowRight className="h-5 w-5" />
-                            </a>
-                        </Button>
+                            </Button>
+                        </div>
 
                         {/* Scroll indicator */}
                         <div className="text-sm text-primary-foreground/60 flex items-center gap-2 animate-bounce">

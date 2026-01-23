@@ -4,20 +4,23 @@
         "bureau": "Bureau",
         "goals": "Goals",
         "events": "Events",
-        "join": "Join"
+        "join": "Join",
+        "learnMore": "Learn More"
     },
     "fr": {
         "about": "À Propos",
         "bureau": "Bureau",
         "goals": "Objectifs",
         "events": "Événements",
-        "join": "Rejoindre"
+        "join": "Rejoindre",
+        "learnMore": "En Savoir Plus"
     },
     "ar": {
         "about": "من نحن",
         "bureau": "المكتب",
         "goals": "أهدافنا",
         "events": "فعالياتنا",
-        "join": "انضم"
+        "join": "انضم",
+        "learnMore": "معرفة المزيد"
     }
 }

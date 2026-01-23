@@ -8,15 +8,18 @@ import {
     SelectItem,
     SelectTrigger,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 interface LanguageToggleProps {
     currentLanguage: Language;
     onChange: (language: Language) => void;
+    isScrolled?: boolean;
 }
 
 export function LanguageToggle({
     currentLanguage,
     onChange,
+    isScrolled = false,
 }: LanguageToggleProps) {
     const languages: Array<{
         value: Language;
@@ -37,7 +40,13 @@ export function LanguageToggle({
         >
             <SelectTrigger
                 size="sm"
-                className="gap-2 bg-primary-dark text-primary-100 min-w-[80px] [&_svg]:text-primary-100 [&_.lucide-chevron-down]:opacity-100"
+                className={cn(
+                    "gap-2 min-w-[80px] transition-colors",
+                    isScrolled
+                        ? "bg-primary-dark text-primary-100 border-primary [&_svg]:text-primary-dark"
+                        : "bg-primary-dark text-primary-100 border-white [&_svg]:text-primary-100",
+                    "[&_.lucide-chevron-down]:opacity-100",
+                )}
                 aria-label="Select language"
             >
                 <Globe className="w-4 h-4 text-primary-dark" />
