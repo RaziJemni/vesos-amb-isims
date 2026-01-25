@@ -66,10 +66,17 @@ export interface JoinFormData {
   fullname: string
   email: string
   phone: string
+  facebookLink: string
+  region: string
   university: string
-  studyField: string
-  year: string
-  motivation: string
+  studyLevel: string
+  specialty: string
+  clubExperience: string
+  desiredPosition: string
+  department: string
+  sosVillageKnowledge: string
+  inPersonMeeting: string
+  additionalInfo: string
 }
 
 // Form status type
