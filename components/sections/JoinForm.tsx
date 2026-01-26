@@ -24,43 +24,88 @@ interface JoinFormProps {
 // Replace with your actual Google Form endpoint URL or set via env var
 const GOOGLE_FORM_ACTION_URL =
     process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL ||
-    "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
+    "https://docs.google.com/forms/d/e/1FAIpQLSc8alGL3JBsLx29KUsxBaJdsI2cDALwidgm5b6snlYNVSqr9A/formResponse";
 
 // Replace with your actual Google Form field IDs
 const FORM_FIELD_IDS = {
     fullname:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_FULLNAME_FIELD || "entry.123456789",
-    email: process.env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL_FIELD || "entry.987654321",
-    phone: process.env.NEXT_PUBLIC_GOOGLE_FORM_PHONE_FIELD || "entry.456789012",
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_FULLNAME_FIELD ||
+        "entry.1084028260",
+    email: process.env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL_FIELD || "entry.800206959",
+    phone:
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_PHONE_FIELD || "entry.1989929430",
     facebookLink:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_FACEBOOK_FIELD || "entry.111111111",
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_FACEBOOK_FIELD ||
+        "entry.1051747649",
     region:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_REGION_FIELD || "entry.222222222",
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_REGION_FIELD || "entry.404387569",
     university:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_UNIVERSITY_FIELD ||
-        "entry.345678901",
+        "entry.1226389771",
     studyLevel:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_STUDY_LEVEL_FIELD ||
-        "entry.333333333",
+        "entry.441955682",
     specialty:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_SPECIALTY_FIELD ||
-        "entry.444444444",
+        "entry.1220947707",
     clubExperience:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_CLUB_EXP_FIELD || "entry.555555555",
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_CLUB_EXP_FIELD ||
+        "entry.1326252408",
     desiredPosition:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_POSITION_FIELD || "entry.666666666",
+        process.env.NEXT_PUBLIC_GOOGLE_FORM_POSITION_FIELD || "entry.289995857",
     department:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_DEPARTMENT_FIELD ||
-        "entry.777777777",
+        "entry.1945779867",
     sosVillageKnowledge:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_SOS_KNOWLEDGE_FIELD ||
-        "entry.888888888",
+        "entry.1221866460",
     inPersonMeeting:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_IN_PERSON_FIELD ||
-        "entry.999999999",
+        "entry.1226591802",
     additionalInfo:
         process.env.NEXT_PUBLIC_GOOGLE_FORM_ADDITIONAL_INFO_FIELD ||
-        "entry.121212121",
+        "entry.2045967029",
+};
+
+// Map internal values to exact Google Form option text (in French)
+const GOOGLE_FORM_VALUES: Record<string, Record<string, string>> = {
+    university: {
+        ISIMS: "ISIMS",
+        Autre: "Autre",
+    },
+    studyLevel: {
+        "1st-year": "Première année",
+        "2nd-year": "Deuxième année",
+        "3rd-year": "Troisième année",
+        other: "Autre",
+    },
+    clubExperience: {
+        yes: "Oui",
+        no: "Non",
+    },
+    desiredPosition: {
+        treasurer: "Trésorier",
+        "event-manager": "Partenariat",
+        "digital-assistant": "Assistant responsable événementiel",
+        member: "Membre",
+    },
+    department: {
+        hr: "Département ressources humaines",
+        events: "Département événementiel",
+        "digital-comm": "Département communication digitale",
+    },
+    sosVillageKnowledge: {
+        know: "Oui, je suivis les nouvelles de l'association et ses missions",
+        partial:
+            "J'ai une connaissance générale de l'association, mais je voudrais en savoir plus",
+        "dont-know":
+            "Non, je ne connais pas encore l'association, mais je suis intéressé(e) à en apprendre davantage.",
+    },
+    inPersonMeeting: {
+        yes: "Oui",
+        "not-sure": "Pas sure",
+        no: "Non",
+    },
 };
 
 export function JoinForm({ t, language }: JoinFormProps) {
@@ -86,6 +131,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
     >({});
     const ref = useScrollAnimation();
     const formConfigured = !GOOGLE_FORM_ACTION_URL.includes("YOUR_FORM_ID");
+    const formToggler = true; // Set to false to disable the form
 
     const validateForm = (): boolean => {
         const newErrors: Partial<Record<keyof JoinFormData, boolean>> = {};
@@ -124,6 +170,9 @@ export function JoinForm({ t, language }: JoinFormProps) {
         setStatus("loading");
 
         try {
+            console.log("Form submission started");
+            console.log("Form data:", formData);
+
             const googleFormData = new FormData();
             googleFormData.append(FORM_FIELD_IDS.fullname, formData.fullname);
             googleFormData.append(FORM_FIELD_IDS.email, formData.email);
@@ -135,46 +184,64 @@ export function JoinForm({ t, language }: JoinFormProps) {
             googleFormData.append(FORM_FIELD_IDS.region, formData.region);
             googleFormData.append(
                 FORM_FIELD_IDS.university,
-                formData.university,
+                GOOGLE_FORM_VALUES.university[formData.university] ||
+                    formData.university,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.studyLevel,
-                formData.studyLevel,
+                GOOGLE_FORM_VALUES.studyLevel[formData.studyLevel] ||
+                    formData.studyLevel,
             );
             googleFormData.append(FORM_FIELD_IDS.specialty, formData.specialty);
             googleFormData.append(
                 FORM_FIELD_IDS.clubExperience,
-                formData.clubExperience,
+                GOOGLE_FORM_VALUES.clubExperience[formData.clubExperience] ||
+                    formData.clubExperience,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.desiredPosition,
-                formData.desiredPosition,
+                GOOGLE_FORM_VALUES.desiredPosition[formData.desiredPosition] ||
+                    formData.desiredPosition,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.department,
-                formData.department,
+                GOOGLE_FORM_VALUES.department[formData.department] ||
+                    formData.department,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.sosVillageKnowledge,
-                formData.sosVillageKnowledge,
+                GOOGLE_FORM_VALUES.sosVillageKnowledge[
+                    formData.sosVillageKnowledge
+                ] || formData.sosVillageKnowledge,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.inPersonMeeting,
-                formData.inPersonMeeting,
+                GOOGLE_FORM_VALUES.inPersonMeeting[formData.inPersonMeeting] ||
+                    formData.inPersonMeeting,
             );
             googleFormData.append(
                 FORM_FIELD_IDS.additionalInfo,
                 formData.additionalInfo,
             );
 
+            const debugPayload = Array.from(googleFormData.entries());
+            console.log("Google Form payload entries:", debugPayload);
+            console.log("Google Form URL:", GOOGLE_FORM_ACTION_URL);
+            console.log("FormData prepared, sending to Google Forms...");
+
             await fetch(GOOGLE_FORM_ACTION_URL, {
                 method: "POST",
                 body: googleFormData,
                 mode: "no-cors",
             });
+            console.log(
+                "Fetch completed (opaque response expected with no-cors)",
+            );
 
+            console.log("Form submitted successfully to Google Forms");
             setStatus("success");
             setErrors({});
+            console.log("Form reset and status set to success");
             setFormData({
                 fullname: "",
                 email: "",
@@ -217,6 +284,11 @@ export function JoinForm({ t, language }: JoinFormProps) {
                     <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
                         The join form is curreently unavailable. Please wait
                         until its back online.
+                    </div>
+                )}
+                {!formToggler && (
+                    <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
+                        Form is disabled for now
                     </div>
                 )}
 
@@ -913,7 +985,9 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                 size="lg"
                                 className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold"
                                 disabled={
-                                    status === "loading" || !formConfigured
+                                    status === "loading" ||
+                                    !formConfigured ||
+                                    !formToggler
                                 }
                             >
                                 {status === "loading"
