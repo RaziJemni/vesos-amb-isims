@@ -21,92 +21,10 @@ interface JoinFormProps {
     language: Language;
 }
 
-// Replace with your actual Google Form endpoint URL or set via env var
-const GOOGLE_FORM_ACTION_URL =
-    process.env.NEXT_PUBLIC_GOOGLE_FORM_ACTION_URL ||
-    "https://docs.google.com/forms/d/e/1FAIpQLSc8alGL3JBsLx29KUsxBaJdsI2cDALwidgm5b6snlYNVSqr9A/formResponse";
-
-// Replace with your actual Google Form field IDs
-const FORM_FIELD_IDS = {
-    fullname:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_FULLNAME_FIELD ||
-        "entry.1084028260",
-    email: process.env.NEXT_PUBLIC_GOOGLE_FORM_EMAIL_FIELD || "entry.800206959",
-    phone:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_PHONE_FIELD || "entry.1989929430",
-    facebookLink:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_FACEBOOK_FIELD ||
-        "entry.1051747649",
-    region:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_REGION_FIELD || "entry.404387569",
-    university:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_UNIVERSITY_FIELD ||
-        "entry.1226389771",
-    studyLevel:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_STUDY_LEVEL_FIELD ||
-        "entry.441955682",
-    specialty:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_SPECIALTY_FIELD ||
-        "entry.1220947707",
-    clubExperience:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_CLUB_EXP_FIELD ||
-        "entry.1326252408",
-    desiredPosition:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_POSITION_FIELD || "entry.289995857",
-    department:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_DEPARTMENT_FIELD ||
-        "entry.1945779867",
-    sosVillageKnowledge:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_SOS_KNOWLEDGE_FIELD ||
-        "entry.1221866460",
-    inPersonMeeting:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_IN_PERSON_FIELD ||
-        "entry.1226591802",
-    additionalInfo:
-        process.env.NEXT_PUBLIC_GOOGLE_FORM_ADDITIONAL_INFO_FIELD ||
-        "entry.2045967029",
-};
-
-// Map internal values to exact Google Form option text (in French)
-const GOOGLE_FORM_VALUES: Record<string, Record<string, string>> = {
-    university: {
-        ISIMS: "ISIMS",
-        Autre: "Autre",
-    },
-    studyLevel: {
-        "1st-year": "Première année",
-        "2nd-year": "Deuxième année",
-        "3rd-year": "Troisième année",
-        other: "Autre",
-    },
-    clubExperience: {
-        yes: "Oui",
-        no: "Non",
-    },
-    desiredPosition: {
-        treasurer: "Trésorier",
-        "event-manager": "Partenariat",
-        "digital-assistant": "Assistant responsable événementiel",
-        member: "Membre",
-    },
-    department: {
-        hr: "Département ressources humaines",
-        events: "Département événementiel",
-        "digital-comm": "Département communication digitale",
-    },
-    sosVillageKnowledge: {
-        know: "Oui, je suivis les nouvelles de l'association et ses missions",
-        partial:
-            "J'ai une connaissance générale de l'association, mais je voudrais en savoir plus",
-        "dont-know":
-            "Non, je ne connais pas encore l'association, mais je suis intéressé(e) à en apprendre davantage.",
-    },
-    inPersonMeeting: {
-        yes: "Oui",
-        "not-sure": "Pas sure",
-        no: "Non",
-    },
-};
+// Replace with your Google Apps Script Web App URL
+const APPS_SCRIPT_URL =
+    process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ||
+    "https://script.google.com/macros/s/AKfycbwAckSAOVpA-95T47jbomhXWSIXfR0ReBOmpB5i7IS1vJQm7rbzwBiNQrogo_uLcdq2Hw/exec";
 
 export function JoinForm({ t, language }: JoinFormProps) {
     const [formData, setFormData] = useState<JoinFormData>({
@@ -130,7 +48,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
         Partial<Record<keyof JoinFormData, boolean>>
     >({});
     const ref = useScrollAnimation();
-    const formConfigured = !GOOGLE_FORM_ACTION_URL.includes("YOUR_FORM_ID");
+    const formConfigured = !APPS_SCRIPT_URL.includes("YOUR_APPS_SCRIPT_URL");
     const formToggler = true; // Set to false to disable the form
 
     const validateForm = (): boolean => {
@@ -173,93 +91,43 @@ export function JoinForm({ t, language }: JoinFormProps) {
             console.log("Form submission started");
             console.log("Form data:", formData);
 
-            const googleFormData = new FormData();
-            googleFormData.append(FORM_FIELD_IDS.fullname, formData.fullname);
-            googleFormData.append(FORM_FIELD_IDS.email, formData.email);
-            googleFormData.append(FORM_FIELD_IDS.phone, formData.phone);
-            googleFormData.append(
-                FORM_FIELD_IDS.facebookLink,
-                formData.facebookLink,
-            );
-            googleFormData.append(FORM_FIELD_IDS.region, formData.region);
-            googleFormData.append(
-                FORM_FIELD_IDS.university,
-                GOOGLE_FORM_VALUES.university[formData.university] ||
-                    formData.university,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.studyLevel,
-                GOOGLE_FORM_VALUES.studyLevel[formData.studyLevel] ||
-                    formData.studyLevel,
-            );
-            googleFormData.append(FORM_FIELD_IDS.specialty, formData.specialty);
-            googleFormData.append(
-                FORM_FIELD_IDS.clubExperience,
-                GOOGLE_FORM_VALUES.clubExperience[formData.clubExperience] ||
-                    formData.clubExperience,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.desiredPosition,
-                GOOGLE_FORM_VALUES.desiredPosition[formData.desiredPosition] ||
-                    formData.desiredPosition,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.department,
-                GOOGLE_FORM_VALUES.department[formData.department] ||
-                    formData.department,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.sosVillageKnowledge,
-                GOOGLE_FORM_VALUES.sosVillageKnowledge[
-                    formData.sosVillageKnowledge
-                ] || formData.sosVillageKnowledge,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.inPersonMeeting,
-                GOOGLE_FORM_VALUES.inPersonMeeting[formData.inPersonMeeting] ||
-                    formData.inPersonMeeting,
-            );
-            googleFormData.append(
-                FORM_FIELD_IDS.additionalInfo,
-                formData.additionalInfo,
-            );
-
-            const debugPayload = Array.from(googleFormData.entries());
-            console.log("Google Form payload entries:", debugPayload);
-            console.log("Google Form URL:", GOOGLE_FORM_ACTION_URL);
-            console.log("FormData prepared, sending to Google Forms...");
-
-            await fetch(GOOGLE_FORM_ACTION_URL, {
+            const response = await fetch("/api/submit-form", {
                 method: "POST",
-                body: googleFormData,
-                mode: "no-cors",
-            });
-            console.log(
-                "Fetch completed (opaque response expected with no-cors)",
-            );
-
-            console.log("Form submitted successfully to Google Forms");
-            setStatus("success");
-            setErrors({});
-            console.log("Form reset and status set to success");
-            setFormData({
-                fullname: "",
-                email: "",
-                phone: "",
-                facebookLink: "",
-                region: "",
-                university: "",
-                studyLevel: "",
-                specialty: "",
-                clubExperience: "",
-                desiredPosition: "",
-                department: "",
-                sosVillageKnowledge: "",
-                inPersonMeeting: "",
-                additionalInfo: "",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
             });
 
-            setTimeout(() => setStatus("idle"), 5000);
+            const result = await response.json();
+            console.log("Server response:", result);
+
+            if (result.success) {
+                setStatus("success");
+                setErrors({});
+                setFormData({
+                    fullname: "",
+                    email: "",
+                    phone: "",
+                    facebookLink: "",
+                    region: "",
+                    university: "",
+                    studyLevel: "",
+                    specialty: "",
+                    clubExperience: "",
+                    desiredPosition: "",
+                    department: "",
+                    sosVillageKnowledge: "",
+                    inPersonMeeting: "",
+                    additionalInfo: "",
+                });
+                console.log("Form submitted successfully and reset");
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                console.error("Submission failed:", result.error);
+                setStatus("error");
+                setTimeout(() => setStatus("idle"), 5000);
+            }
         } catch (error) {
             console.error("Form submission error:", error);
             setStatus("error");
