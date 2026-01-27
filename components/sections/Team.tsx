@@ -55,58 +55,68 @@ export function Team({ t, language }: TeamProps) {
                                     />
                                 </div>
                                 <CardContent className="p-6">
-                                    <div className={`text-center mb-4 ${member.isMascot ? "" : ""}`}>
-                                        <h3 className={`${member.isMascot ? "text-4xl text-primary font-bold" : "text-xl font-semibold mb-1 text-primary-dark"}`}>
+                                    <div
+                                        className={`text-center mb-4 ${member.isMascot ? "" : ""}`}
+                                    >
+                                        <h3
+                                            className={`${member.isMascot ? "text-4xl text-primary font-bold" : "text-xl font-semibold mb-1 text-primary-dark"}`}
+                                        >
                                             {member.name}
                                         </h3>
-                                        <p className={`${member.isMascot ? "text-xl text-primary-dark" : "text-primary-dark font-medium"}`}>
+                                        <p
+                                            className={`${member.isMascot ? "text-xl text-primary-dark" : "text-primary-dark font-medium"}`}
+                                        >
                                             {getLocalizedRole(member, language)}
                                         </p>
                                     </div>
 
                                     {!member.isMascot && (
-                                    <div className="space-y-3 border-t pt-4">
-                                        {member.email && (
-                                            <div className="flex items-center justify-center gap-2 text-sm">
-                                                <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
-                                                <a
-                                                    href={`mailto:${member.email}`}
-                                                    className="text-primary-dark hover:text-primary transition-colors truncate"
-                                                    title={member.email}
-                                                >
-                                                    {member.email}
-                                                </a>
-                                            </div>
-                                        )}
+                                        <div className="space-y-3 border-t pt-4">
+                                            {member.email && (
+                                                <div className="flex items-center justify-center gap-2 text-sm">
+                                                    <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
+                                                    <a
+                                                        href={`mailto:${member.email}`}
+                                                        className="text-primary-dark hover:text-primary transition-colors truncate"
+                                                        title={member.email}
+                                                    >
+                                                        {member.email}
+                                                    </a>
+                                                </div>
+                                            )}
 
-                                        {(member.instagram ||
-                                            member.linkedin) && (
-                                            <div className="flex justify-center gap-3 pt-2">
-                                                {member.instagram && (
-                                                    <a
-                                                        href={member.instagram}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
-                                                        title="Instagram"
-                                                    >
-                                                        <Instagram className="h-4 w-4" />
-                                                    </a>
-                                                )}
-                                                {member.linkedin && (
-                                                    <a
-                                                        href={member.linkedin}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
-                                                        title="LinkedIn"
-                                                    >
-                                                        <Linkedin className="h-4 w-4" />
-                                                    </a>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
+                                            {(member.instagram ||
+                                                member.linkedin) && (
+                                                <div className="flex justify-center gap-3 pt-2">
+                                                    {member.instagram && (
+                                                        <a
+                                                            href={
+                                                                member.instagram
+                                                            }
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
+                                                            title="Instagram"
+                                                        >
+                                                            <Instagram className="h-4 w-4" />
+                                                        </a>
+                                                    )}
+                                                    {member.linkedin && (
+                                                        <a
+                                                            href={
+                                                                member.linkedin
+                                                            }
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-9 h-9 bg-secondary text-white rounded-full flex items-center justify-center hover:opacity-80 hover:scale-110 transition-all duration-300 flex-shrink-0"
+                                                            title="LinkedIn"
+                                                        >
+                                                            <Linkedin className="h-4 w-4" />
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
                                     )}
                                 </CardContent>
                             </Card>
@@ -125,8 +135,8 @@ export function Team({ t, language }: TeamProps) {
                             {language === "fr"
                                 ? "Bureaux precedents"
                                 : language === "ar"
-                                ? "المكاتب السابقة"
-                                : "Previous bureaus"}
+                                  ? "المكاتب السابقة"
+                                  : "Previous bureaus"}
                         </Button>
                     </div>
                 </div>
