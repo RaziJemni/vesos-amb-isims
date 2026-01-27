@@ -41,9 +41,9 @@ export function Team({ t, language }: TeamProps) {
                         {teamData.currentBureau.members.map((member, index) => (
                             <Card
                                 key={index}
-                                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary "
+                                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary"
                             >
-                                <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] bg-gradient-to-br from-primary/10 to-secondary/10">
+                                <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] bg-primary">
                                     <Image
                                         src={member.image}
                                         alt={member.name}
@@ -55,15 +55,16 @@ export function Team({ t, language }: TeamProps) {
                                     />
                                 </div>
                                 <CardContent className="p-6">
-                                    <div className="text-center mb-4">
-                                        <h3 className="text-xl font-semibold mb-1 text-primary-dark">
+                                    <div className={`text-center mb-4 ${member.isMascot ? "" : ""}`}>
+                                        <h3 className={`${member.isMascot ? "text-4xl text-primary font-bold" : "text-xl font-semibold mb-1 text-primary-dark"}`}>
                                             {member.name}
                                         </h3>
-                                        <p className="text-primary-dark font-medium">
+                                        <p className={`${member.isMascot ? "text-xl text-primary-dark" : "text-primary-dark font-medium"}`}>
                                             {getLocalizedRole(member, language)}
                                         </p>
                                     </div>
 
+                                    {!member.isMascot && (
                                     <div className="space-y-3 border-t pt-4">
                                         {member.email && (
                                             <div className="flex items-center justify-center gap-2 text-sm">
@@ -106,6 +107,7 @@ export function Team({ t, language }: TeamProps) {
                                             </div>
                                         )}
                                     </div>
+                                    )}
                                 </CardContent>
                             </Card>
                         ))}

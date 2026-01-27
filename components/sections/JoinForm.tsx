@@ -5,13 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
 import type { Language, Translations } from "@/lib/translations";
 import type { JoinFormData, FormStatus } from "@/lib/types";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -43,6 +36,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
         inPersonMeeting: "",
         additionalInfo: "",
     });
+    const [otherUniversity, setOtherUniversity] = useState("");
     const [status, setStatus] = useState<FormStatus>("idle");
     const [errors, setErrors] = useState<
         Partial<Record<keyof JoinFormData, boolean>>
@@ -57,18 +51,32 @@ export function JoinForm({ t, language }: JoinFormProps) {
         if (!formData.fullname.trim()) newErrors.fullname = true;
         if (!formData.email.trim()) newErrors.email = true;
         if (!formData.phone.trim()) newErrors.phone = true;
+        if (!formData.facebookLink.trim()) newErrors.facebookLink = true;
         if (!formData.region.trim()) newErrors.region = true;
         if (!formData.university) newErrors.university = true;
+        if (formData.university === "Autre" && !otherUniversity.trim())
+            newErrors.university = true;
         if (!formData.studyLevel) newErrors.studyLevel = true;
-        if (!formData.specialty.trim()) newErrors.specialty = true;
+        // specialty is optional
         if (!formData.clubExperience) newErrors.clubExperience = true;
         if (!formData.desiredPosition) newErrors.desiredPosition = true;
-        if (formData.desiredPosition === "member" && !formData.department)
-            newErrors.department = true;
+        // department is optional (only for members)
         if (!formData.sosVillageKnowledge) newErrors.sosVillageKnowledge = true;
         if (!formData.inPersonMeeting) newErrors.inPersonMeeting = true;
+        // additionalInfo is optional
 
         setErrors(newErrors);
+
+        // Scroll to first error field
+        if (Object.keys(newErrors).length > 0) {
+            const firstErrorKey = Object.keys(newErrors)[0];
+            const element = document.getElementById(firstErrorKey);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "center" });
+                element.focus();
+            }
+        }
+
         return Object.keys(newErrors).length === 0;
     };
 
@@ -88,23 +96,29 @@ export function JoinForm({ t, language }: JoinFormProps) {
         setStatus("loading");
 
         try {
-            console.log("Form submission started");
-            console.log("Form data:", formData);
+            // Prepare data with actual university value
+            const submissionData = {
+                ...formData,
+                university:
+                    formData.university === "Autre"
+                        ? otherUniversity
+                        : formData.university,
+            };
 
             const response = await fetch("/api/submit-form", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(submissionData),
             });
 
             const result = await response.json();
-            console.log("Server response:", result);
 
             if (result.success) {
                 setStatus("success");
                 setErrors({});
+                setOtherUniversity("");
                 setFormData({
                     fullname: "",
                     email: "",
@@ -121,7 +135,6 @@ export function JoinForm({ t, language }: JoinFormProps) {
                     inPersonMeeting: "",
                     additionalInfo: "",
                 });
-                console.log("Form submitted successfully and reset");
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
                 console.error("Submission failed:", result.error);
@@ -144,7 +157,6 @@ export function JoinForm({ t, language }: JoinFormProps) {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-center mb-3 text-balance text-primary-dark animate-fade-in-up animate-in">
                     {t.join.title}
                 </h2>
-                {/* small subtitle under the main title */}
                 <p className="text-center text-primary-dark/90 mb-8 max-w-2xl mx-auto text-base md:text-lg font-medium">
                     {t.join.subtitle}
                 </p>
@@ -171,7 +183,11 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="fullname"
-                                        className="text-primary-dark"
+                                        className={
+                                            errors.fullname
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.fullname}
                                     </Label>
@@ -193,19 +209,18 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     fullname: false,
                                                 });
                                         }}
-                                        className={`h-11 bg-white text-primary-dark ${errors.fullname ? "border-red-500" : ""}`}
+                                        className={`h-11 bg-white text-primary-dark ${errors.fullname ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    {errors.fullname && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
-                                    )}
                                 </div>
 
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="email"
-                                        className="text-primary-dark"
+                                        className={
+                                            errors.email
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.email}
                                     </Label>
@@ -227,13 +242,8 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     email: false,
                                                 });
                                         }}
-                                        className={`h-11 bg-white text-primary-dark ${errors.email ? "border-red-500" : ""}`}
+                                        className={`h-11 bg-white text-primary-dark ${errors.email ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    {errors.email && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
-                                    )}
                                 </div>
                             </div>
 
@@ -242,7 +252,11 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="phone"
-                                        className="text-primary-dark"
+                                        className={
+                                            errors.phone
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.phone}
                                     </Label>
@@ -264,13 +278,8 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     phone: false,
                                                 });
                                         }}
-                                        className={`h-11 bg-white text-primary-dark ${errors.phone ? "border-red-500" : ""}`}
+                                        className={`h-11 bg-white text-primary-dark ${errors.phone ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    {errors.phone && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
-                                    )}
                                 </div>
 
                                 <div className="space-y-2">
@@ -303,7 +312,11 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                 <div className="space-y-2">
                                     <Label
                                         htmlFor="region"
-                                        className="text-primary-dark"
+                                        className={
+                                            errors.region
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.region}
                                     </Label>
@@ -325,18 +338,17 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     region: false,
                                                 });
                                         }}
-                                        className={`h-11 bg-white text-primary-dark ${errors.region ? "border-red-500" : ""}`}
+                                        className={`h-11 bg-white text-primary-dark ${errors.region ? "border-red-500 focus:ring-red-500" : ""}`}
                                     />
-                                    {errors.region && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
-                                    )}
                                 </div>
 
-                                <div className="space-y-2">
+                                <div className="space-y-2" id="university">
                                     <Label
-                                        className={`text-primary-dark ${errors.university ? "text-red-500" : ""}`}
+                                        className={
+                                            errors.university
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.university}
                                     </Label>
@@ -356,6 +368,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                         university:
                                                             e.target.value,
                                                     });
+                                                    setOtherUniversity("");
                                                     if (errors.university)
                                                         setErrors({
                                                             ...errors,
@@ -396,18 +409,42 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                             </span>
                                         </label>
                                     </div>
-                                    {errors.university && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
+                                    {formData.university === "Autre" && (
+                                        <div className="mt-3">
+                                            <Input
+                                                id="otherUniversity"
+                                                type="text"
+                                                placeholder={
+                                                    language === "fr"
+                                                        ? "Nom de votre université"
+                                                        : "Your university name"
+                                                }
+                                                value={otherUniversity}
+                                                onChange={(e) => {
+                                                    setOtherUniversity(
+                                                        e.target.value,
+                                                    );
+                                                    if (errors.university)
+                                                        setErrors({
+                                                            ...errors,
+                                                            university: false,
+                                                        });
+                                                }}
+                                                className={`h-11 bg-white text-primary-dark ${errors.university ? "border-red-500 focus:ring-red-500" : ""}`}
+                                            />
+                                        </div>
                                     )}
                                 </div>
                             </div>
 
                             {/* Row 4: Study Level and Specialty */}
-                            <div className="space-y-2">
+                            <div className="space-y-2" id="studyLevel">
                                 <Label
-                                    className={`text-primary-dark ${errors.studyLevel ? "text-red-500" : ""}`}
+                                    className={
+                                        errors.studyLevel
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.studyLevel}
                                 </Label>
@@ -465,17 +502,16 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         </label>
                                     ))}
                                 </div>
-                                {errors.studyLevel && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             <div className="space-y-2">
                                 <Label
                                     htmlFor="specialty"
-                                    className="text-primary-dark"
+                                    className={
+                                        errors.specialty
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.specialty}
                                 </Label>
@@ -497,19 +533,18 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                 specialty: false,
                                             });
                                     }}
-                                    className={`h-11 bg-white text-primary-dark ${errors.specialty ? "border-red-500" : ""}`}
+                                    className={`h-11 bg-white text-primary-dark ${errors.specialty ? "border-red-500 focus:ring-red-500" : ""}`}
                                 />
-                                {errors.specialty && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             {/* Row 5: Club Experience */}
-                            <div className="space-y-2">
+                            <div className="space-y-2" id="clubExperience">
                                 <Label
-                                    className={`text-primary-dark ${errors.clubExperience ? "text-red-500" : ""}`}
+                                    className={
+                                        errors.clubExperience
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.clubExperience}
                                 </Label>
@@ -553,17 +588,16 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         </label>
                                     ))}
                                 </div>
-                                {errors.clubExperience && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             {/* Row 6: Desired Position */}
-                            <div className="space-y-2">
+                            <div className="space-y-2" id="desiredPosition">
                                 <Label
-                                    className={`text-primary-dark ${errors.desiredPosition ? "text-red-500" : ""}`}
+                                    className={
+                                        errors.desiredPosition
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.desiredPosition}
                                 </Label>
@@ -621,18 +655,17 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         </label>
                                     ))}
                                 </div>
-                                {errors.desiredPosition && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             {/* Row 7: Department (shown if member selected) */}
                             {formData.desiredPosition === "member" && (
-                                <div className="space-y-2">
+                                <div className="space-y-2" id="department">
                                     <Label
-                                        className={`text-primary-dark ${errors.department ? "text-red-500" : ""}`}
+                                        className={
+                                            errors.department
+                                                ? "text-red-500"
+                                                : "text-primary-dark"
+                                        }
                                     >
                                         {t.join.form.department}
                                     </Label>
@@ -685,18 +718,17 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                             </label>
                                         ))}
                                     </div>
-                                    {errors.department && (
-                                        <p className="text-xs text-red-500">
-                                            This field is required
-                                        </p>
-                                    )}
                                 </div>
                             )}
 
                             {/* Row 8: SOS Village Knowledge */}
-                            <div className="space-y-2">
+                            <div className="space-y-2" id="sosVillageKnowledge">
                                 <Label
-                                    className={`text-primary-dark ${errors.sosVillageKnowledge ? "text-red-500" : ""}`}
+                                    className={
+                                        errors.sosVillageKnowledge
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.sosVillageKnowledge}
                                 </Label>
@@ -752,17 +784,16 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         </label>
                                     ))}
                                 </div>
-                                {errors.sosVillageKnowledge && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             {/* Row 9: In-Person Meeting */}
-                            <div className="space-y-2">
+                            <div className="space-y-2" id="inPersonMeeting">
                                 <Label
-                                    className={`text-primary-dark ${errors.inPersonMeeting ? "text-red-500" : ""}`}
+                                    className={
+                                        errors.inPersonMeeting
+                                            ? "text-red-500"
+                                            : "text-primary-dark"
+                                    }
                                 >
                                     {t.join.form.inPersonMeeting}
                                 </Label>
@@ -816,11 +847,6 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         </label>
                                     ))}
                                 </div>
-                                {errors.inPersonMeeting && (
-                                    <p className="text-xs text-red-500">
-                                        This field is required
-                                    </p>
-                                )}
                             </div>
 
                             {/* Row 10: Additional Info */}

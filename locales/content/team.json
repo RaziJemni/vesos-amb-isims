@@ -3,6 +3,17 @@
         "year": "2025-2026",
         "members": [
             {
+                "name": "Totoro",
+                "role": "Mascot",
+                "roleFr": "Mascotte",
+                "roleAr": "التميمة",
+                "email": "",
+                "instagram": "",
+                "linkedin": "",
+                "image": "/assets/images/bureau/totoro.avif",
+                "isMascot": true
+            },
+            {
                 "name": "Farouk Snoussi",
                 "role": "President",
                 "roleFr": "Président",
