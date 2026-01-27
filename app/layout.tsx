@@ -55,9 +55,7 @@ export const metadata: Metadata = {
     publisher: "ISIMS",
     robots: "index, follow",
     icons: {
-        icon: "/favicon.ico",
-        shortcut: "/favicon-16x16.png",
-        apple: "/apple-touch-icon.png",
+        icon: "/assets/icons/logo-isims.svg",
     },
     openGraph: {
         title: "SOS Children's Village Ambassadors Club - ISIMS",
