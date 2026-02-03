@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 // WOFF2 files under `public/fonts/` and uncomment the `localFont` block
 // below. Until the font files are added, fall back to Inter so the dev
 // server and build remain stable.
-import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import AnalyticsClient from "./AnalyticsClient";
 import "./globals.css";
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     publisher: "ISIMS",
     robots: "index, follow",
     icons: {
-        icon: "/assets/icons/logo-isims.svg",
+        icon: "/assets/icons/logo-blue.svg",
     },
     openGraph: {
         title: "SOS Children's Village Ambassadors Club - ISIMS",

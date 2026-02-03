@@ -88,8 +88,7 @@ export interface Translations {
             no: string;
             desiredPosition: string;
             positionTreasurer: string;
-            positionEventManager: string;
-            positionDigitalCommunicationAssistant: string;
+            positionPartnership: string;
             positionMember: string;
             department: string;
             departmentHR: string;

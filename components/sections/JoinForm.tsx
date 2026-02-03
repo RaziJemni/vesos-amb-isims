@@ -609,14 +609,9 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                 .positionTreasurer,
                                         },
                                         {
-                                            value: "event-manager",
+                                            value: "partnership-manager",
                                             label: t.join.form
-                                                .positionEventManager,
-                                        },
-                                        {
-                                            value: "digital-assistant",
-                                            label: t.join.form
-                                                .positionDigitalCommunicationAssistant,
+                                                .positionPartnership,
                                         },
                                         {
                                             value: "member",
