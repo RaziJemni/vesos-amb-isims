@@ -44,7 +44,9 @@ export function Navigation({
     const handleNavClick = (href: string) => {
         setIsMobileMenuOpen(false);
         const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: "smooth" });
+        if (!element) return;
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.replaceState(null, "", href);
     };
 
     const joinButtonClasses = cn(
@@ -109,20 +111,29 @@ export function Navigation({
                         {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center gap-8">
                             {navItems.map((item) => (
-                                <button
+                                <a
                                     key={item.href}
-                                    onClick={() => handleNavClick(item.href)}
+                                    href={item.href}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick(item.href);
+                                    }}
                                     className="text-sm font-medium hover:text-primary transition-colors"
                                 >
                                     {item.label}
-                                </button>
+                                </a>
                             ))}
                             <div className="w-px h-6 bg-gray-300"></div>
-                            <Button
-                                onClick={() => handleNavClick("#join")}
-                                className={joinButtonClasses}
-                            >
-                                {t.nav.join}
+                            <Button asChild className={joinButtonClasses}>
+                                <a
+                                    href="#join"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick("#join");
+                                    }}
+                                >
+                                    {t.nav.join}
+                                </a>
                             </Button>
                             <Button
                                 onClick={() =>
@@ -176,19 +187,28 @@ export function Navigation({
                     <div className="container px-4 py-8">
                         <div className="flex flex-col gap-4">
                             {navItems.map((item) => (
-                                <button
+                                <a
                                     key={item.href}
-                                    onClick={() => handleNavClick(item.href)}
+                                    href={item.href}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick(item.href);
+                                    }}
                                     className="text-lg font-medium hover:text-primary transition-colors text-left py-2"
                                 >
                                     {item.label}
-                                </button>
+                                </a>
                             ))}
-                            <Button
-                                onClick={() => handleNavClick("#join")}
-                                className={cn(joinButtonClasses, "w-full mt-4")}
-                            >
-                                {t.nav.join}
+                            <Button asChild className={cn(joinButtonClasses, "w-full mt-4")}>
+                                <a
+                                    href="#join"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleNavClick("#join");
+                                    }}
+                                >
+                                    {t.nav.join}
+                                </a>
                             </Button>
                         </div>
                     </div>
