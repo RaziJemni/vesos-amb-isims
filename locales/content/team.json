@@ -24,13 +24,14 @@
                 "image": "/assets/images/bureau/farouk-snoussi.avif"
             },
             {
-                "name": "Mohsen Hamza",
+                "name": "Firas Hmidi",
                 "role": "Vice-President",
                 "roleFr": "Vice-président",
                 "roleAr": "نائب الرئيس",
-                "email": "mohsenhamza082@gmail.com",
-                "instagram": "https://www.instagram.com/mohsenhamza777777",
-                "image": "/assets/images/bureau/mohsin-hamza.avif"
+                "email": "firaas.hmidi@gmail.com",
+                "instagram": "https://www.instagram.com/firashmidi_",
+                "linkedin": "https://www.linkedin.com/in/firashmidi",
+                "image": "/assets/images/bureau/firas-hmidi.avif"
             },
             {
                 "name": "Mariam Elloumi",
@@ -41,6 +42,26 @@
                 "instagram": "https://www.instagram.com/mariam_elloumi19",
                 "linkedin": "https://www.linkedin.com/in/mariam-elloumi-6b478b361",
                 "image": "/assets/images/bureau/mariem-elloumi.avif"
+            },
+            {
+                "name": "Siwar Ben Abdallah",
+                "role": "Treasurer",
+                "roleFr": "Trésorière",
+                "roleAr": "أمينة الصندوق",
+                "email": "siwar131099@gmail.com",
+                "instagram": "https://www.instagram.com/siwar__ben__abdallah/",
+                "linkedin": "https://www.linkedin.com/in/siwar-ben-abdallah-b6a7b0325/",
+                "image": "/assets/images/bureau/siwar-ben-abdallah.jpeg"
+            },
+            {
+                "name": "Salsabil Bargui",
+                "role": "Partnership Manager",
+                "roleFr": "Responsable Partenariats",
+                "roleAr": "مديرة الشراكات",
+                "email": "salsabilbargui05@gmail.com",
+                "instagram": "https://www.instagram.com/sal__sabil_/",
+                "linkedin": "",
+                "image": "/assets/images/bureau/salsabil-bargui.avif"
             },
 
             {
@@ -69,16 +90,6 @@
                 "email": "sarrahyousfi18@gmail.com",
                 "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
                 "image": "/assets/images/bureau/sarrah-yousfi.avif"
-            },
-            {
-                "name": "Firas Hmidi",
-                "role": "Events Assistant",
-                "roleFr": "Assistant événements",
-                "roleAr": "مساعد الفعاليات",
-                "email": "firaas.hmidi@gmail.com",
-                "instagram": "https://www.instagram.com/firashmidi_",
-                "linkedin": "https://www.linkedin.com/in/firashmidi",
-                "image": "/assets/images/bureau/firas-hmidi.avif"
             },
             {
                 "name": "Mohamed Zribi",
@@ -130,14 +141,6 @@
                     "roleAr": "نائبة الرئيس",
                     "email": "",
                     "image": "/assets/images/bureau/placeholder-member.avif"
-                },
-                {
-                    "name": "Mohsin Hamza",
-                    "role": "Treasurer",
-                    "roleFr": "Trésorier",
-                    "roleAr": "أمين الصندوق",
-                    "email": "mohsenhamza082@gmail.com",
-                    "image": "/assets/images/bureau/mohsin-hamza.avif"
                 },
                 {
                     "name": "Mariam Elloumi",
