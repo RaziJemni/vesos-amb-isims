@@ -1,28 +1,42 @@
 {
     "recentEvents": [],
-    "upcomingEvents": [
-        {
-            "id": "movie-nights-2026",
-            "date": "2026-02-22 20:30",
-            "title": "Movie Nights Series — Night #1: My Neighbor Totoro",
-            "titleFr": "Série Soirées Cinéma — Édition #1 : Mon Voisin Totoro",
-            "titleAr": "سلسلة ليالي الأفلام — الليلة الأولى: جاري توتورو",
-            "description": "Movie Nights is our main seasonal series: recurring cozy cinema evenings where members and guests come together to enjoy great films, warm vibes, and shared moments.",
-            "descriptionFr": "Soirées Cinéma est notre série principale de la saison : des soirées cinéma conviviales et régulières où membres et invités se retrouvent pour profiter de bons films, d'une ambiance chaleureuse et de moments partagés.",
-            "descriptionAr": "سلسلة ليالي الأفلام هي فعالية الموسم الرئيسية لدينا: أمسيات سينمائية دورية ودافئة يجتمع فيها الأعضاء والضيوف للاستمتاع بأفلام رائعة وأجواء جميلة ولحظات مشتركة.",
-            "location": "Ribat Madina, Sfax",
-            "locationFr": "Ribat Madina, Sfax",
-            "locationAr": "رباط المدينة، صفاقس",
-            "image": "/assets/images/events/upcoming/Movie Nights/1.png",
-            "gallery": ["/assets/images/events/upcoming/Movie Nights/2.png"],
-            "details": "Night #1 starts with the magical world of My Neighbor Totoro. Join us on 22 February at 20:30 in Ribat Madina, and use the registration form link below to reserve your spot.",
-            "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd3khvXj-GBRuLMdGvkJdwSV0wQTOs3vBQIFkVpYGWFbVqFbg/viewform"
-        }
-    ],
+    "upcomingEvents": [],
     "previousEvents": [
         {
             "year": "2025-2026",
             "events": [
+                {
+                    "id": "movie-nights-2026",
+                    "date": "2026-02-22 20:30",
+                    "title": "Movie Nights Series — Night #1: My Neighbor Totoro",
+                    "titleFr": "Série Soirées Cinéma — Édition #1 : Mon Voisin Totoro",
+                    "titleAr": "سلسلة ليالي الأفلام — الليلة الأولى: جاري توتورو",
+                    "description": "Movie Nights became our main seasonal series: cozy cinema evenings where members and guests came together to enjoy great films, warm vibes, and shared moments.",
+                    "descriptionFr": "Soirées Cinéma est devenue notre série principale de la saison : des soirées cinéma conviviales où membres et invités se sont retrouvés pour profiter de bons films, d'une ambiance chaleureuse et de moments partagés.",
+                    "descriptionAr": "أصبحت سلسلة ليالي الأفلام فعالية الموسم الرئيسية لدينا: أمسيات سينمائية دافئة اجتمع فيها الأعضاء والضيوف للاستمتاع بأفلام رائعة وأجواء جميلة ولحظات مشتركة.",
+                    "location": "Ribat Madina, Sfax",
+                    "locationFr": "Ribat Madina, Sfax",
+                    "locationAr": "رباط المدينة، صفاقس",
+                    "image": "/assets/images/events/upcoming/Movie Nights/1.png",
+                    "gallery": ["/assets/images/events/upcoming/Movie Nights/2.png"],
+                    "details": "Night #1 took place in the magical world of My Neighbor Totoro on 22 February at 20:30 in Ribat Madina, creating a cozy and memorable evening for attendees."
+                },
+                {
+                    "id": "formation-event-2026",
+                    "date": "2026-02-07",
+                    "title": "Formation Event",
+                    "titleFr": "Événement de Formation",
+                    "titleAr": "فعالية تدريبية",
+                    "description": "An inspiring session with Hayder Hajlaoui was held to motivate students and share practical insights in a collaborative atmosphere.",
+                    "descriptionFr": "Une session inspirante avec Hayder Hajlaoui a été organisée pour motiver les étudiants et partager des conseils pratiques dans une ambiance collaborative.",
+                    "descriptionAr": "تم تنظيم جلسة ملهمة مع حيدر الحجلوي لتحفيز الطلبة ومشاركة أفكار عملية في أجواء تعاونية.",
+                    "location": "FSS, Sfax",
+                    "locationFr": "FSS, Sfax",
+                    "locationAr": "كلية العلوم بصفاقس",
+                    "image": "/assets/images/events/previous/2025-2026/formation-event/1.avif",
+                    "gallery": [],
+                    "details": "Formation Event was held on 7 February 2026 at 14:00 in FSS, featuring an inspiring session with Hayder Hajlaoui. The event was organized in collaboration with FSS, ISSEPS, ISAAS, and FLSHS, bringing students from different institutions together for a rich and engaging learning experience."
+                },
                 {
                     "id": "third-anniversary-celebration-2025",
                     "date": "2025-12-07",
