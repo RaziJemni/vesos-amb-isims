@@ -43,7 +43,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
     >({});
     const ref = useScrollAnimation();
     const formConfigured = !APPS_SCRIPT_URL.includes("YOUR_APPS_SCRIPT_URL");
-    const formToggler = false; // Set to false to disable the form
+    const formToggler = true; // Set to true to enable the form UI
 
     const validateForm = (): boolean => {
         const newErrors: Partial<Record<keyof JoinFormData, boolean>> = {};

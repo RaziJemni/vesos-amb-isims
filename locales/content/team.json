@@ -92,16 +92,6 @@
                 "image": "/assets/images/bureau/sarrah-yousfi.avif"
             },
             {
-                "name": "Mohamed Zribi",
-                "role": "Events Assistant",
-                "roleFr": "Assistant événements",
-                "roleAr": "مساعد الفعاليات",
-                "email": "medbusiness000@gmail.com",
-                "instagram": "https://www.instagram.com/zribi98",
-                "image": "/assets/images/bureau/mohamed-zribi.avif"
-            },
-
-            {
                 "name": "Razi Jemni",
                 "role": "Digital Communication Manager",
                 "roleFr": "Responsable Communication Digitale",
@@ -110,15 +100,6 @@
                 "instagram": "https://www.instagram.com/razi.jemni",
                 "linkedin": "https://www.linkedin.com/in/razi-jemni",
                 "image": "/assets/images/bureau/razi-jemni.avif"
-            },
-            {
-                "name": "Yassine Abbes",
-                "role": "Digital Communication Assistant",
-                "roleFr": "Assistant Communication Digitale",
-                "roleAr": "مساعد التواصل الرقمي",
-                "email": "abbesyassine154@gmail.com",
-                "instagram": "https://www.instagram.com/yasssineabbes",
-                "image": "/assets/images/bureau/yassine-abbes.avif"
             }
         ]
     },

@@ -18,7 +18,9 @@
                     "locationFr": "Ribat Madina, Sfax",
                     "locationAr": "رباط المدينة، صفاقس",
                     "image": "/assets/images/events/upcoming/Movie Nights/1.png",
-                    "gallery": ["/assets/images/events/upcoming/Movie Nights/2.png"],
+                    "gallery": [
+                        "/assets/images/events/upcoming/Movie Nights/2.png"
+                    ],
                     "details": "Night #1 took place in the magical world of My Neighbor Totoro on 22 February at 20:30 in Ribat Madina, creating a cozy and memorable evening for attendees."
                 },
                 {
