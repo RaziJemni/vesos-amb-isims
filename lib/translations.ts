@@ -185,7 +185,7 @@ export const getLocalizedRole = (
 ): string => {
     if (language === "fr") return member.roleFr || member.role;
     if (language === "ar")
-        return (member as any).roleAr || member.roleFr || member.role;
+        return member.roleAr || member.roleFr || member.role;
     return member.role;
 };
 
@@ -197,13 +197,13 @@ export const getLocalizedEvent = (event: Event, language: Language): Event => {
             language === "fr"
                 ? event.titleFr || event.title
                 : language === "ar"
-                  ? (event as any).titleAr || event.titleFr || event.title
+                  ? event.titleAr || event.titleFr || event.title
                   : event.title,
         description:
             language === "fr"
                 ? event.descriptionFr || event.description
                 : language === "ar"
-                  ? (event as any).descriptionAr ||
+                  ? event.descriptionAr ||
                     event.descriptionFr ||
                     event.description
                   : event.description,
@@ -211,7 +211,7 @@ export const getLocalizedEvent = (event: Event, language: Language): Event => {
             language === "fr"
                 ? event.locationFr || event.location
                 : language === "ar"
-                  ? (event as any).locationAr ||
+                  ? event.locationAr ||
                     event.locationFr ||
                     event.location
                   : event.location,
@@ -219,7 +219,7 @@ export const getLocalizedEvent = (event: Event, language: Language): Event => {
             language === "fr"
                 ? event.detailsFr || event.details
                 : language === "ar"
-                  ? (event as any).detailsAr || event.detailsFr || event.details
+                  ? event.detailsAr || event.detailsFr || event.details
                   : event.details,
     };
 };

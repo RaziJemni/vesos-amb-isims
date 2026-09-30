@@ -45,7 +45,10 @@ export function Team({ t, language }: TeamProps) {
                             >
                                 <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] bg-primary">
                                     <Image
-                                        src={member.image}
+                                        src={
+                                            member.image ||
+                                            "/assets/images/bureau/placeholder-member.avif"
+                                        }
                                         alt={member.name}
                                         width={400}
                                         height={500}

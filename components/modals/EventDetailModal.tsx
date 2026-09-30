@@ -69,13 +69,13 @@ export default function EventDetailModal({
         language === "fr"
             ? event.titleFr || event.title
             : language === "ar"
-            ? (event as any).titleAr || event.titleFr || event.title
+            ? event.titleAr || event.titleFr || event.title
             : event.title;
     const description =
         language === "fr"
             ? event.descriptionFr || event.description
             : language === "ar"
-            ? (event as any).descriptionAr ||
+            ? event.descriptionAr ||
               event.descriptionFr ||
               event.description
             : event.description;
@@ -83,13 +83,13 @@ export default function EventDetailModal({
         language === "fr"
             ? event.locationFr || event.location
             : language === "ar"
-            ? (event as any).locationAr || event.locationFr || event.location
+            ? event.locationAr || event.locationFr || event.location
             : event.location;
     const details =
         language === "fr"
             ? event.detailsFr || event.details
             : language === "ar"
-            ? (event as any).detailsAr || event.detailsFr || event.details
+            ? event.detailsAr || event.detailsFr || event.details
             : event.details;
 
     // Build full gallery including main image at the beginning

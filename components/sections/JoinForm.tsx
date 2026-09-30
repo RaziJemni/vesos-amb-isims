@@ -14,11 +14,6 @@ interface JoinFormProps {
     language: Language;
 }
 
-// Replace with your Google Apps Script Web App URL
-const APPS_SCRIPT_URL =
-    process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ||
-    "https://script.google.com/macros/s/AKfycbwAckSAOVpA-95T47jbomhXWSIXfR0ReBOmpB5i7IS1vJQm7rbzwBiNQrogo_uLcdq2Hw/exec";
-
 export function JoinForm({ t, language }: JoinFormProps) {
     const [formData, setFormData] = useState<JoinFormData>({
         fullname: "",
@@ -37,13 +32,14 @@ export function JoinForm({ t, language }: JoinFormProps) {
         additionalInfo: "",
     });
     const [otherUniversity, setOtherUniversity] = useState("");
+    const [honeypot, setHoneypot] = useState("");
     const [status, setStatus] = useState<FormStatus>("idle");
     const [errors, setErrors] = useState<
         Partial<Record<keyof JoinFormData, boolean>>
     >({});
     const ref = useScrollAnimation();
-    const formConfigured = !APPS_SCRIPT_URL.includes("YOUR_APPS_SCRIPT_URL");
-    const formToggler = true; // Set to true to enable the form UI
+    const formConfigured = true;
+    const formToggler = process.env.NEXT_PUBLIC_RECRUITMENT_OPEN !== "false";
 
     const validateForm = (): boolean => {
         const newErrors: Partial<Record<keyof JoinFormData, boolean>> = {};
@@ -96,13 +92,14 @@ export function JoinForm({ t, language }: JoinFormProps) {
         setStatus("loading");
 
         try {
-            // Prepare data with actual university value
+            // Prepare data with actual university value and honeypot
             const submissionData = {
                 ...formData,
                 university:
                     formData.university === "Autre"
                         ? otherUniversity
                         : formData.university,
+                website_url: honeypot,
             };
 
             const response = await fetch("/api/submit-form", {
@@ -119,6 +116,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                 setStatus("success");
                 setErrors({});
                 setOtherUniversity("");
+                setHoneypot("");
                 setFormData({
                     fullname: "",
                     email: "",
@@ -160,15 +158,13 @@ export function JoinForm({ t, language }: JoinFormProps) {
                 <p className="text-center text-primary-dark/90 mb-8 max-w-2xl mx-auto text-base md:text-lg font-medium">
                     {t.join.subtitle}
                 </p>
-                {!formConfigured && (
-                    <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
-                        The join form is curreently unavailable. Please wait
-                        until its back online.
-                    </div>
-                )}
                 {!formToggler && (
                     <div className="max-w-2xl mx-auto mb-6 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-4 py-3 text-sm font-medium text-center">
-                        Form is disabled for now
+                        {language === "fr"
+                            ? "Le formulaire d'adhésion est actuellement fermé."
+                            : language === "ar"
+                            ? "استمارة الانضمام مغلقة حالياً."
+                            : "The join form is currently closed."}
                     </div>
                 )}
 
@@ -178,6 +174,22 @@ export function JoinForm({ t, language }: JoinFormProps) {
                         className="bg-primary/5 shadow rounded-2xl p-8 border border-gray-100 animate-fade-in-up animate-stagger"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Honeypot field for bot protection */}
+                            <input
+                                type="text"
+                                name="website_url"
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                tabIndex={-1}
+                                autoComplete="off"
+                                style={{
+                                    position: "absolute",
+                                    left: "-9999px",
+                                    opacity: 0,
+                                    pointerEvents: "none",
+                                }}
+                                aria-hidden="true"
+                            />
                             {/* Row 1: Full Name and Email */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">

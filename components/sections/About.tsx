@@ -11,7 +11,7 @@ export function About({ t }: AboutProps) {
   const ref = useScrollAnimation()
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py- md:py-16 relative overflow-hidden bg-white">
+    <section id="about" className="min-h-screen flex items-center justify-center py-12 md:py-16 relative overflow-hidden bg-white">
       
       <div className="container px-4 relative">
         <div ref={ref} className="mx-auto max-w-5xl text-center">

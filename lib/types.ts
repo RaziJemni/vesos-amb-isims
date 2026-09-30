@@ -8,10 +8,12 @@ export interface TeamMember {
     name: string;
     role: string;
     roleFr: string;
+    roleAr?: string;
     email: string;
     instagram?: string;
     linkedin?: string;
     image?: string;
+    isMascot?: boolean;
 }
 
 // Bureau interface
@@ -26,13 +28,17 @@ export interface Event {
     date: string;
     title: string;
     titleFr: string;
+    titleAr?: string;
     description: string;
     descriptionFr: string;
+    descriptionAr?: string;
     location: string;
     locationFr: string;
+    locationAr?: string;
     image?: string;
     details?: string;
     detailsFr?: string;
+    detailsAr?: string;
     gallery?: string[];
     category?: string;
     attendees?: number;

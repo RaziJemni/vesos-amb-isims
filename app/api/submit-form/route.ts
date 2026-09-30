@@ -1,32 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const APPS_SCRIPT_URL =
-    process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ||
-    "https://script.google.com/macros/s/AKfycbwAckSAOVpA-95T47jbomhXWSIXfR0ReBOmpB5i7IS1vJQm7rbzwBiNQrogo_uLcdq2Hw/exec";
+import { getGoogleSheet } from "@/lib/google-sheets";
+import { mapFormDataToSheetRow } from "@/lib/form-mapping";
 
 export async function POST(request: NextRequest) {
     try {
         const formData = await request.json();
-        console.log("API received form data:", formData);
 
-        // Forward to Apps Script
-        const response = await fetch(APPS_SCRIPT_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
+        // 1. Honeypot check: If the hidden honeypot field has a value, it's a bot
+        if (formData.website_url) {
+            console.warn("Honeypot triggered, dropping submission quietly.");
+            return NextResponse.json({ success: true }, { status: 200 });
+        }
 
-        console.log("Apps Script response status:", response.status);
-        const result = await response.json();
-        console.log("Apps Script response:", result);
+        // 2. Basic validation for essential contact info
+        if (!formData.fullname || !formData.email || !formData.phone) {
+            return NextResponse.json(
+                { success: false, error: "Missing required contact fields." },
+                { status: 400 },
+            );
+        }
 
-        return NextResponse.json(result, { status: 200 });
-    } catch (error) {
-        console.error("API error:", error);
+        // 3. Connect to Google Sheet
+        const sheet = await getGoogleSheet();
+
+        // 4. Map the submitted form data flexibly to the sheet columns
+        const rowData = mapFormDataToSheetRow(formData, sheet.headerValues);
+
+        // 5. Append row to Google Sheets
+        await sheet.addRow(rowData);
+
+        console.log("Successfully appended row to Google Sheet for:", formData.fullname);
+
+        return NextResponse.json({ success: true }, { status: 200 });
+    } catch (error: any) {
+        console.error("API submit-form error:", error);
         return NextResponse.json(
-            { success: false, error: "Failed to submit form" },
+            {
+                success: false,
+                error: error.message || "Failed to submit form to Google Sheets",
+            },
             { status: 500 },
         );
     }

@@ -138,7 +138,10 @@ export function PreviousBureausModal({
                                     >
                                         <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-secondary/10 overflow-hidden">
                                             <Image
-                                                src={member.image}
+                                                src={
+                                                    member.image ||
+                                                    "/assets/images/bureau/placeholder-member.avif"
+                                                }
                                                 alt={member.name}
                                                 width={320}
                                                 height={320}
