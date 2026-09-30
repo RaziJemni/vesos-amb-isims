@@ -6,12 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, X } from "lucide-react";
 import type { Event } from "@/lib/types";
-import { getLocalizedEvent, type Language } from "@/lib/translations";
+import { getLocalizedEvent, getTranslations, type Language, type Translations } from "@/lib/translations";
 
 interface PreviousEventsModalProps {
     open: boolean;
     previousGroups: { year: string; events: Event[] }[];
     language: Language;
+    t?: Translations;
     onClose: () => void;
     onSelectEvent: (event: Event) => void;
 }
@@ -20,9 +21,11 @@ export function PreviousEventsModal({
     open,
     previousGroups,
     language,
+    t,
     onClose,
     onSelectEvent,
 }: PreviousEventsModalProps) {
+    const strings = t?.events || getTranslations(language).events;
     const sortedGroups = useMemo(() => {
         return (previousGroups || []).slice().sort((a, b) => {
             const aStart = parseInt(String(a.year).split("-")[0], 10) || 0;
@@ -123,16 +126,12 @@ export function PreviousEventsModal({
                         id="previous-events-title"
                         className="text-2xl font-semibold text-primary-dark"
                     >
-                        {language === "fr"
-                            ? "Événements précédents"
-                            : language === "ar"
-                            ? "الفعاليات السابقة"
-                            : "Previous events"}
+                        {strings.previousEvents}
                     </h3>
                     <button
                         onClick={onClose}
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                        aria-label="Close previous events"
+                        aria-label={strings.close}
                         ref={closeButtonRef}
                     >
                         <X className="h-5 w-5" />
@@ -218,11 +217,7 @@ export function PreviousEventsModal({
                                                 {localized.description}
                                             </p>
                                             <p className="text-xs text-primary mt-3 font-medium">
-                                                {language === "fr"
-                                                    ? "Cliquer pour les détails"
-                                                    : language === "ar"
-                                                    ? "اضغط لرؤية التفاصيل"
-                                                    : "Click for details"}
+                                                {strings.viewDetails}
                                             </p>
                                         </CardContent>
                                     </Card>
@@ -239,11 +234,7 @@ export function PreviousEventsModal({
                         onClick={onClose}
                         className="min-w-[120px]"
                     >
-                        {language === "fr"
-                            ? "Fermer"
-                            : language === "ar"
-                            ? "إغلاق"
-                            : "Close"}
+                        {strings.close}
                     </Button>
                 </div>
             </div>

@@ -29,10 +29,12 @@ export interface Translations {
         learnMore: string;
     };
     hero: {
+        tagline: string;
         title: string;
         subtitle: string;
         cta: string;
         donate: string;
+        scroll: string;
     };
     about: {
         title: string;
@@ -53,11 +55,21 @@ export interface Translations {
         noPreviousBureaus: string;
         prevButton: string;
         nextButton: string;
+        close: string;
     };
     events: {
         title: string;
         recent: string;
         upcoming: string;
+        previousEvents: string;
+        viewDetails: string;
+        viewDetailsAndRegister: string;
+        noUpcoming: string;
+        close: string;
+        details: string;
+        description: string;
+        gallery: string;
+        register: string;
     };
     join: {
         title: string;
@@ -76,6 +88,7 @@ export interface Translations {
             university: string;
             universityISIMS: string;
             universityOther: string;
+            otherUniversityPlaceholder?: string;
             studyLevel: string;
             studyLevelFirstYear: string;
             studyLevelSecondYear: string;
@@ -83,6 +96,7 @@ export interface Translations {
             studyLevelOther: string;
             specialty: string;
             specialtyPlaceholder: string;
+            optional?: string;
             clubExperience: string;
             yes: string;
             no: string;
@@ -105,7 +119,12 @@ export interface Translations {
             additionalInfo: string;
             additionalInfoPlaceholder: string;
             submit: string;
+            submitting?: string;
             success: string;
+            successTitle?: string;
+            successSubtitle?: string;
+            submitAnother?: string;
+            closedAlert?: string;
             error: string;
             next?: string;
             prev?: string;

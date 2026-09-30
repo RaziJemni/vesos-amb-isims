@@ -36,7 +36,7 @@ export function Hero({ t }: HeroProps) {
                 <div className="mx-auto max-w-4xl text-center space-y-12 animate-fade-in-up animate-in">
                     {/* Subtle label above title */}
                     <div className="text-primary-foreground/70 font-medium tracking-wider uppercase text-sm mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-                        Students Organization for Success
+                        {t.hero.tagline}
                     </div>
 
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-balance text-primary-foreground drop-shadow-sm">
@@ -60,7 +60,7 @@ export function Hero({ t }: HeroProps) {
                                     className="inline-flex items-center gap-2"
                                 >
                                     {t.hero.cta}
-                                    <ArrowRight className="h-5 w-5" />
+                                    <ArrowRight className="h-5 w-5 rtl:rotate-180" />
                                 </a>
                             </Button>
                             <Button
@@ -72,7 +72,7 @@ export function Hero({ t }: HeroProps) {
                                 }
                             >
                                 {t.hero.donate}
-                                <ArrowRight className="h-5 w-5" />
+                                <ArrowRight className="h-5 w-5 rtl:rotate-180" />
                             </Button>
                         </div>
 
@@ -81,7 +81,7 @@ export function Hero({ t }: HeroProps) {
                             <div className="w-5 h-10 rounded-full border-2 border-primary-foreground/20 relative">
                                 <div className="absolute top-2 left-1/2 w-1 h-1 bg-primary-foreground/60 rounded-full -translate-x-1/2" />
                             </div>
-                            Scroll to explore
+                            {t.hero.scroll}
                         </div>
                     </div>
                 </div>

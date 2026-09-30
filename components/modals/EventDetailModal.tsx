@@ -5,20 +5,23 @@ import Image from "next/image";
 import { X, MapPin, Calendar, Link as LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GalleryModal from "@/components/modals/GalleryModal";
-import type { Language } from "@/lib/translations";
+import { getTranslations, type Language, type Translations } from "@/lib/translations";
 import type { Event } from "@/lib/types";
 
 interface EventDetailModalProps {
     event: Event;
     language: Language;
+    t?: Translations;
     onClose: () => void;
 }
 
 export default function EventDetailModal({
     event,
     language,
+    t,
     onClose,
 }: EventDetailModalProps) {
+    const strings = t?.events || getTranslations(language).events;
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [galleryIndex, setGalleryIndex] = useState(0);
     const modalRef = useRef<HTMLDivElement>(null);
@@ -121,7 +124,7 @@ export default function EventDetailModal({
                         <button
                             onClick={onClose}
                             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                            aria-label="Close"
+                            aria-label={strings.close}
                             ref={closeButtonRef}
                         >
                             <X className="h-6 w-6" />
@@ -174,11 +177,7 @@ export default function EventDetailModal({
                         {/* Description */}
                         <div>
                             <h3 className="text-lg font-semibold mb-2 text-gray-900">
-                                {language === "fr"
-                                    ? "Description"
-                                    : language === "ar"
-                                    ? "الوصف"
-                                    : "Description"}
+                                {strings.description}
                             </h3>
                             <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                                 {description}
@@ -189,11 +188,7 @@ export default function EventDetailModal({
                         {details && (
                             <div>
                                 <h3 className="text-lg font-semibold mb-2 text-gray-900">
-                                    {language === "fr"
-                                        ? "Détails"
-                                        : language === "ar"
-                                        ? "التفاصيل"
-                                        : "Details"}
+                                    {strings.details}
                                 </h3>
                                 <p className="text-gray-700 leading-relaxed whitespace-pre-line">
                                     {details}
@@ -205,11 +200,7 @@ export default function EventDetailModal({
                         {event.gallery && event.gallery.length > 0 && (
                             <div>
                                 <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                                    {language === "fr"
-                                        ? "Galerie"
-                                        : language === "ar"
-                                        ? "المعرض"
-                                        : "Gallery"}
+                                    {strings.gallery}
                                 </h3>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     {event.gallery.map((image, i) => (
@@ -247,11 +238,7 @@ export default function EventDetailModal({
                                 >
                                     <Button className="w-full bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-2">
                                         <LinkIcon className="h-4 w-4" />
-                                        {language === "fr"
-                                            ? "S'inscrire"
-                                            : language === "ar"
-                                            ? "التسجيل في هذا الحدث"
-                                            : "Register for this event"}
+                                        {strings.register}
                                     </Button>
                                 </a>
                             </div>

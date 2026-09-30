@@ -194,7 +194,7 @@ export function Navigation({
                                         e.preventDefault();
                                         handleNavClick(item.href);
                                     }}
-                                    className="text-lg font-medium hover:text-primary transition-colors text-left py-2"
+                                    className="text-lg font-medium hover:text-primary transition-colors text-start py-2"
                                 >
                                     {item.label}
                                 </a>

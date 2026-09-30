@@ -262,11 +262,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
 
                 {!formToggler && (
                     <div className="max-w-2xl mx-auto mb-8 rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-5 py-4 text-sm font-medium text-center shadow-sm">
-                        {language === "fr"
-                            ? "Le formulaire d'adhésion est actuellement fermé."
-                            : language === "ar"
-                            ? "استمارة الانضمام مغلقة حالياً."
-                            : "The join form is currently closed."}
+                        {t.join.form.closedAlert || "The join form is currently closed."}
                     </div>
                 )}
 
@@ -283,21 +279,15 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                 </div>
                                 <div className="space-y-2 max-w-lg mx-auto">
                                     <h3 className="text-2xl sm:text-3xl font-bold text-primary-dark">
-                                        {language === "fr"
-                                            ? "Candidature enregistrée avec succès !"
-                                            : language === "ar"
-                                            ? "تم استلام طلبك بنجاح!"
-                                            : "Application Submitted Successfully!"}
+                                        {t.join.form.successTitle ||
+                                            "Application Submitted Successfully!"}
                                     </h3>
                                     <p className="text-primary-dark/80 text-base">
                                         {t.join.form.success}
                                     </p>
                                     <p className="text-sm text-gray-500 pt-2">
-                                        {language === "fr"
-                                            ? "Notre équipe RH examinera votre profil et vous contactera pour planifier un entretien."
-                                            : language === "ar"
-                                            ? "سيقوم فريق الموارد البشرية بمراجعة ملفك والتواصل معك لتحديد موعد المقابلة."
-                                            : "Our HR team will review your application and get in touch to schedule an interview."}
+                                        {t.join.form.successSubtitle ||
+                                            "Our HR team will review your application and get in touch to schedule an interview."}
                                     </p>
                                 </div>
                                 <div className="pt-4">
@@ -307,11 +297,8 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         className="gap-2 border-primary/30 text-primary hover:bg-primary/5"
                                     >
                                         <RotateCcw className="w-4 h-4" />
-                                        {language === "fr"
-                                            ? "Soumettre une autre réponse"
-                                            : language === "ar"
-                                            ? "إرسال طلب آخر"
-                                            : "Submit another response"}
+                                        {t.join.form.submitAnother ||
+                                            "Submit another response"}
                                     </Button>
                                 </div>
                             </div>
@@ -733,11 +720,9 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                                 id="otherUniversity"
                                                                 type="text"
                                                                 placeholder={
-                                                                    language === "fr"
-                                                                        ? "Nom de votre établissement"
-                                                                        : language === "ar"
-                                                                        ? "اسم مؤسستك الجامعية"
-                                                                        : "Your university name"
+                                                                    t.join.form
+                                                                        .otherUniversityPlaceholder ||
+                                                                    "Your university name"
                                                                 }
                                                                 value={
                                                                     otherUniversity
@@ -853,7 +838,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     >
                                                         {t.join.form.specialty}{" "}
                                                         <span className="text-gray-400 font-normal">
-                                                            ({language === "fr" ? "optionnel" : language === "ar" ? "اختياري" : "optional"})
+                                                            ({t.join.form.optional || "optional"})
                                                         </span>
                                                     </Label>
                                                     <Input
@@ -1269,7 +1254,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                 >
                                                     {t.join.form.additionalInfo}{" "}
                                                     <span className="text-gray-400 font-normal">
-                                                        ({language === "fr" ? "optionnel" : language === "ar" ? "اختياري" : "optional"})
+                                                        ({t.join.form.optional || "optional"})
                                                     </span>
                                                 </Label>
                                                 <Textarea
@@ -1343,11 +1328,8 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                     {status === "loading" ? (
                                                         <span className="flex items-center gap-2">
                                                             <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                                            {language === "fr"
-                                                                ? "Envoi en cours..."
-                                                                : language === "ar"
-                                                                ? "جارٍ الإرسال..."
-                                                                : "Submitting..."}
+                                                            {t.join.form.submitting ||
+                                                                "Submitting..."}
                                                         </span>
                                                     ) : (
                                                         t.join.form.submit

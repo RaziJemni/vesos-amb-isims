@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 // WOFF2 files under `public/fonts/` and uncomment the `localFont` block
 // below. Until the font files are added, fall back to Inter so the dev
 // server and build remain stable.
-import { Inter } from "next/font/google";
+import { Inter, Cairo } from "next/font/google";
+import { cookies } from "next/headers";
 import AnalyticsClient from "./AnalyticsClient";
 import "./globals.css";
 
@@ -17,6 +18,11 @@ import "./globals.css";
 
 // Fallback font while Aktiv Grotesk files are not present
 const aktiv = Inter({ subsets: ["latin"], display: "swap" });
+const cairo = Cairo({
+    subsets: ["arabic", "latin"],
+    display: "swap",
+    variable: "--font-cairo",
+});
 
 /*
 // To enable Aktiv Grotesk when you have the font files, copy them to
@@ -108,14 +114,22 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const cookieStore = await cookies();
+    const language =
+        (cookieStore.get("language")?.value as "en" | "fr" | "ar" | undefined) ||
+        "en";
+    const dir = language === "ar" ? "rtl" : "ltr";
+
     return (
-        <html lang="en">
-            <body className={`${aktiv.className} font-sans antialiased`}>
+        <html lang={language} dir={dir}>
+            <body
+                className={`${aktiv.className} ${cairo.variable} font-sans antialiased`}
+            >
                 {children}
                 <AnalyticsClient />
             </body>

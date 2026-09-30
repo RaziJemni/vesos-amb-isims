@@ -2,16 +2,43 @@
     "en": {
         "title": "Our Events",
         "recent": "Recent Events",
-        "upcoming": "Upcoming Events"
+        "upcoming": "Upcoming Events",
+        "previousEvents": "Previous events",
+        "viewDetails": "Click to view details",
+        "viewDetailsAndRegister": "Click to view details & register",
+        "noUpcoming": "No upcoming events soon",
+        "close": "Close",
+        "details": "Details",
+        "description": "Description",
+        "gallery": "Gallery",
+        "register": "Register for this event"
     },
     "fr": {
         "title": "Nos Événements",
         "recent": "Événements récents",
-        "upcoming": "Événements à venir"
+        "upcoming": "Événements à venir",
+        "previousEvents": "Événements précédents",
+        "viewDetails": "Cliquez pour voir les détails",
+        "viewDetailsAndRegister": "Cliquez pour voir les détails et vous inscrire",
+        "noUpcoming": "Pas d'événements à venir bientôt",
+        "close": "Fermer",
+        "details": "Détails",
+        "description": "Description",
+        "gallery": "Galerie",
+        "register": "S'inscrire à cet événement"
     },
     "ar": {
         "title": "فعالياتنا",
         "recent": "الفعاليات الأخيرة",
-        "upcoming": "الفعاليات القادمة"
+        "upcoming": "الفعاليات القادمة",
+        "previousEvents": "الفعاليات السابقة",
+        "viewDetails": "اضغط لعرض التفاصيل",
+        "viewDetailsAndRegister": "اضغط لعرض التفاصيل والتسجيل",
+        "noUpcoming": "لا توجد فعاليات قادمة قريباً",
+        "close": "إغلاق",
+        "details": "التفاصيل",
+        "description": "الوصف",
+        "gallery": "المعرض",
+        "register": "التسجيل في هذا الحدث"
     }
 }

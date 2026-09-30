@@ -144,6 +144,15 @@
     @apply bg-background text-foreground;
   }
 
+  [dir="rtl"],
+  [dir="rtl"] body,
+  [dir="rtl"] input,
+  [dir="rtl"] textarea,
+  [dir="rtl"] select,
+  [dir="rtl"] button {
+    font-family: var(--font-cairo), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
   html {
     scroll-behavior: smooth;
   }

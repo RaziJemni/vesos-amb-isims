@@ -61,24 +61,9 @@ export function Events({ t, language }: EventsProps) {
 
     const previousYears = previousGroups.map((g) => g.year);
     const hasPreviousEvents = previousYears.length > 0;
-    const previousButtonLabel =
-        language === "fr"
-            ? "Évènements précédents"
-            : language === "ar"
-            ? "الفعاليات السابقة"
-            : "Previous events";
-    const viewDetailsLabel =
-        language === "fr"
-            ? "Cliquez pour voir les détails"
-            : language === "ar"
-            ? "اضغط لعرض التفاصيل"
-            : "Click to view details";
-    const noUpcomingLabel =
-        language === "fr"
-            ? "Pas d'évènements à venir bientôt"
-            : language === "ar"
-            ? "لا توجد فعاليات قادمة قريباً"
-            : "No upcoming events soon";
+    const previousButtonLabel = t.events.previousEvents;
+    const viewDetailsLabel = t.events.viewDetails;
+    const noUpcomingLabel = t.events.noUpcoming;
 
     // Recent should always show the latest two events regardless of their season
     const allPreviousEvents: Event[] = previousGroups.flatMap(
@@ -199,8 +184,7 @@ export function Events({ t, language }: EventsProps) {
                                                             }
                                                         </p>
                                                         <p className="text-xs text-primary mt-3 font-medium">
-                                                            Click to view
-                                                            details & register
+                                                            {t.events.viewDetailsAndRegister}
                                                         </p>
                                                     </CardContent>
                                                 </Card>
@@ -315,6 +299,7 @@ export function Events({ t, language }: EventsProps) {
                     open={showPreviousModal}
                     previousGroups={previousGroups}
                     language={language}
+                    t={t}
                     onClose={() => setShowPreviousModal(false)}
                     onSelectEvent={(event) => handleEventClick(event)}
                 />
@@ -324,6 +309,7 @@ export function Events({ t, language }: EventsProps) {
                 <EventDetailModal
                     event={selectedEvent}
                     language={language}
+                    t={t}
                     onClose={closeModal}
                 />
             )}

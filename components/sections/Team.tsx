@@ -135,11 +135,7 @@ export function Team({ t, language }: TeamProps) {
                             onClick={() => setShowPreviousModal(true)}
                             className="px-6 shadow-md hover:shadow-lg"
                         >
-                            {language === "fr"
-                                ? "Bureaux precedents"
-                                : language === "ar"
-                                  ? "المكاتب السابقة"
-                                  : "Previous bureaus"}
+                            {t.team.viewPreviousBureaus}
                         </Button>
                     </div>
                 </div>
@@ -150,6 +146,7 @@ export function Team({ t, language }: TeamProps) {
                     open={showPreviousModal}
                     bureaus={teamData.previousBureaus}
                     language={language}
+                    t={t}
                     onClose={() => setShowPreviousModal(false)}
                 />
             )}

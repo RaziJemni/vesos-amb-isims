@@ -6,12 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import type { Bureau } from "@/lib/types";
-import { getLocalizedRole, type Language } from "@/lib/translations";
+import { getLocalizedRole, getTranslations, type Language, type Translations } from "@/lib/translations";
 
 interface PreviousBureausModalProps {
     open: boolean;
     bureaus: Bureau[];
     language: Language;
+    t?: Translations;
     onClose: () => void;
 }
 
@@ -19,8 +20,10 @@ export function PreviousBureausModal({
     open,
     bureaus,
     language,
+    t,
     onClose,
 }: PreviousBureausModalProps) {
+    const strings = t?.team || getTranslations(language).team;
     const years = useMemo(() => bureaus.map((b) => b.year), [bureaus]);
     const [activeYear, setActiveYear] = useState<string | null>(
         years[0] ?? null
@@ -93,16 +96,12 @@ export function PreviousBureausModal({
                         id="previous-bureaus-title"
                         className="text-2xl font-semibold text-primary-dark"
                     >
-                        {language === "fr"
-                            ? "Bureaux précédents"
-                            : language === "ar"
-                            ? "المكاتب السابقة"
-                            : "Previous bureaus"}
+                        {strings.previousBureausTitle}
                     </h3>
                     <button
                         onClick={onClose}
                         className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                        aria-label="Close previous bureaus"
+                        aria-label={strings.close}
                         ref={closeButtonRef}
                     >
                         <X className="h-5 w-5" />
@@ -184,11 +183,7 @@ export function PreviousBureausModal({
                         onClick={onClose}
                         className="min-w-[120px]"
                     >
-                        {language === "fr"
-                            ? "Fermer"
-                            : language === "ar"
-                            ? "إغلاق"
-                            : "Close"}
+                        {strings.close}
                     </Button>
                 </div>
             </div>
