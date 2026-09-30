@@ -1,6 +1,6 @@
 {
     "currentBureau": {
-        "year": "2025-2026",
+        "year": "2026-2027",
         "members": [
             {
                 "name": "Totoro",
@@ -14,73 +14,24 @@
                 "isMascot": true
             },
             {
-                "name": "Farouk Snoussi",
+                "name": "Azer Chelly",
                 "role": "President",
                 "roleFr": "Président",
                 "roleAr": "الرئيس",
-                "email": "farouksnoussi7@gmail.com",
-                "instagram": "https://www.instagram.com/farouk_the_creator/",
-                "linkedin": "https://www.linkedin.com/in/farouksnoussi",
-                "image": "/assets/images/bureau/farouk-snoussi.avif"
-            },
-            {
-                "name": "Firas Hmidi",
-                "role": "Vice-President",
-                "roleFr": "Vice-président",
-                "roleAr": "نائب الرئيس",
-                "email": "firaas.hmidi@gmail.com",
-                "instagram": "https://www.instagram.com/firashmidi_",
-                "linkedin": "https://www.linkedin.com/in/firashmidi",
-                "image": "/assets/images/bureau/firas-hmidi.avif"
-            },
-            {
-                "name": "Mariam Elloumi",
-                "role": "Secretary General",
-                "roleFr": "Secrétaire générale",
-                "roleAr": "الأمينة العامة",
-                "email": "mariemelloumi17@gmail.com",
-                "instagram": "https://www.instagram.com/mariam_elloumi19",
-                "linkedin": "https://www.linkedin.com/in/mariam-elloumi-6b478b361",
-                "image": "/assets/images/bureau/mariem-elloumi.avif"
-            },
-            {
-                "name": "Siwar Ben Abdallah",
-                "role": "Treasurer",
-                "roleFr": "Trésorière",
-                "roleAr": "أمينة الصندوق",
-                "email": "siwar131099@gmail.com",
-                "instagram": "https://www.instagram.com/siwar__ben__abdallah/",
-                "linkedin": "https://www.linkedin.com/in/siwar-ben-abdallah-b6a7b0325/",
-                "image": "/assets/images/bureau/siwar-ben-abdallah.avif"
-            },
-            {
-                "name": "Salsabil Bargui",
-                "role": "Partnership Manager",
-                "roleFr": "Responsable Partenariats",
-                "roleAr": "مديرة الشراكات",
-                "email": "salsabilbargui05@gmail.com",
-                "instagram": "https://www.instagram.com/sal__sabil_/",
-                "linkedin": "",
-                "image": "/assets/images/bureau/salsabil-bargui.avif"
-            },
-
-            {
-                "name": "Azer Chelly",
-                "role": "HR Manager",
-                "roleFr": "Responsable RH",
-                "roleAr": "مدير الموارد البشرية",
                 "email": "azerchelly59@gmail.com",
                 "instagram": "https://www.instagram.com/chelly_azer",
+                "linkedin": "",
                 "image": "/assets/images/bureau/azer-chilli.avif"
             },
             {
-                "name": "Molka Besbes",
-                "role": "HR Assistant",
-                "roleFr": "Assistante RH",
-                "roleAr": "مساعدة الموارد البشرية",
-                "email": "besbesmolka8@gmail.com",
-                "instagram": "https://www.instagram.com/molka_besbes_6",
-                "image": "/assets/images/bureau/molka-besbes.avif"
+                "name": "Razi Jemni",
+                "role": "Vice-President",
+                "roleFr": "Vice-président",
+                "roleAr": "نائب الرئيس",
+                "email": "razijemni264@gmail.com",
+                "instagram": "https://www.instagram.com/razi.jemni",
+                "linkedin": "https://www.linkedin.com/in/razi-jemni",
+                "image": "/assets/images/bureau/razi-jemni.avif"
             },
             {
                 "name": "Sarrah Yousfi",
@@ -88,22 +39,90 @@
                 "roleFr": "Responsable Evénements",
                 "roleAr": "مديرة الفعاليات",
                 "email": "sarrahyousfi18@gmail.com",
+                "instagram": "",
                 "linkedin": "https://www.linkedin.com/in/yousfi-sarrah",
                 "image": "/assets/images/bureau/sarrah-yousfi.avif"
-            },
-            {
-                "name": "Razi Jemni",
-                "role": "Digital Communication Manager",
-                "roleFr": "Responsable Communication Digitale",
-                "roleAr": "مدير التواصل الرقمي",
-                "email": "razijemni264@gmail.com",
-                "instagram": "https://www.instagram.com/razi.jemni",
-                "linkedin": "https://www.linkedin.com/in/razi-jemni",
-                "image": "/assets/images/bureau/razi-jemni.avif"
             }
         ]
     },
     "previousBureaus": [
+        {
+            "year": "2025-2026",
+            "members": [
+                {
+                    "name": "Farouk Snoussi",
+                    "role": "President",
+                    "roleFr": "Président",
+                    "roleAr": "الرئيس",
+                    "email": "farouksnoussi7@gmail.com",
+                    "image": "/assets/images/bureau/farouk-snoussi.avif"
+                },
+                {
+                    "name": "Firas Hmidi",
+                    "role": "Vice-President",
+                    "roleFr": "Vice-président",
+                    "roleAr": "نائب الرئيس",
+                    "email": "firaas.hmidi@gmail.com",
+                    "image": "/assets/images/bureau/firas-hmidi.avif"
+                },
+                {
+                    "name": "Mariam Elloumi",
+                    "role": "Secretary General",
+                    "roleFr": "Secrétaire générale",
+                    "roleAr": "الأمينة العامة",
+                    "email": "mariemelloumi17@gmail.com",
+                    "image": "/assets/images/bureau/mariem-elloumi.avif"
+                },
+                {
+                    "name": "Siwar Ben Abdallah",
+                    "role": "Treasurer",
+                    "roleFr": "Trésorière",
+                    "roleAr": "أمينة الصندوق",
+                    "email": "siwar131099@gmail.com",
+                    "image": "/assets/images/bureau/siwar-ben-abdallah.avif"
+                },
+                {
+                    "name": "Salsabil Bargui",
+                    "role": "Partnership Manager",
+                    "roleFr": "Responsable Partenariats",
+                    "roleAr": "مديرة الشراكات",
+                    "email": "salsabilbargui05@gmail.com",
+                    "image": "/assets/images/bureau/salsabil-bargui.avif"
+                },
+                {
+                    "name": "Azer Chelly",
+                    "role": "HR Manager",
+                    "roleFr": "Responsable RH",
+                    "roleAr": "مدير الموارد البشرية",
+                    "email": "azerchelly59@gmail.com",
+                    "image": "/assets/images/bureau/azer-chilli.avif"
+                },
+                {
+                    "name": "Molka Besbes",
+                    "role": "HR Assistant",
+                    "roleFr": "Assistante RH",
+                    "roleAr": "مساعدة الموارد البشرية",
+                    "email": "besbesmolka8@gmail.com",
+                    "image": "/assets/images/bureau/molka-besbes.avif"
+                },
+                {
+                    "name": "Sarrah Yousfi",
+                    "role": "Events Manager",
+                    "roleFr": "Responsable Evénements",
+                    "roleAr": "مديرة الفعاليات",
+                    "email": "sarrahyousfi18@gmail.com",
+                    "image": "/assets/images/bureau/sarrah-yousfi.avif"
+                },
+                {
+                    "name": "Razi Jemni",
+                    "role": "Digital Communication Manager",
+                    "roleFr": "Responsable Communication Digitale",
+                    "roleAr": "مدير التواصل الرقمي",
+                    "email": "razijemni264@gmail.com",
+                    "image": "/assets/images/bureau/razi-jemni.avif"
+                }
+            ]
+        },
         {
             "year": "2024-2025",
             "members": [
