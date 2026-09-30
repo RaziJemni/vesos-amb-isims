@@ -46,7 +46,18 @@
             "additionalInfoPlaceholder": "Any additional information or comments...",
             "submit": "Register",
             "success": "Thank you for registering! We will contact you soon.",
-            "error": "Something went wrong. Please try again."
+            "error": "Something went wrong. Please try again.",
+            "next": "Next Step",
+            "prev": "Previous Step",
+            "step": "Step",
+            "of": "of",
+            "step1Title": "Personal & Studies",
+            "step2Title": "Experience & Position",
+            "step3Title": "SOS & Availability",
+            "step1Desc": "Your contact and academic details",
+            "step2Desc": "Your past activities and preferred role",
+            "step3Desc": "Knowledge of SOS Village and availability",
+            "fillRequired": "Please complete all required fields on this step before continuing."
         }
     },
     "fr": {
@@ -96,7 +107,18 @@
             "additionalInfoPlaceholder": "Réponse longue",
             "submit": "S'inscrire",
             "success": "Merci pour votre inscription ! Nous vous recontacterons bientôt.",
-            "error": "Un problème est survenu. Veuillez réessayer."
+            "error": "Un problème est survenu. Veuillez réessayer.",
+            "next": "Étape suivante",
+            "prev": "Étape précédente",
+            "step": "Étape",
+            "of": "sur",
+            "step1Title": "Profil & Études",
+            "step2Title": "Expérience & Poste",
+            "step3Title": "SOS & Disponibilité",
+            "step1Desc": "Vos coordonnées et établissement",
+            "step2Desc": "Vos activités associatives et rôle souhaité",
+            "step3Desc": "Connaissance de SOS Village et disponibilité",
+            "fillRequired": "Veuillez remplir tous les champs obligatoires de cette étape pour continuer."
         }
     },
     "ar": {
@@ -146,7 +168,18 @@
             "additionalInfoPlaceholder": "أي معلومات إضافية أو تعليقات...",
             "submit": "تسجيل",
             "success": "شكرًا لتسجيلك! سنتواصل معك قريبًا.",
-            "error": "حدث خطأ ما. الرجاء المحاولة مرة أخرى."
+            "error": "حدث خطأ ما. الرجاء المحاولة مرة أخرى.",
+            "next": "الخطوة التالية",
+            "prev": "الخطوة السابقة",
+            "step": "المرحلة",
+            "of": "من",
+            "step1Title": "المعلومات الشخصية والدراسية",
+            "step2Title": "الخبرة والمنصب المطلوب",
+            "step3Title": "قرى SOS والجاهزية",
+            "step1Desc": "بيانات الاتصال والتفاصيل الأكاديمية",
+            "step2Desc": "أنشطتك الجمعياتية والمنصب المفضل",
+            "step3Desc": "معرفتك بقرى الأطفال والجاهزية للمقابلة",
+            "fillRequired": "يرجى إكمال جميع الحقول الإلزامية في هذه المرحلة للمتابعة."
         }
     }
 }

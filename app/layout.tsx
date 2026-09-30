@@ -35,8 +35,18 @@ const aktivLocal = localFont({
 // then use aktivLocal.className on body instead of aktiv.className
 */
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+    ? process.env.NEXT_PUBLIC_SITE_URL
+    : process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://sos-club-isims.vercel.app";
+
 export const metadata: Metadata = {
-    title: "SOS Children's Village Ambassadors Club - ISIMS",
+    metadataBase: new URL(siteUrl),
+    title: {
+        default: "SOS Children's Village Ambassadors Club - ISIMS",
+        template: "%s | SOS Club ISIMS",
+    },
     description:
         "Join our mission to help children in difficult situations through charitable actions and solidarity events. Student organization at ISIMS committed to making a difference.",
     keywords: [
@@ -48,27 +58,53 @@ export const metadata: Metadata = {
         "volunteer",
         "Tunisia",
         "Sfax",
+        "solidarity",
     ],
     authors: [{ name: "SOS Club ISIMS" }],
     creator: "SOS Children's Village Ambassadors Club of ISIMS",
     publisher: "ISIMS",
-    robots: "index, follow",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
     icons: {
         icon: "/assets/icons/logo-blue.svg",
+        shortcut: "/assets/icons/logo-blue.svg",
+        apple: "/assets/icons/logo-blue.svg",
     },
     openGraph: {
         title: "SOS Children's Village Ambassadors Club - ISIMS",
         description:
             "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+        url: siteUrl,
         type: "website",
         locale: "en_US",
         siteName: "SOS Club ISIMS",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "SOS Children's Village Ambassadors Club - ISIMS",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
         title: "SOS Children's Village Ambassadors Club - ISIMS",
         description:
             "Join our mission to help children in difficult situations through charitable actions and solidarity events.",
+        images: ["/og-image.png"],
+    },
+    alternates: {
+        canonical: "/",
     },
 };
 

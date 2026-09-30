@@ -107,6 +107,17 @@ export interface Translations {
             submit: string;
             success: string;
             error: string;
+            next?: string;
+            prev?: string;
+            step?: string;
+            of?: string;
+            step1Title?: string;
+            step2Title?: string;
+            step3Title?: string;
+            step1Desc?: string;
+            step2Desc?: string;
+            step3Desc?: string;
+            fillRequired?: string;
         };
     };
     footer: {
