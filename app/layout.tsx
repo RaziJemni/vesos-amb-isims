@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 // server and build remain stable.
 import { Inter, Cairo } from "next/font/google";
 import { cookies } from "next/headers";
+import { JsonLd } from "@/components/seo/JsonLd";
 import AnalyticsClient from "./AnalyticsClient";
 import "./globals.css";
 
@@ -57,15 +58,28 @@ export const metadata: Metadata = {
         "Join our mission to help children in difficult situations through charitable actions and solidarity events. Student organization at ISIMS committed to making a difference.",
     keywords: [
         "SOS Village",
-        "children",
-        "charity",
+        "SOS Children's Village",
+        "SOS Village d'Enfants",
+        "Club Ambassadeurs SOS",
+        "Club SOS ISIMS",
+        "VESOS ISIMS",
         "ISIMS",
+        "Institut Supérieur d'Informatique et de Multimédia de Sfax",
         "student club",
         "volunteer",
-        "Tunisia",
-        "Sfax",
+        "charity",
         "solidarity",
+        "Tunisia",
+        "Tunisie",
+        "Sfax",
+        "نادي سفراء قرية الأطفال",
+        "قرية الأطفال SOS",
+        "المعهد العالي للإعلامية والملتيميديا بصفاقس",
+        "تونس",
+        "صفاقس",
     ],
+    category: "Community & Charity",
+    classification: "Non-Profit Student Organization",
     authors: [{ name: "SOS Club ISIMS" }],
     creator: "SOS Children's Village Ambassadors Club of ISIMS",
     publisher: "ISIMS",
@@ -92,6 +106,7 @@ export const metadata: Metadata = {
         url: siteUrl,
         type: "website",
         locale: "en_US",
+        alternateLocale: ["fr_FR", "ar_TN"],
         siteName: "SOS Club ISIMS",
         images: [
             {
@@ -111,6 +126,20 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "/",
+        languages: {
+            en: "/?lang=en",
+            fr: "/?lang=fr",
+            ar: "/?lang=ar",
+            "x-default": "/",
+        },
+    },
+    verification: {
+        google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+        other: {
+            "msvalidate.01":
+                process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
+        },
     },
 };
 
@@ -127,6 +156,9 @@ export default async function RootLayout({
 
     return (
         <html lang={language} dir={dir}>
+            <head>
+                <JsonLd siteUrl={siteUrl} />
+            </head>
             <body
                 className={`${aktiv.className} ${cairo.variable} font-sans antialiased`}
             >
