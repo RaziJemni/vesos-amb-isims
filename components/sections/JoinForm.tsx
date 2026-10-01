@@ -52,6 +52,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
         Partial<Record<keyof JoinFormData, boolean>>
     >({});
     const [stepErrorMsg, setStepErrorMsg] = useState<string | null>(null);
+    const [stepTransitionTime, setStepTransitionTime] = useState<number>(0);
 
     const ref = useScrollAnimation();
     const cardRef = useRef<HTMLDivElement>(null);
@@ -139,7 +140,9 @@ export function JoinForm({ t, language }: JoinFormProps) {
     const handleNext = () => {
         if (!validateStep(currentStep)) return;
         if (currentStep < 3) {
-            setCurrentStep((prev) => (prev + 1) as WizardStep);
+            const nextStep = (currentStep + 1) as WizardStep;
+            setCurrentStep(nextStep);
+            setStepTransitionTime(Date.now());
             scrollToForm();
         }
     };
@@ -161,6 +164,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
             // Only allow jumping forward if current step is valid
             if (validateStep(currentStep)) {
                 setCurrentStep(targetStep);
+                setStepTransitionTime(Date.now());
                 scrollToForm();
             }
         }
@@ -194,8 +198,30 @@ export function JoinForm({ t, language }: JoinFormProps) {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
-        if (!validateStep(1) || !validateStep(2) || !validateStep(3)) {
-            setStatus("error");
+        // 1. Guard against submitting if not on step 3
+        if (currentStep !== 3) {
+            handleNext();
+            return;
+        }
+
+        // 2. Guard against click bleed-through (e.g. fast or double-clicking Next on Step 2)
+        if (Date.now() - stepTransitionTime < 450) {
+            return;
+        }
+
+        // 3. Sequential validation with automatic redirect to first invalid step
+        if (!validateStep(1)) {
+            setCurrentStep(1);
+            scrollToForm();
+            return;
+        }
+        if (!validateStep(2)) {
+            setCurrentStep(2);
+            scrollToForm();
+            return;
+        }
+        if (!validateStep(3)) {
+            scrollToForm();
             return;
         }
 
@@ -1346,8 +1372,13 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                         <div className="w-full sm:w-auto flex items-center gap-3">
                                             {currentStep < 3 ? (
                                                 <Button
+                                                    key="wizard-next-step-btn"
                                                     type="button"
-                                                    onClick={handleNext}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
+                                                        handleNext();
+                                                    }}
                                                     className="w-full sm:w-auto gap-2 bg-primary hover:bg-primary/90 text-white font-bold px-8 shadow-md"
                                                 >
                                                     {t.join.form.next || "Next Step"}
@@ -1359,6 +1390,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                 </Button>
                                             ) : (
                                                 <Button
+                                                    key="wizard-submit-final-btn"
                                                     type="submit"
                                                     size="lg"
                                                     className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-bold px-10 shadow-lg"
