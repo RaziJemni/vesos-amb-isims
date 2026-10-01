@@ -102,8 +102,16 @@ export interface Translations {
             no: string;
             desiredPosition: string;
             positionTreasurer: string;
-            positionPartnership: string;
+            positionSecretaryGeneral: string;
+            positionPartnershipManager: string;
+            positionPartnershipAssistant: string;
+            positionCommManager: string;
+            positionCommAssistant: string;
+            positionHRManager: string;
+            positionHRAssistant: string;
+            positionEventsAssistant: string;
             positionMember: string;
+            positionPartnership?: string;
             department: string;
             departmentHR: string;
             departmentEvents: string;

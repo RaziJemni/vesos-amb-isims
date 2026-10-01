@@ -953,7 +953,7 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                 >
                                                     {t.join.form.desiredPosition} *
                                                 </Label>
-                                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2">
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
                                                     {[
                                                         {
                                                             value: "treasurer",
@@ -961,9 +961,44 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                                 .positionTreasurer,
                                                         },
                                                         {
+                                                            value: "secretary-general",
+                                                            label: t.join.form
+                                                                .positionSecretaryGeneral,
+                                                        },
+                                                        {
                                                             value: "partnership-manager",
                                                             label: t.join.form
-                                                                .positionPartnership,
+                                                                .positionPartnershipManager,
+                                                        },
+                                                        {
+                                                            value: "partnership-assistant",
+                                                            label: t.join.form
+                                                                .positionPartnershipAssistant,
+                                                        },
+                                                        {
+                                                            value: "comm-manager",
+                                                            label: t.join.form
+                                                                .positionCommManager,
+                                                        },
+                                                        {
+                                                            value: "comm-assistant",
+                                                            label: t.join.form
+                                                                .positionCommAssistant,
+                                                        },
+                                                        {
+                                                            value: "hr-manager",
+                                                            label: t.join.form
+                                                                .positionHRManager,
+                                                        },
+                                                        {
+                                                            value: "hr-assistant",
+                                                            label: t.join.form
+                                                                .positionHRAssistant,
+                                                        },
+                                                        {
+                                                            value: "events-assistant",
+                                                            label: t.join.form
+                                                                .positionEventsAssistant,
                                                         },
                                                         {
                                                             value: "member",

@@ -18,8 +18,15 @@ export const OPTION_LABELS: Record<string, Record<string, string>> = {
         no: "Non",
     },
     desiredPosition: {
-        treasurer: "Trésorier",
-        "partnership-manager": "Partenariat",
+        treasurer: "Trésorier / Trésorière",
+        "secretary-general": "Secrétaire Général(e)",
+        "partnership-manager": "Responsable Partenariats",
+        "partnership-assistant": "Assistant(e) Partenariats",
+        "comm-manager": "Responsable Communication Digitale",
+        "comm-assistant": "Assistant(e) Communication Digitale",
+        "hr-manager": "Responsable RH",
+        "hr-assistant": "Assistant(e) RH",
+        "events-assistant": "Assistant(e) Événements",
         member: "Membre",
     },
     department: {
