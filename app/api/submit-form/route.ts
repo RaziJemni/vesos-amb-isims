@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
         // 4. Map the submitted form data flexibly to the sheet columns
         const rowData = mapFormDataToSheetRow(formData, sheet.headerValues);
 
-        // 5. Append row to Google Sheets
-        await sheet.addRow(rowData);
+        // 5. Append row to Google Sheets (insert: true ensures new rows are inserted sequentially rather than overwriting)
+        await sheet.addRow(rowData, { insert: true });
 
         console.log("Successfully appended row to Google Sheet for:", formData.fullname);
 
