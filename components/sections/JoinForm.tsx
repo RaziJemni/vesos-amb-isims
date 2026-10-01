@@ -233,12 +233,20 @@ export function JoinForm({ t, language }: JoinFormProps) {
             } else {
                 console.error("Submission failed:", result.error);
                 setStatus("error");
-                setStepErrorMsg(t.join.form.error || "Submission failed. Please try again.");
+                setStepErrorMsg(
+                    result.error ||
+                    t.join.form.error ||
+                    "Submission failed. Please try again."
+                );
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Form submission error:", error);
             setStatus("error");
-            setStepErrorMsg(t.join.form.error || "Submission failed. Please try again.");
+            setStepErrorMsg(
+                error?.message ||
+                t.join.form.error ||
+                "Submission failed. Please try again."
+            );
         }
     };
 
