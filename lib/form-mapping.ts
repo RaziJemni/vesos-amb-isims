@@ -167,5 +167,28 @@ export function mapFormDataToSheetRow(
         }
     }
 
+    // Sanitize all cell values to prevent Google Sheets from interpreting
+    // phone numbers starting with '+' or strings starting with '=', '-', '@' as broken formulas
+    for (const key of Object.keys(row)) {
+        const clean = key.trim().toLowerCase();
+        if (clean.includes("timestamp") || clean.includes("horodateur")) {
+            continue;
+        }
+        const val = row[key];
+        if (typeof val === "string") {
+            const trimmed = val.trim();
+            if (
+                trimmed.startsWith("+") ||
+                trimmed.startsWith("=") ||
+                trimmed.startsWith("-") ||
+                trimmed.startsWith("@")
+            ) {
+                row[key] = "'" + trimmed;
+            } else {
+                row[key] = trimmed;
+            }
+        }
+    }
+
     return row;
 }
