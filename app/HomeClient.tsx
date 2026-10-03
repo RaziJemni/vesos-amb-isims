@@ -19,7 +19,14 @@ export default function HomeClient({ initialLanguage }: HomeClientProps) {
     };
 
     useEffect(() => {
+        setLanguage(initialLanguage);
+    }, [initialLanguage]);
+
+    useEffect(() => {
         applyLanguageAttributes(language);
+        document.cookie = `language=${language}; path=/; max-age=${
+            60 * 60 * 24 * 365
+        }`;
     }, [language]);
 
     const handleLanguageChange = (lang: Language) => {
@@ -29,6 +36,13 @@ export default function HomeClient({ initialLanguage }: HomeClientProps) {
         }`;
         applyLanguageAttributes(lang);
         setLanguage(lang);
+
+        if (typeof window !== "undefined") {
+            const url = new URL(window.location.href);
+            url.searchParams.set("lang", lang);
+            window.history.replaceState(null, "", url.toString());
+        }
+
         router.refresh();
     };
 

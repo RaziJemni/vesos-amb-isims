@@ -9,10 +9,20 @@ import { Events } from "@/components/sections/Events";
 import { JoinForm } from "@/components/sections/JoinForm";
 import { Footer } from "@/components/sections/Footer";
 
-export default async function Home() {
+interface HomePageProps {
+    searchParams: Promise<{ lang?: string }>;
+}
+
+export default async function Home({ searchParams }: HomePageProps) {
+    const resolvedParams = await searchParams;
     const cookieStore = await cookies();
-    const language =
-        (cookieStore.get("language")?.value as Language | undefined) || "en";
+    const cookieLang = cookieStore.get("language")?.value as Language | undefined;
+    const paramLang = resolvedParams?.lang;
+    const validParamLang =
+        paramLang && ["en", "fr", "ar"].includes(paramLang)
+            ? (paramLang as Language)
+            : undefined;
+    const language: Language = validParamLang || cookieLang || "en";
     const t = getTranslations(language);
 
     return (
