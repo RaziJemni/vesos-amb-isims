@@ -4,7 +4,7 @@ const nextConfig = {
     root: process.cwd(),
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
 }
 
