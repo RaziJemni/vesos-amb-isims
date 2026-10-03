@@ -27,6 +27,7 @@ export const OPTION_LABELS: Record<string, Record<string, string>> = {
         "hr-manager": "Responsable RH",
         "hr-assistant": "Assistant(e) RH",
         "events-assistant": "Assistant(e) Événements",
+        "fundraising-manager": "Responsable Collecte de Fonds",
         member: "Membre",
     },
     department: {

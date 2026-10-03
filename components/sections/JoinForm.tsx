@@ -1035,6 +1035,11 @@ export function JoinForm({ t, language }: JoinFormProps) {
                                                                 .positionEventsAssistant,
                                                         },
                                                         {
+                                                            value: "fundraising-manager",
+                                                            label: t.join.form
+                                                                .positionFundraisingManager,
+                                                        },
+                                                        {
                                                             value: "member",
                                                             label: t.join.form
                                                                 .positionMember,

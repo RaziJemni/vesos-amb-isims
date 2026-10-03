@@ -110,6 +110,7 @@ export interface Translations {
             positionHRManager: string;
             positionHRAssistant: string;
             positionEventsAssistant: string;
+            positionFundraisingManager: string;
             positionMember: string;
             positionPartnership?: string;
             department: string;
