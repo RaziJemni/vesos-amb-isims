@@ -29,6 +29,7 @@ export interface Translations {
         learnMore: string;
     };
     hero: {
+        badge: string;
         tagline: string;
         title: string;
         subtitle: string;
@@ -39,9 +40,19 @@ export interface Translations {
     about: {
         title: string;
         description: string;
+        badge?: string;
+        partnerBadge?: string;
+        quote?: string;
+        stats?: {
+            founded: { value: string; label: string };
+            chapter: { value: string; label: string };
+            solidarity: { value: string; label: string };
+        };
     };
     goals: {
         title: string;
+        badge?: string;
+        subtitle?: string;
         items: Array<{
             icon: string;
             title: string;

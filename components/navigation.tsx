@@ -50,20 +50,35 @@ export function Navigation({
     };
 
     const joinButtonClasses = cn(
-        "transition-colors",
+        "transition-all font-medium",
         isScrolled
-            ? "bg-primary hover:bg-primary/90 text-white"
-            : "bg-white hover:bg-white/90 text-primary",
+            ? "bg-primary hover:bg-primary/90 text-white shadow-xs"
+            : "bg-white hover:bg-white/90 text-primary-dark shadow-sm hover:shadow",
+    );
+
+    const learnMoreButtonClasses = cn(
+        "transition-colors bg-transparent",
+        isScrolled
+            ? "border-primary-dark/30 text-primary-dark hover:bg-primary-dark/5 hover:border-primary-dark"
+            : "border-white/80 text-white/90 hover:bg-white/10 hover:text-white hover:border-white",
+    );
+
+    const mobileMenuButtonClasses = cn(
+        "transition-colors",
+        isScrolled || isMobileMenuOpen
+            ? "text-primary-dark hover:bg-gray-100 hover:text-primary-dark"
+            : "text-white/90 hover:bg-white/10 hover:text-white",
     );
 
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in-down ${
+                className={cn(
+                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in-down",
                     isScrolled
-                        ? "bg-background/50 backdrop-blur-sm shadow-md"
-                        : "bg-transparent"
-                }`}
+                        ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-border/40"
+                        : "bg-transparent",
+                )}
             >
                 <div className="container px-4">
                     <div className="flex items-center justify-between h-16 md:h-20">
@@ -78,6 +93,7 @@ export function Navigation({
                                     })
                                 }
                                 className="hover:opacity-80 transition-opacity"
+                                aria-label="Scroll to top"
                             >
                                 <img
                                     src="/assets/icons/logo-isims.svg"
@@ -94,6 +110,7 @@ export function Navigation({
                                     })
                                 }
                                 className="text-xl md:text-2xl font-bold hover:opacity-80 transition-opacity"
+                                aria-label="SOS Club Home"
                             >
                                 {/* Show white logo when nav is over the hero (transparent), otherwise show blue logo */}
                                 <img
@@ -118,12 +135,22 @@ export function Navigation({
                                         e.preventDefault();
                                         handleNavClick(item.href);
                                     }}
-                                    className="text-sm font-medium hover:text-primary transition-colors"
+                                    className={cn(
+                                        "text-sm font-medium transition-colors",
+                                        isScrolled
+                                            ? "text-primary-dark hover:text-primary"
+                                            : "text-white/90 hover:text-white",
+                                    )}
                                 >
                                     {item.label}
                                 </a>
                             ))}
-                            <div className="w-px h-6 bg-gray-300"></div>
+                            <div
+                                className={cn(
+                                    "w-px h-6 transition-colors",
+                                    isScrolled ? "bg-gray-200" : "bg-white/20",
+                                )}
+                            />
                             <Button asChild className={joinButtonClasses}>
                                 <a
                                     href="#join"
@@ -140,12 +167,7 @@ export function Navigation({
                                     window.open("https://sosve.tn", "_blank")
                                 }
                                 variant="outline"
-                                className={cn(
-                                    "transition-colors",
-                                    isScrolled
-                                        ? "border-primary text-primary hover:bg-primary/10"
-                                        : "border-white text-primary hover:bg-white/10",
-                                )}
+                                className={learnMoreButtonClasses}
                             >
                                 {t.nav.learnMore}
                             </Button>
@@ -166,9 +188,15 @@ export function Navigation({
                             <Button
                                 variant="ghost"
                                 size="icon"
+                                aria-label={
+                                    isMobileMenuOpen
+                                        ? "Close navigation menu"
+                                        : "Open navigation menu"
+                                }
                                 onClick={() =>
                                     setIsMobileMenuOpen(!isMobileMenuOpen)
                                 }
+                                className={mobileMenuButtonClasses}
                             >
                                 {isMobileMenuOpen ? (
                                     <X className="h-6 w-6" />
@@ -183,9 +211,9 @@ export function Navigation({
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-sm md:hidden pt-16">
+                <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md md:hidden pt-16 border-b border-border/40">
                     <div className="container px-4 py-8">
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-3">
                             {navItems.map((item) => (
                                 <a
                                     key={item.href}
@@ -194,12 +222,15 @@ export function Navigation({
                                         e.preventDefault();
                                         handleNavClick(item.href);
                                     }}
-                                    className="text-lg font-medium hover:text-primary transition-colors text-start py-2"
+                                    className="text-lg font-medium text-primary-dark hover:text-primary transition-colors text-start py-2.5 border-b border-border/30 last:border-b-0"
                                 >
                                     {item.label}
                                 </a>
                             ))}
-                            <Button asChild className={cn(joinButtonClasses, "w-full mt-4")}>
+                            <Button
+                                asChild
+                                className="w-full mt-4 bg-primary hover:bg-primary/90 text-white shadow-md font-medium"
+                            >
                                 <a
                                     href="#join"
                                     onClick={(e) => {

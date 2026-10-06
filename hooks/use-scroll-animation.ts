@@ -10,8 +10,7 @@ export function useScrollAnimation() {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("animate-in");
-                } else {
-                    entry.target.classList.remove("animate-in");
+                    observer.unobserve(entry.target);
                 }
             },
             { threshold: 0.05 }

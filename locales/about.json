@@ -1,14 +1,38 @@
 {
     "en": {
+        "badge": "✦ Our Story & Mission",
         "title": "About Us",
-        "description": "The SOS Children's Village Ambassadors Club of ISIMS is a student association dedicated to charitable action for vulnerable children. Our mission is to raise awareness within the university community about the challenges facing children in difficulty and to raise funds in support of SOS Village d'Enfants initiatives.\n\nFounded in 2022, our club regularly organizes events, fundraising campaigns, and awareness activities to provide tangible support to children in need."
+        "description": "The SOS Children's Village Ambassadors Club of ISIMS is a student association dedicated to charitable action for vulnerable children. Our mission is to raise awareness within the university community about the challenges facing children in difficulty and to raise funds in support of SOS Village d'Enfants initiatives.\n\nFounded in 2022, our club regularly organizes events, fundraising campaigns, and awareness activities to provide tangible support to children in need.",
+        "partnerBadge": "Official Partner • SOS Villages d'Enfants Tunisie",
+        "quote": "Empowering university students to deliver hope, protection, and tangible joy to children in vulnerable situations.",
+        "stats": {
+            "founded": { "value": "2022", "label": "2022 Foundation" },
+            "chapter": { "value": "ISIMS", "label": "ISIMS Chapter" },
+            "solidarity": { "value": "100%", "label": "Solidarity & Action" }
+        }
     },
     "fr": {
+        "badge": "✦ Notre Histoire & Mission",
         "title": "À Propos de Nous",
-        "description": "Le Club Ambassadeurs SOS Village d'Enfants de l'ISIMS est une association étudiante engagée dans des actions caritatives au profit des enfants défavorisés. Notre mission est de sensibiliser la communauté universitaire aux défis de l'enfance en difficulté et de collecter des fonds pour soutenir les initiatives de SOS Village d'Enfants.\n\nFondé en 2022, notre club organise régulièrement des événements, des collectes de fonds et des activités de sensibilisation pour apporter un soutien concret aux enfants dans le besoin."
+        "description": "Le Club Ambassadeurs SOS Village d'Enfants de l'ISIMS est une association étudiante engagée dans des actions caritatives au profit des enfants défavorisés. Notre mission est de sensibiliser la communauté universitaire aux défis de l'enfance en difficulté et de collecter des fonds pour soutenir les initiatives de SOS Village d'Enfants.\n\nFondé en 2022, notre club organise régulièrement des événements, des collectes de fonds et des activités de sensibilisation pour apporter un soutien concret aux enfants dans le besoin.",
+        "partnerBadge": "Partenaire Officiel • SOS Villages d'Enfants Tunisie",
+        "quote": "Mobiliser l'énergie des étudiants pour apporter protection, espoir et soutien concret aux enfants.",
+        "stats": {
+            "founded": { "value": "2022", "label": "Fondation 2022" },
+            "chapter": { "value": "ISIMS", "label": "Chapitre ISIMS" },
+            "solidarity": { "value": "100%", "label": "Solidarité & Action" }
+        }
     },
     "ar": {
+        "badge": "✦ قصتنا ورسالتنا",
         "title": "نبذة عنا",
-        "description": "يُعد نادي سفراء قرية الأطفال SOS في ISIMS جمعية طلابية مكرسة للعمل الخيري لصالح الأطفال المحتاجين. تتمثل رسالتنا في توعية المجتمع الجامعي بالتحديات التي يواجهها الأطفال في وضعية صعبة وجمع التبرعات لدعم مبادرات SOS Village d'Enfants.\n\nتأسس النادي عام 2022، وينظم بانتظام فعاليات وحملات جمع تبرعات وأنشطة توعوية لتقديم دعم ملموس للأطفال المحتاجين."
+        "description": "يُعد نادي سفراء قرية الأطفال SOS في ISIMS جمعية طلابية مكرسة للعمل الخيري لصالح الأطفال المحتاجين. تتمثل رسالتنا في توعية المجتمع الجامعي بالتحديات التي يواجهها الأطفال في وضعية صعبة وجمع التبرعات لدعم مبادرات SOS Village d'Enfants.\n\nتأسس النادي عام 2022، وينظم بانتظام فعاليات وحملات جمع تبرعات وأنشطة توعوية لتقديم دعم ملموس للأطفال المحتاجين.",
+        "partnerBadge": "شريك رسمي • SOS قرى الأطفال تونس",
+        "quote": "تسخير طاقات وشغف طلبة الجامعة لتوفير الأمل والحماية والدعم الملموس للأطفال.",
+        "stats": {
+            "founded": { "value": "2022", "label": "تأسس عام 2022" },
+            "chapter": { "value": "ISIMS", "label": "فرع ISIMS" },
+            "solidarity": { "value": "100%", "label": "تضامن وعمل خيري" }
+        }
     }
 }
