@@ -43,7 +43,7 @@ export function Team({ t, language }: TeamProps) {
                                 key={index}
                                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-t-4 border-t-primary"
                             >
-                                <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] bg-primary">
+                                <div className="relative w-full h-[220px] sm:h-[320px] lg:h-[400px] bg-primary">
                                     <Image
                                         src={
                                             member.image ||
@@ -57,27 +57,27 @@ export function Team({ t, language }: TeamProps) {
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <CardContent className="p-6">
+                                <CardContent className="p-3 sm:p-5 md:p-6">
                                     <div
-                                        className={`text-center mb-4 ${member.isMascot ? "" : ""}`}
+                                        className={`text-center mb-2.5 sm:mb-4 ${member.isMascot ? "" : ""}`}
                                     >
                                         <h3
-                                            className={`${member.isMascot ? "text-4xl text-primary font-bold" : "text-xl font-semibold mb-1 text-primary-dark"}`}
+                                            className={`${member.isMascot ? "text-2xl sm:text-4xl text-primary font-bold" : "text-base sm:text-xl font-semibold mb-0.5 sm:mb-1 text-primary-dark"}`}
                                         >
                                             {member.name}
                                         </h3>
                                         <p
-                                            className={`${member.isMascot ? "text-xl text-primary-dark" : "text-primary-dark font-medium"}`}
+                                            className={`${member.isMascot ? "text-base sm:text-xl text-primary-dark" : "text-xs sm:text-base text-primary-dark/80 font-medium leading-snug"}`}
                                         >
                                             {getLocalizedRole(member, language)}
                                         </p>
                                     </div>
 
                                     {!member.isMascot && (
-                                        <div className="space-y-3 border-t pt-4">
+                                        <div className="space-y-2 sm:space-y-3 border-t pt-2.5 sm:pt-4">
                                             {member.email && (
-                                                <div className="flex items-center justify-center gap-2 text-sm">
-                                                    <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
+                                                <div className="flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
+                                                    <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-secondary flex-shrink-0" />
                                                     <a
                                                         href={`mailto:${member.email}`}
                                                         className="text-primary-dark hover:text-primary transition-colors truncate"
@@ -90,7 +90,7 @@ export function Team({ t, language }: TeamProps) {
 
                                             {(member.instagram ||
                                                 member.linkedin) && (
-                                                <div className="flex justify-center gap-3 pt-2">
+                                                <div className="flex justify-center gap-2 sm:gap-3 pt-1 sm:pt-2">
                                                     {member.instagram && (
                                                         <a
                                                             href={

@@ -145,8 +145,19 @@ export function Hero({ t }: HeroProps) {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
                     {/* Left Column: High-Impact Headline, Subtitle & Action CTAs (7 cols) */}
                     <div className="lg:col-span-7 flex flex-col justify-center text-start items-start space-y-4 sm:space-y-5 animate-fade-in-up animate-in">
+                        {/* Eyebrow Chapter Beacon */}
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-xs border border-white/20 text-xs text-white font-medium shadow-xs">
+                            <span className="flex h-2 w-2 relative shrink-0">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+                            </span>
+                            <span>
+                                ✦ ISIMS Sfax • Higher Institute of Computer Science and Multimedia
+                            </span>
+                        </div>
+
                         {/* High-Impact Headline with Accent Underline */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.12] text-balance">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.14] text-balance">
                             {t.hero.title.includes("SOS") ? (
                                 <>
                                     {t.hero.title.split("SOS")[0]}
@@ -167,19 +178,19 @@ export function Hero({ t }: HeroProps) {
                         </p>
 
                         {/* Dual High-Contrast Action Buttons */}
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1 w-full sm:w-auto">
+                        <div className="flex flex-row items-center gap-2.5 sm:gap-3.5 pt-1 w-full sm:w-auto">
                             {/* Primary CTA: Become a Member (Crisp White Button on Blue) */}
                             <Button
                                 asChild
                                 size="lg"
-                                className="gap-2 text-sm sm:text-base font-bold px-6 py-5 rounded-xl bg-white hover:bg-white/95 text-[#1c325d] hover:text-[#00abec] shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 active:translate-y-0 transition-all border border-transparent cursor-pointer"
+                                className="flex-1 sm:flex-initial gap-1.5 sm:gap-2 text-xs sm:text-base font-bold px-3.5 sm:px-6 py-3.5 sm:py-5 rounded-xl bg-white hover:bg-white/95 text-[#1c325d] hover:text-[#00abec] shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 active:translate-y-0 transition-all border border-transparent cursor-pointer"
                             >
                                 <a
                                     href="#join"
-                                    className="inline-flex items-center justify-center gap-2"
+                                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2"
                                 >
                                     <span>{t.hero.cta}</span>
-                                    <ArrowRight className="h-4.5 w-4.5 rtl:rotate-180 shrink-0 text-[#00abec]" />
+                                    <ArrowRight className="h-4 w-4 sm:h-4.5 sm:w-4.5 rtl:rotate-180 shrink-0 text-[#00abec]" />
                                 </a>
                             </Button>
 
@@ -188,29 +199,18 @@ export function Hero({ t }: HeroProps) {
                                 asChild
                                 size="lg"
                                 variant="outline"
-                                className="gap-2 text-sm sm:text-base font-semibold px-6 py-5 rounded-xl border-2 border-white/80 hover:border-white text-white hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 transition-all bg-transparent shadow-sm cursor-pointer"
+                                className="flex-1 sm:flex-initial gap-1.5 sm:gap-2 text-xs sm:text-base font-semibold px-3.5 sm:px-6 py-3.5 sm:py-5 rounded-xl border-2 border-white/80 hover:border-white text-white hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 transition-all bg-transparent shadow-sm cursor-pointer"
                             >
                                 <a
                                     href="https://sosve.tn"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2"
+                                    className="inline-flex items-center justify-center gap-1.5 sm:gap-2"
                                 >
                                     <span>{t.hero.donate}</span>
-                                    <ArrowRight className="h-4.5 w-4.5 rtl:rotate-180 shrink-0" />
+                                    <ArrowRight className="h-4 w-4 sm:h-4.5 sm:w-4.5 rtl:rotate-180 shrink-0" />
                                 </a>
                             </Button>
-                        </div>
-
-                        {/* Chapter Beacon */}
-                        <div className="flex items-center gap-2.5 pt-0.5 text-xs text-white/90 font-medium">
-                            <span className="flex h-2 w-2 relative shrink-0">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                            </span>
-                            <span>
-                                Higher Institute of Computer Science and Multimedia • Sfax
-                            </span>
                         </div>
                     </div>
 

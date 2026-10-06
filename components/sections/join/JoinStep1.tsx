@@ -58,6 +58,8 @@ export function JoinStep1({
                     <Input
                         id="fullname"
                         type="text"
+                        autoComplete="name"
+                        autoCapitalize="words"
                         placeholder={t.join.form.fullnamePlaceholder}
                         value={formData.fullname}
                         onChange={(e) => {
@@ -86,6 +88,7 @@ export function JoinStep1({
                     <Input
                         id="email"
                         type="email"
+                        autoComplete="email"
                         placeholder={t.join.form.emailPlaceholder}
                         value={formData.email}
                         onChange={(e) => {
@@ -117,6 +120,8 @@ export function JoinStep1({
                     <Input
                         id="phone"
                         type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
                         placeholder={t.join.form.phonePlaceholder}
                         value={formData.phone}
                         onChange={(e) => {

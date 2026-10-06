@@ -140,6 +140,31 @@ export function Goals({ t }: GoalsProps) {
                     </p>
                 </div>
 
+                {/* Mobile Pillar Pills Bar (< lg screens) */}
+                <div className="flex lg:hidden overflow-x-auto pb-2 gap-2 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 mb-4">
+                    {goals.map((goal, index) => {
+                        const meta = goalMeta[index] || goalMeta[0];
+                        const Icon = meta.icon;
+                        const isSelected = selectedIndex === index;
+
+                        return (
+                            <button
+                                key={`mobile-tab-${index}`}
+                                type="button"
+                                onClick={() => setSelectedIndex(index)}
+                                className={`shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                                    isSelected
+                                        ? `bg-white ${meta.borderActive} ${meta.badgeText} shadow-xs ring-1 ring-current`
+                                        : "bg-white/90 border-slate-200/90 text-slate-600 hover:bg-white"
+                                }`}
+                            >
+                                <Icon className="w-3.5 h-3.5 shrink-0" />
+                                <span className="whitespace-nowrap">{goal.title}</span>
+                            </button>
+                        );
+                    })}
+                </div>
+
                 {/* Interactive Spotlight & Pillar Showcase */}
                 <div
                     ref={ref}
@@ -188,8 +213,8 @@ export function Goals({ t }: GoalsProps) {
                         </Card>
                     </div>
 
-                    {/* Right Column: Interactive Pillar List with Alternating Hover Colors */}
-                    <div className="lg:col-span-7 flex flex-col justify-between space-y-2 sm:space-y-2.5">
+                    {/* Right Column: Interactive Pillar List with Alternating Hover Colors (Desktop lg:) */}
+                    <div className="hidden lg:flex lg:col-span-7 flex-col justify-between space-y-2 sm:space-y-2.5">
                         {goals.map((goal, index) => {
                             const meta = goalMeta[index] || goalMeta[0];
                             const Icon = meta.icon;
